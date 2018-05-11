@@ -60,7 +60,7 @@ Public Class Form1
         Dim strIPAddress As String = System.Net.Dns.GetHostEntry(strHostName).AddressList(1).ToString()
         Dim str As String = "-"
         Dim DataSplit As String() = strHostName.Split("I")
-        Label40.Text = "IP:" & strIPAddress & " V1.06"
+        Label40.Text = "IP:" & strIPAddress & " V1.07"
         If DataSplit.Length >= 3 Then
             str = "0" & DataSplit(2)
         End If
@@ -1247,11 +1247,14 @@ EndLoop:
     End Sub
     Private Sub pbxQR_Click(sender As System.Object, e As System.EventArgs) Handles pbxQR.Click, btnWorkSlip.Click
 
-        If Not IsNumeric(btnOPID.Text) Then
+        'If Not IsNumeric(btnOPID.Text) Then
+        '    MsgBox("กรุณา Input OPID ก่อน")
+        '    Exit Sub
+        'End If
+        If btnOPID.Text.Length <> 6 Then
             MsgBox("กรุณา Input OPID ก่อน")
             Exit Sub
         End If
-
         tbxKey.Text = ""
         tbxKey.Focus()
         btnWorkSlip.ForeColor = Color.Green
@@ -1303,9 +1306,9 @@ EndLoop:
         If e.KeyChar = Convert.ToChar(13) Then
 
             If tbxQR_OPID.Text.Length = 6 Then                   'OPID Qr length is 6
-                If Not IsNumeric(tbxQR_OPID.Text) Then
-                    Exit Sub
-                End If
+                'If Not IsNumeric(tbxQR_OPID.Text) Then
+                '    Exit Sub
+                'End If
                 OprData.OPID = tbxQR_OPID.Text
                 tbxQR_OPID.Text = ""
                 btnOPID.Text = OprData.OPID
