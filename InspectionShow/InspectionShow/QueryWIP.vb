@@ -57,6 +57,12 @@
                 If Not dayWIP.IsStatusNull Then
                     row.Status = dayWIP.Status
                 End If
+                If Not dayWIP.IsRequestMode1Null Then
+                    row.RequestMode1 = dayWIP.RequestMode1
+                End If
+                If Not dayWIP.IsRequestMode2Null Then
+                    row.RequestMode2 = dayWIP.RequestMode2
+                End If
                 row.DateWIP = EndDateWIP.AddDays(-(i + 1))
                 row.Number = num
 

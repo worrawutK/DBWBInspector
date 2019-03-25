@@ -38,7 +38,8 @@ Public Class Form1
     Dim SPMM As Integer
     Dim SPss As Integer
     Dim CheckQR As String = ""
-
+    Private Const PathServer As String = "\\172.16.0.115\MachineData\DB\Inspector\"
+    Private Const Version As String = "V1.08"
     Dim strHostName As String = System.Net.Dns.GetHostName()
 
 
@@ -53,14 +54,14 @@ Public Class Form1
         If My.Settings.SetMasterGLCheck = True Then
             btGLConfirm.Visible = True
         End If
-        lbVersion.Text = My.Settings.Version
+        'lbVersion.Text = My.Settings.Version
         'update ip
         ' GetHostEntry
         '    Dim strIPAddress As String = System.Net.Dns.GetHostByName(strHostName).AddressList(0).ToString()
         Dim strIPAddress As String = System.Net.Dns.GetHostEntry(strHostName).AddressList(1).ToString()
         Dim str As String = "-"
         Dim DataSplit As String() = strHostName.Split("I")
-        Label40.Text = "IP:" & strIPAddress & " V1.07"
+        Label40.Text = "IP:" & strIPAddress & " " & Version
         If DataSplit.Length >= 3 Then
             str = "0" & DataSplit(2)
         End If
@@ -513,8 +514,8 @@ BypassAuter:
             'End If
             PictureBox2.BackgroundImage = Nothing
             PictureBox1.BackgroundImage = Nothing
-            If File.Exists("\\zion\Inpector\" & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG") Then
-                PictureBox1.BackgroundImage = Image.FromFile("\\zion\Inpector\" & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG")
+            If File.Exists(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG") Then
+                PictureBox1.BackgroundImage = Image.FromFile(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG")
             End If
 
         Catch ex As Exception
@@ -1046,7 +1047,7 @@ EndLoop:
                 Exit Sub
             End If
             If Not My.Computer.Network.Ping("172.16.0.100") Then            'Can Pink Zion
-                MsgBox("การเชื่อมต่อกับ Zion ล้มเหลวไม่สามารถดำเนินการต่อได้")
+                MsgBox("การเชื่อมต่อกับ 172.16.0.100 ล้มเหลวไม่สามารถดำเนินการต่อได้")
                 Exit Sub
             End If
 
@@ -1133,7 +1134,7 @@ EndLoop:
                         Detail = InspDetail.NewRow
                         Detail.LotNo = lbLotNo.Text
                         If PictureBox2.BackgroundImage IsNot Nothing Then
-                            Detail.LinkShoko = "\\zion\Inpector\" & lbProcess.Text & "\" & lbLotNo.Text & "_SHOKONOKOSHI.JPG"
+                            Detail.LinkShoko = PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_SHOKONOKOSHI.JPG"
                         End If
                         Detail.Process = lbProcess.Text
                         If Not row.Is_1MNull Then Detail._1M = row._1M
@@ -1175,7 +1176,7 @@ EndLoop:
 
                 '----------------------------------------------
                 If PictureBox2.BackgroundImage IsNot Nothing Then
-                    PictureBox2.BackgroundImage.Save("\\zion\Inpector\" & lbProcess.Text & "\" & lbLotNo.Text & "_SHOKONOKOSHI.JPG")
+                    PictureBox2.BackgroundImage.Save(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_SHOKONOKOSHI.JPG")
 
                 End If
             Catch ex As Exception
