@@ -4,11 +4,14 @@
 
 Imports System.Net, System.Net.Sockets
 Imports System.Text
-
+Imports InspectorWork.iLibraryService
+Imports MessageDialog
 'Imports iTextSharp.text.pdf
 'Imports iTextSharp.text
 
 Public Class Form1
+    'iLibrary Service
+    Private c_ServiceiLibrary As ServiceiLibraryClient
     '------------------TCP
     Dim serverSocket As Socket
     Dim clientSocket As Socket
@@ -39,7 +42,7 @@ Public Class Form1
     Dim SPss As Integer
     Dim CheckQR As String = ""
     Private Const PathServer As String = "\\172.16.0.115\MachineData\DB\Inspector\"
-    Private Const Version As String = "V1.08"
+    Private Const Version As String = "V1.09"
     Dim strHostName As String = System.Net.Dns.GetHostName()
 
 
@@ -51,6 +54,10 @@ Public Class Form1
     End Structure
 
     Private Sub Form1_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+
+        'apcs pro.
+        c_ServiceiLibrary.MachineOnlineState(My.Settings.MachineNo, MachineOnline.Online)
+
         If My.Settings.SetMasterGLCheck = True Then
             btGLConfirm.Visible = True
         End If
@@ -66,9 +73,11 @@ Public Class Form1
             str = "0" & DataSplit(2)
         End If
 
-        Label41.Text = "Inspection No." & str
+        'Label41.Text = "Inspection No." & str
+        Label41.Text = "No." & My.Settings.MachineNo
 
-        MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
+        'MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
+        MachinesTableAdapter1.Fill(DBxDataSet.Machines, My.Settings.MachineNo, "WBINS")
         '  MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
         For Each Data As DBxDataSet.MachinesRow In DBxDataSet.Machines.Rows
             Data.IP = strIPAddress
@@ -331,6 +340,29 @@ BypassAuter:
                 slMessage.Text = "Lot นี้ยังไม่ได้ ทำการ บันทึก Inspection Request หรือ End Inspection แล้ว"
                 Exit Sub
             End If
+            DR = DBWB_InsTbl.Rows(0)                        '  Use DRcan make sure  update only one row to table
+
+            Try
+                Dim layerNo As String = ""
+                If DR.Process.Trim() = "DB" Then
+                    'DB M BRARI100%INS 0213
+                    layerNo = "0213"
+                End If
+                Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
+                If result.IsPass = SetupLotResult.Status.NotPass Then
+                    MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
+                    Exit Sub
+                ElseIf result.IsPass = SetupLotResult.Status.Warning Then
+                    MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
+                End If
+                c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.LotSetUp)
+                c_ServiceiLibrary.StartLot(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, result.Recipe)
+                c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Execute)
+            Catch ex As Exception
+                MessageBoxDialog.ShowMessage("SetupLot,StartLot", ex.Message.ToString, "iLibrary Service")
+            End Try
+
+
             SPss = 0
             SPHH = 0
             SPMM = 0
@@ -359,7 +391,7 @@ BypassAuter:
             End If
 
 
-            DR = DBWB_InsTbl.Rows(0)                        '  Use DRcan make sure  update only one row to table
+
 
             If DR.IsTotalQtyNull Then
                 KeyNumInput = StatusKey.Total 'Input Qty.if already input in data base will no pop up form
@@ -372,7 +404,7 @@ BypassAuter:
             If DR.IsStartTimeNull Then     ' If already start time will continue And DR.Process = "" 
                 DR.StartTime = CDate(lbStartTime.Text) 'Format(Now, "yyyy/MM/dd HH:mm:ss")
             End If
-            DR.InsName = strHostName
+            DR.InsName = My.Settings.MachineNo 'strHostName
 
             lbStartTime.Text = Format(DR.StartTime, "yyyy/MM/dd HH:mm:ss")
 
@@ -1010,6 +1042,16 @@ EndLoop:
 
         SaveCatchLog("", "btnSave_Click()")
         '  btTimePause.Visible = False
+        Try
+            Dim result As EndLotResult = c_ServiceiLibrary.EndLotNoCheckLicenser(lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, lbNG.Text)
+            If Not result.IsPass Then
+                MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString)
+                Exit Sub
+            End If
+            c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Idle)
+        Catch ex As Exception
+            MessageBoxDialog.ShowMessage("EndLot", ex.Message.ToString, "iLibrary Service")
+        End Try
 
         Try
             'If dgvTotal.Item(13, 0).Value = 0 And rbtLotJudgeOK.Checked = False Then              'If no data no action
@@ -1215,6 +1257,7 @@ EndLoop:
             slMessage.Text = "Save Success"
             TabControl1.SelectedTab = TabPage1
             ClearTime()
+
             'Call Shell("C:\Program Files\Internet Explorer\iexplore.exe http://http://webserv/WBWIP/WBWIP.aspx?LotNo=" & lbLotNo.Text & "&Process=" & lbProcess.Text & "&MCNo=" & lbMCNo.Text & "&OPNo=" & lbinspectorID.Text & "&Package=" & lbPackage.Text & "&NextProcess=WB", AppWinStyle.NormalFocus)
         Catch ex As Exception
             slMessage.Text = "Save Fail" & ex.ToString
@@ -1270,6 +1313,7 @@ EndLoop:
                 '     TabControl1.TabPages.Add(TabPage2) '********
                 OprData.QrData = tbxKey.Text.ToUpper
                 tbxKey.Text = ""
+
                 ' QR_DataRead()
                 ReadData(Nothing)
                 pbxQR.Focus()
@@ -2045,6 +2089,16 @@ EndLoop:
     Dim MagStart As Integer
     Dim MagEND As Integer
     Dim MagMAX As Integer = 12
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        c_ServiceiLibrary = New ServiceiLibraryClient()
+    End Sub
+
     Private Sub Hilight()
         Try
             arr = lbObjInsp.Text.Split("-")
@@ -2306,6 +2360,10 @@ EndLoop:
 
 
 
+    End Sub
+
+    Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        c_ServiceiLibrary.MachineOnlineState(My.Settings.MachineNo, MachineOnline.Offline)
     End Sub
 End Class
 Public Class StateObject
