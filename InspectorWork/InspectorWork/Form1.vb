@@ -42,7 +42,7 @@ Public Class Form1
     Dim SPss As Integer
     Dim CheckQR As String = ""
     Private Const PathServer As String = "\\172.16.0.115\MachineData\DB\Inspector\"
-    Private Const Version As String = "V1.09"
+    Private Const Version As String = "V1.10"
     Dim strHostName As String = System.Net.Dns.GetHostName()
 
 
