@@ -55,8 +55,13 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As System.EventArgs) Handles Me.Load
 
-        'apcs pro.
-        c_ServiceiLibrary.MachineOnlineState(My.Settings.MachineNo, MachineOnline.Online)
+        Try
+            'apcs pro.
+            c_ServiceiLibrary.MachineOnlineState(My.Settings.MachineNo, MachineOnline.Online)
+        Catch ex As Exception
+            MessageBoxDialog.ShowMessage("MachineOnlineState", ex.Message.ToString, "iLibrary Service")
+        End Try
+
 
         If My.Settings.SetMasterGLCheck = True Then
             btGLConfirm.Visible = True
@@ -349,7 +354,7 @@ BypassAuter:
                     layerNo = "0213"
                 End If
                 Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
-                If result.IsPass = SetupLotResult.Status.NotPass Then
+                If result.IsPass = SetupLotResult.Status.NotPass AndAlso result.Type = MessageType.Apcs Then
                     MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
                     Exit Sub
                 ElseIf result.IsPass = SetupLotResult.Status.Warning Then
@@ -1044,7 +1049,7 @@ EndLoop:
         '  btTimePause.Visible = False
         Try
             Dim result As EndLotResult = c_ServiceiLibrary.EndLotNoCheckLicenser(lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, lbNG.Text)
-            If Not result.IsPass Then
+            If Not result.IsPass AndAlso result.Type = MessageType.Apcs Then
                 MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString)
                 Exit Sub
             End If
@@ -2363,7 +2368,13 @@ EndLoop:
     End Sub
 
     Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        c_ServiceiLibrary.MachineOnlineState(My.Settings.MachineNo, MachineOnline.Offline)
+
+        Try
+            'apcs pro.
+            c_ServiceiLibrary.MachineOnlineState(My.Settings.MachineNo, MachineOnline.Offline)
+        Catch ex As Exception
+            MessageBoxDialog.ShowMessage("MachineOnlineState", ex.Message.ToString, "iLibrary Service")
+        End Try
     End Sub
 End Class
 Public Class StateObject
