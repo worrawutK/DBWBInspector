@@ -3,6 +3,7 @@
 '* UserAuthenOP = NOUSE is disable autherization system
 
 Imports System.Net, System.Net.Sockets
+Imports System.Reflection
 Imports System.Text
 Imports InspectorWork.iLibraryService
 Imports MessageDialog
@@ -73,7 +74,8 @@ Public Class Form1
         Dim strIPAddress As String = System.Net.Dns.GetHostEntry(strHostName).AddressList(1).ToString()
         Dim str As String = "-"
         Dim DataSplit As String() = strHostName.Split("I")
-        Label40.Text = "IP:" & strIPAddress & " " & Version
+        Label40.Text = "IP:" & strIPAddress & " V" & System.Windows.Forms.Application.ProductVersion 'Version
+
         If DataSplit.Length >= 3 Then
             str = "0" & DataSplit(2)
         End If
