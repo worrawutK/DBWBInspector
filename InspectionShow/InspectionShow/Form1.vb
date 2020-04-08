@@ -917,14 +917,16 @@ Public Class Form1
     End Sub
     Dim frm As QueryWIP = New QueryWIP
     Private Sub btQuery_Click(sender As Object, e As EventArgs) Handles btQuery.Click
-        If frm.Visible = False Then
-            If frm.IsDisposed = True Then
-                frm = New QueryWIP
-            End If
-            frm.Visible = True
-        Else
-            frm.Focus()
-        End If
+        Dim frm As CheckWip = New CheckWip()
+        frm.ShowDialog()
+        'If frm.Visible = False Then
+        '    If frm.IsDisposed = True Then
+        '        frm = New QueryWIP
+        '    End If
+        '    frm.Visible = True
+        'Else
+        '    frm.Focus()
+        'End If
 
     End Sub
 

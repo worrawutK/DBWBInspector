@@ -1078,7 +1078,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
   <xs:element name="DBxDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DBxDataSet" msprop:Generator_UserDSName="DBxDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="InspectionDetail" msprop:Generator_TableClassName="InspectionDetailDataTable" msprop:Generator_TableVarName="tableInspectionDetail" msprop:Generator_RowChangedName="InspectionDetailRowChanged" msprop:Generator_TablePropName="InspectionDetail" msprop:Generator_RowDeletingName="InspectionDetailRowDeleting" msprop:Generator_RowChangingName="InspectionDetailRowChanging" msprop:Generator_RowEvHandlerName="InspectionDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="InspectionDetailRowDeleted" msprop:Generator_RowClassName="InspectionDetailRow" msprop:Generator_UserTableName="InspectionDetail" msprop:Generator_RowEvArgName="InspectionDetailRowChangeEvent">
+        <xs:element name="InspectionDetail" msprop:Generator_TableClassName="InspectionDetailDataTable" msprop:Generator_TableVarName="tableInspectionDetail" msprop:Generator_TablePropName="InspectionDetail" msprop:Generator_RowDeletingName="InspectionDetailRowDeleting" msprop:Generator_RowChangingName="InspectionDetailRowChanging" msprop:Generator_RowEvHandlerName="InspectionDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="InspectionDetailRowDeleted" msprop:Generator_UserTableName="InspectionDetail" msprop:Generator_RowChangedName="InspectionDetailRowChanged" msprop:Generator_RowEvArgName="InspectionDetailRowChangeEvent" msprop:Generator_RowClassName="InspectionDetailRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Process" msprop:Generator_ColumnVarNameInTable="columnProcess" msprop:Generator_ColumnPropNameInRow="Process" msprop:Generator_ColumnPropNameInTable="ProcessColumn" msprop:Generator_UserColumnName="Process">
@@ -1139,7 +1139,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DBWBINSData1" msprop:Generator_TableClassName="DBWBINSData1DataTable" msprop:Generator_TableVarName="tableDBWBINSData1" msprop:Generator_RowChangedName="DBWBINSData1RowChanged" msprop:Generator_TablePropName="DBWBINSData1" msprop:Generator_RowDeletingName="DBWBINSData1RowDeleting" msprop:Generator_RowChangingName="DBWBINSData1RowChanging" msprop:Generator_RowEvHandlerName="DBWBINSData1RowChangeEventHandler" msprop:Generator_RowDeletedName="DBWBINSData1RowDeleted" msprop:Generator_RowClassName="DBWBINSData1Row" msprop:Generator_UserTableName="DBWBINSData1" msprop:Generator_RowEvArgName="DBWBINSData1RowChangeEvent">
+        <xs:element name="DBWBINSData1" msprop:Generator_TableClassName="DBWBINSData1DataTable" msprop:Generator_TableVarName="tableDBWBINSData1" msprop:Generator_TablePropName="DBWBINSData1" msprop:Generator_RowDeletingName="DBWBINSData1RowDeleting" msprop:Generator_RowChangingName="DBWBINSData1RowChanging" msprop:Generator_RowEvHandlerName="DBWBINSData1RowChangeEventHandler" msprop:Generator_RowDeletedName="DBWBINSData1RowDeleted" msprop:Generator_UserTableName="DBWBINSData1" msprop:Generator_RowChangedName="DBWBINSData1RowChanged" msprop:Generator_RowEvArgName="DBWBINSData1RowChangeEvent" msprop:Generator_RowClassName="DBWBINSData1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LotNo" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_UserColumnName="LotNo">
@@ -1417,7 +1417,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LotAlarmQty" msprop:Generator_TableClassName="LotAlarmQtyDataTable" msprop:Generator_TableVarName="tableLotAlarmQty" msprop:Generator_RowChangedName="LotAlarmQtyRowChanged" msprop:Generator_TablePropName="LotAlarmQty" msprop:Generator_RowDeletingName="LotAlarmQtyRowDeleting" msprop:Generator_RowChangingName="LotAlarmQtyRowChanging" msprop:Generator_RowEvHandlerName="LotAlarmQtyRowChangeEventHandler" msprop:Generator_RowDeletedName="LotAlarmQtyRowDeleted" msprop:Generator_RowClassName="LotAlarmQtyRow" msprop:Generator_UserTableName="LotAlarmQty" msprop:Generator_RowEvArgName="LotAlarmQtyRowChangeEvent">
+        <xs:element name="LotAlarmQty" msprop:Generator_TableClassName="LotAlarmQtyDataTable" msprop:Generator_TableVarName="tableLotAlarmQty" msprop:Generator_TablePropName="LotAlarmQty" msprop:Generator_RowDeletingName="LotAlarmQtyRowDeleting" msprop:Generator_RowChangingName="LotAlarmQtyRowChanging" msprop:Generator_RowEvHandlerName="LotAlarmQtyRowChangeEventHandler" msprop:Generator_RowDeletedName="LotAlarmQtyRowDeleted" msprop:Generator_UserTableName="LotAlarmQty" msprop:Generator_RowChangedName="LotAlarmQtyRowChanged" msprop:Generator_RowEvArgName="LotAlarmQtyRowChangeEvent" msprop:Generator_RowClassName="LotAlarmQtyRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Process" msprop:Generator_ColumnVarNameInTable="columnProcess" msprop:Generator_ColumnPropNameInRow="Process" msprop:Generator_ColumnPropNameInTable="ProcessColumn" msprop:Generator_UserColumnName="Process">
@@ -1460,7 +1460,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WIPINS" msprop:Generator_TableClassName="WIPINSDataTable" msprop:Generator_TableVarName="tableWIPINS" msprop:Generator_TablePropName="WIPINS" msprop:Generator_RowDeletingName="WIPINSRowDeleting" msprop:Generator_RowChangingName="WIPINSRowChanging" msprop:Generator_RowEvHandlerName="WIPINSRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPINSRowDeleted" msprop:Generator_UserTableName="WIPINS" msprop:Generator_RowChangedName="WIPINSRowChanged" msprop:Generator_RowEvArgName="WIPINSRowChangeEvent" msprop:Generator_RowClassName="WIPINSRow">
+        <xs:element name="WIPINS" msprop:Generator_TableClassName="WIPINSDataTable" msprop:Generator_TableVarName="tableWIPINS" msprop:Generator_RowChangedName="WIPINSRowChanged" msprop:Generator_TablePropName="WIPINS" msprop:Generator_RowDeletingName="WIPINSRowDeleting" msprop:Generator_RowChangingName="WIPINSRowChanging" msprop:Generator_RowEvHandlerName="WIPINSRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPINSRowDeleted" msprop:Generator_RowClassName="WIPINSRow" msprop:Generator_UserTableName="WIPINS" msprop:Generator_RowEvArgName="WIPINSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Package" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package" minOccurs="0">
@@ -1479,7 +1479,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SUMWIP" msprop:Generator_TableClassName="SUMWIPDataTable" msprop:Generator_TableVarName="tableSUMWIP" msprop:Generator_RowChangedName="SUMWIPRowChanged" msprop:Generator_TablePropName="SUMWIP" msprop:Generator_RowDeletingName="SUMWIPRowDeleting" msprop:Generator_RowChangingName="SUMWIPRowChanging" msprop:Generator_RowEvHandlerName="SUMWIPRowChangeEventHandler" msprop:Generator_RowDeletedName="SUMWIPRowDeleted" msprop:Generator_RowClassName="SUMWIPRow" msprop:Generator_UserTableName="SUMWIP" msprop:Generator_RowEvArgName="SUMWIPRowChangeEvent">
+        <xs:element name="SUMWIP" msprop:Generator_TableClassName="SUMWIPDataTable" msprop:Generator_TableVarName="tableSUMWIP" msprop:Generator_TablePropName="SUMWIP" msprop:Generator_RowDeletingName="SUMWIPRowDeleting" msprop:Generator_RowChangingName="SUMWIPRowChanging" msprop:Generator_RowEvHandlerName="SUMWIPRowChangeEventHandler" msprop:Generator_RowDeletedName="SUMWIPRowDeleted" msprop:Generator_UserTableName="SUMWIP" msprop:Generator_RowChangedName="SUMWIPRowChanged" msprop:Generator_RowEvArgName="SUMWIPRowChangeEvent" msprop:Generator_RowClassName="SUMWIPRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SUM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSUM" msprop:Generator_ColumnPropNameInRow="SUM" msprop:Generator_ColumnPropNameInTable="SUMColumn" msprop:Generator_UserColumnName="SUM" minOccurs="0">
@@ -1498,7 +1498,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WIPLOT" msprop:Generator_TableClassName="WIPLOTDataTable" msprop:Generator_TableVarName="tableWIPLOT" msprop:Generator_TablePropName="WIPLOT" msprop:Generator_RowDeletingName="WIPLOTRowDeleting" msprop:Generator_RowChangingName="WIPLOTRowChanging" msprop:Generator_RowEvHandlerName="WIPLOTRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPLOTRowDeleted" msprop:Generator_UserTableName="WIPLOT" msprop:Generator_RowChangedName="WIPLOTRowChanged" msprop:Generator_RowEvArgName="WIPLOTRowChangeEvent" msprop:Generator_RowClassName="WIPLOTRow">
+        <xs:element name="WIPLOT" msprop:Generator_TableClassName="WIPLOTDataTable" msprop:Generator_TableVarName="tableWIPLOT" msprop:Generator_RowChangedName="WIPLOTRowChanged" msprop:Generator_TablePropName="WIPLOT" msprop:Generator_RowDeletingName="WIPLOTRowDeleting" msprop:Generator_RowChangingName="WIPLOTRowChanging" msprop:Generator_RowEvHandlerName="WIPLOTRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPLOTRowDeleted" msprop:Generator_RowClassName="WIPLOTRow" msprop:Generator_UserTableName="WIPLOT" msprop:Generator_RowEvArgName="WIPLOTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LotNo" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_UserColumnName="LotNo">
@@ -1556,7 +1556,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="WIPINSToatal" msprop:Generator_TableClassName="WIPINSToatalDataTable" msprop:Generator_TableVarName="tableWIPINSToatal" msprop:Generator_RowChangedName="WIPINSToatalRowChanged" msprop:Generator_TablePropName="WIPINSToatal" msprop:Generator_RowDeletingName="WIPINSToatalRowDeleting" msprop:Generator_RowChangingName="WIPINSToatalRowChanging" msprop:Generator_RowEvHandlerName="WIPINSToatalRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPINSToatalRowDeleted" msprop:Generator_RowClassName="WIPINSToatalRow" msprop:Generator_UserTableName="WIPINSToatal" msprop:Generator_RowEvArgName="WIPINSToatalRowChangeEvent">
+        <xs:element name="WIPINSToatal" msprop:Generator_TableClassName="WIPINSToatalDataTable" msprop:Generator_TableVarName="tableWIPINSToatal" msprop:Generator_TablePropName="WIPINSToatal" msprop:Generator_RowDeletingName="WIPINSToatalRowDeleting" msprop:Generator_RowChangingName="WIPINSToatalRowChanging" msprop:Generator_RowEvHandlerName="WIPINSToatalRowChangeEventHandler" msprop:Generator_RowDeletedName="WIPINSToatalRowDeleted" msprop:Generator_UserTableName="WIPINSToatal" msprop:Generator_RowChangedName="WIPINSToatalRowChanged" msprop:Generator_RowEvArgName="WIPINSToatalRowChangeEvent" msprop:Generator_RowClassName="WIPINSToatalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Package" msprop:Generator_ColumnVarNameInTable="columnPackage" msprop:Generator_ColumnPropNameInRow="Package" msprop:Generator_ColumnPropNameInTable="PackageColumn" msprop:Generator_UserColumnName="Package" minOccurs="0">
@@ -1577,7 +1577,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SUMWIPTotal" msprop:Generator_TableClassName="SUMWIPTotalDataTable" msprop:Generator_TableVarName="tableSUMWIPTotal" msprop:Generator_TablePropName="SUMWIPTotal" msprop:Generator_RowDeletingName="SUMWIPTotalRowDeleting" msprop:Generator_RowChangingName="SUMWIPTotalRowChanging" msprop:Generator_RowEvHandlerName="SUMWIPTotalRowChangeEventHandler" msprop:Generator_RowDeletedName="SUMWIPTotalRowDeleted" msprop:Generator_UserTableName="SUMWIPTotal" msprop:Generator_RowChangedName="SUMWIPTotalRowChanged" msprop:Generator_RowEvArgName="SUMWIPTotalRowChangeEvent" msprop:Generator_RowClassName="SUMWIPTotalRow">
+        <xs:element name="SUMWIPTotal" msprop:Generator_TableClassName="SUMWIPTotalDataTable" msprop:Generator_TableVarName="tableSUMWIPTotal" msprop:Generator_RowChangedName="SUMWIPTotalRowChanged" msprop:Generator_TablePropName="SUMWIPTotal" msprop:Generator_RowDeletingName="SUMWIPTotalRowDeleting" msprop:Generator_RowChangingName="SUMWIPTotalRowChanging" msprop:Generator_RowEvHandlerName="SUMWIPTotalRowChangeEventHandler" msprop:Generator_RowDeletedName="SUMWIPTotalRowDeleted" msprop:Generator_RowClassName="SUMWIPTotalRow" msprop:Generator_UserTableName="SUMWIPTotal" msprop:Generator_RowEvArgName="SUMWIPTotalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SUM" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSUM" msprop:Generator_ColumnPropNameInRow="SUM" msprop:Generator_ColumnPropNameInTable="SUMColumn" msprop:Generator_UserColumnName="SUM" minOccurs="0">
@@ -1598,7 +1598,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DBWBINS_Query_Data" msprop:Generator_TableClassName="DBWBINS_Query_DataDataTable" msprop:Generator_TableVarName="tableDBWBINS_Query_Data" msprop:Generator_RowChangedName="DBWBINS_Query_DataRowChanged" msprop:Generator_TablePropName="DBWBINS_Query_Data" msprop:Generator_RowDeletingName="DBWBINS_Query_DataRowDeleting" msprop:Generator_RowChangingName="DBWBINS_Query_DataRowChanging" msprop:Generator_RowEvHandlerName="DBWBINS_Query_DataRowChangeEventHandler" msprop:Generator_RowDeletedName="DBWBINS_Query_DataRowDeleted" msprop:Generator_RowClassName="DBWBINS_Query_DataRow" msprop:Generator_UserTableName="DBWBINS_Query_Data" msprop:Generator_RowEvArgName="DBWBINS_Query_DataRowChangeEvent">
+        <xs:element name="DBWBINS_Query_Data" msprop:Generator_TableClassName="DBWBINS_Query_DataDataTable" msprop:Generator_TableVarName="tableDBWBINS_Query_Data" msprop:Generator_TablePropName="DBWBINS_Query_Data" msprop:Generator_RowDeletingName="DBWBINS_Query_DataRowDeleting" msprop:Generator_RowChangingName="DBWBINS_Query_DataRowChanging" msprop:Generator_RowEvHandlerName="DBWBINS_Query_DataRowChangeEventHandler" msprop:Generator_RowDeletedName="DBWBINS_Query_DataRowDeleted" msprop:Generator_UserTableName="DBWBINS_Query_Data" msprop:Generator_RowChangedName="DBWBINS_Query_DataRowChanged" msprop:Generator_RowEvArgName="DBWBINS_Query_DataRowChangeEvent" msprop:Generator_RowClassName="DBWBINS_Query_DataRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:int" />
@@ -1674,7 +1674,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DBWBINS_Query" msprop:Generator_TableClassName="DBWBINS_QueryDataTable" msprop:Generator_TableVarName="tableDBWBINS_Query" msprop:Generator_RowChangedName="DBWBINS_QueryRowChanged" msprop:Generator_TablePropName="DBWBINS_Query" msprop:Generator_RowDeletingName="DBWBINS_QueryRowDeleting" msprop:Generator_RowChangingName="DBWBINS_QueryRowChanging" msprop:Generator_RowEvHandlerName="DBWBINS_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="DBWBINS_QueryRowDeleted" msprop:Generator_RowClassName="DBWBINS_QueryRow" msprop:Generator_UserTableName="DBWBINS_Query" msprop:Generator_RowEvArgName="DBWBINS_QueryRowChangeEvent">
+        <xs:element name="DBWBINS_Query" msprop:Generator_TableClassName="DBWBINS_QueryDataTable" msprop:Generator_TableVarName="tableDBWBINS_Query" msprop:Generator_TablePropName="DBWBINS_Query" msprop:Generator_RowDeletingName="DBWBINS_QueryRowDeleting" msprop:Generator_RowChangingName="DBWBINS_QueryRowChanging" msprop:Generator_RowEvHandlerName="DBWBINS_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="DBWBINS_QueryRowDeleted" msprop:Generator_UserTableName="DBWBINS_Query" msprop:Generator_RowChangedName="DBWBINS_QueryRowChanged" msprop:Generator_RowEvArgName="DBWBINS_QueryRowChangeEvent" msprop:Generator_RowClassName="DBWBINS_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Device" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDevice" msprop:Generator_ColumnPropNameInRow="Device" msprop:Generator_ColumnPropNameInTable="DeviceColumn" msprop:Generator_UserColumnName="Device" minOccurs="0">
@@ -1747,7 +1747,7 @@ WHERE        (DBWBINSData_12.ReqDate &lt; @EndDateWIP) AND (DBWBINSData_12.ReqDa
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Query_SumWIP" msprop:Generator_TableClassName="Query_SumWIPDataTable" msprop:Generator_TableVarName="tableQuery_SumWIP" msprop:Generator_RowChangedName="Query_SumWIPRowChanged" msprop:Generator_TablePropName="Query_SumWIP" msprop:Generator_RowDeletingName="Query_SumWIPRowDeleting" msprop:Generator_RowChangingName="Query_SumWIPRowChanging" msprop:Generator_RowEvHandlerName="Query_SumWIPRowChangeEventHandler" msprop:Generator_RowDeletedName="Query_SumWIPRowDeleted" msprop:Generator_RowClassName="Query_SumWIPRow" msprop:Generator_UserTableName="Query_SumWIP" msprop:Generator_RowEvArgName="Query_SumWIPRowChangeEvent">
+        <xs:element name="Query_SumWIP" msprop:Generator_TableClassName="Query_SumWIPDataTable" msprop:Generator_TableVarName="tableQuery_SumWIP" msprop:Generator_TablePropName="Query_SumWIP" msprop:Generator_RowDeletingName="Query_SumWIPRowDeleting" msprop:Generator_RowChangingName="Query_SumWIPRowChanging" msprop:Generator_RowEvHandlerName="Query_SumWIPRowChangeEventHandler" msprop:Generator_RowDeletedName="Query_SumWIPRowDeleted" msprop:Generator_UserTableName="Query_SumWIP" msprop:Generator_RowChangedName="Query_SumWIPRowChanged" msprop:Generator_RowEvArgName="Query_SumWIPRowChangeEvent" msprop:Generator_RowClassName="Query_SumWIPRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="_Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" />

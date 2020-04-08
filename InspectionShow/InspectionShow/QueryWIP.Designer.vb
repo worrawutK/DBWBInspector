@@ -27,17 +27,40 @@ Partial Class QueryWIP
         Me.rbWB = New System.Windows.Forms.RadioButton()
         Me.rbDB = New System.Windows.Forms.RadioButton()
         Me.dgWipSumDay = New System.Windows.Forms.DataGridView()
+        Me.dgListwip = New System.Windows.Forms.DataGridView()
+        Me.RequestMode1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Day = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Night = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.gvDaywip = New System.Windows.Forms.DataGridView()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.btQuery = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lbLoad = New System.Windows.Forms.Label()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DayDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NightDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QuerySumWIPBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DBxDataSet = New InspectionShow.DBxDataSet()
-        Me.dgListwip = New System.Windows.Forms.DataGridView()
+        Me.NumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PackageDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeviceDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LotNoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateWIPDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReqDateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DayDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StartTimeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EndTimeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RequestModeName1DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RequestModeName2DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProcessDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DBWBINSQueryDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.gvDaywip = New System.Windows.Forms.DataGridView()
         Me.DeviceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LotNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PackageDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,35 +75,12 @@ Partial Class QueryWIP
         Me.DBWBINSQueryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DBWBINS_QueryTableAdapter = New InspectionShow.DBxDataSetTableAdapters.DBWBINS_QueryTableAdapter()
         Me.DBWBINS_Query_DataTableAdapter = New InspectionShow.DBxDataSetTableAdapters.DBWBINS_Query_DataTableAdapter()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.btQuery = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.lbLoad = New System.Windows.Forms.Label()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.NumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PackageDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeviceDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LotNoDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RequestMode1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateWIPDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Day = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Night = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReqDateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DayDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StartTimeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EndTimeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RequestModeName1DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RequestModeName2DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProcessDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgWipSumDay, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgListwip, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvDaywip, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuerySumWIPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgListwip, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBWBINSQueryDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gvDaywip, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBWBINSQueryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -130,6 +130,109 @@ Partial Class QueryWIP
         Me.dgWipSumDay.Size = New System.Drawing.Size(436, 534)
         Me.dgWipSumDay.TabIndex = 11
         '
+        'dgListwip
+        '
+        Me.dgListwip.AllowUserToAddRows = False
+        Me.dgListwip.AllowUserToDeleteRows = False
+        Me.dgListwip.AutoGenerateColumns = False
+        Me.dgListwip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgListwip.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumberDataGridViewTextBoxColumn, Me.PackageDataGridViewTextBoxColumn1, Me.DeviceDataGridViewTextBoxColumn1, Me.LotNoDataGridViewTextBoxColumn1, Me.RequestMode1, Me.DateWIPDataGridViewTextBoxColumn1, Me.Day, Me.Night, Me.ReqDateDataGridViewTextBoxColumn1, Me.DayDataGridViewTextBoxColumn, Me.NightDataGridViewTextBoxColumn, Me.StartTimeDataGridViewTextBoxColumn1, Me.EndTimeDataGridViewTextBoxColumn1, Me.RequestModeName1DataGridViewTextBoxColumn1, Me.RequestModeName2DataGridViewTextBoxColumn1, Me.ProcessDataGridViewTextBoxColumn1, Me.StatusDataGridViewTextBoxColumn1})
+        Me.dgListwip.DataSource = Me.DBWBINSQueryDataBindingSource
+        Me.dgListwip.Location = New System.Drawing.Point(23, 90)
+        Me.dgListwip.Name = "dgListwip"
+        Me.dgListwip.ReadOnly = True
+        Me.dgListwip.Size = New System.Drawing.Size(643, 534)
+        Me.dgListwip.TabIndex = 10
+        '
+        'RequestMode1
+        '
+        Me.RequestMode1.DataPropertyName = "RequestMode1"
+        Me.RequestMode1.HeaderText = "RequestMode1"
+        Me.RequestMode1.Name = "RequestMode1"
+        Me.RequestMode1.ReadOnly = True
+        '
+        'Day
+        '
+        Me.Day.DataPropertyName = "Day"
+        Me.Day.HeaderText = "Day"
+        Me.Day.Name = "Day"
+        Me.Day.ReadOnly = True
+        '
+        'Night
+        '
+        Me.Night.DataPropertyName = "Night"
+        Me.Night.HeaderText = "Night"
+        Me.Night.Name = "Night"
+        Me.Night.ReadOnly = True
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(285, 47)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker2.TabIndex = 8
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(23, 46)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 9
+        '
+        'gvDaywip
+        '
+        Me.gvDaywip.AutoGenerateColumns = False
+        Me.gvDaywip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gvDaywip.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DeviceDataGridViewTextBoxColumn, Me.LotNoDataGridViewTextBoxColumn, Me.PackageDataGridViewTextBoxColumn, Me.ReqDateDataGridViewTextBoxColumn, Me.StartTimeDataGridViewTextBoxColumn, Me.EndTimeDataGridViewTextBoxColumn, Me.RequestModeName1DataGridViewTextBoxColumn, Me.RequestModeName2DataGridViewTextBoxColumn, Me.ProcessDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.DateWIPDataGridViewTextBoxColumn})
+        Me.gvDaywip.DataSource = Me.DBWBINSQueryBindingSource
+        Me.gvDaywip.Location = New System.Drawing.Point(892, 31)
+        Me.gvDaywip.Name = "gvDaywip"
+        Me.gvDaywip.Size = New System.Drawing.Size(238, 154)
+        Me.gvDaywip.TabIndex = 6
+        Me.gvDaywip.Visible = False
+        '
+        'BackgroundWorker1
+        '
+        '
+        'btQuery
+        '
+        Me.btQuery.Location = New System.Drawing.Point(508, 44)
+        Me.btQuery.Name = "btQuery"
+        Me.btQuery.Size = New System.Drawing.Size(75, 23)
+        Me.btQuery.TabIndex = 15
+        Me.btQuery.Text = "Query"
+        Me.btQuery.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 200
+        '
+        'lbLoad
+        '
+        Me.lbLoad.AutoSize = True
+        Me.lbLoad.Location = New System.Drawing.Point(24, 661)
+        Me.lbLoad.Name = "lbLoad"
+        Me.lbLoad.Size = New System.Drawing.Size(21, 13)
+        Me.lbLoad.TabIndex = 16
+        Me.lbLoad.Text = "0%"
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(23, 635)
+        Me.ProgressBar1.Maximum = 100000
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(1095, 23)
+        Me.ProgressBar1.TabIndex = 18
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(245, 52)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(20, 13)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "To"
+        '
         'DateDataGridViewTextBoxColumn
         '
         Me.DateDataGridViewTextBoxColumn.DataPropertyName = "Date"
@@ -168,50 +271,109 @@ Partial Class QueryWIP
         Me.DBxDataSet.DataSetName = "DBxDataSet"
         Me.DBxDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'dgListwip
+        'NumberDataGridViewTextBoxColumn
         '
-        Me.dgListwip.AllowUserToAddRows = False
-        Me.dgListwip.AllowUserToDeleteRows = False
-        Me.dgListwip.AutoGenerateColumns = False
-        Me.dgListwip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgListwip.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumberDataGridViewTextBoxColumn, Me.PackageDataGridViewTextBoxColumn1, Me.DeviceDataGridViewTextBoxColumn1, Me.LotNoDataGridViewTextBoxColumn1, Me.RequestMode1, Me.DateWIPDataGridViewTextBoxColumn1, Me.Day, Me.Night, Me.ReqDateDataGridViewTextBoxColumn1, Me.DayDataGridViewTextBoxColumn, Me.NightDataGridViewTextBoxColumn, Me.StartTimeDataGridViewTextBoxColumn1, Me.EndTimeDataGridViewTextBoxColumn1, Me.RequestModeName1DataGridViewTextBoxColumn1, Me.RequestModeName2DataGridViewTextBoxColumn1, Me.ProcessDataGridViewTextBoxColumn1, Me.StatusDataGridViewTextBoxColumn1})
-        Me.dgListwip.DataSource = Me.DBWBINSQueryDataBindingSource
-        Me.dgListwip.Location = New System.Drawing.Point(23, 90)
-        Me.dgListwip.Name = "dgListwip"
-        Me.dgListwip.ReadOnly = True
-        Me.dgListwip.Size = New System.Drawing.Size(643, 534)
-        Me.dgListwip.TabIndex = 10
+        Me.NumberDataGridViewTextBoxColumn.DataPropertyName = "Number"
+        Me.NumberDataGridViewTextBoxColumn.HeaderText = "Number"
+        Me.NumberDataGridViewTextBoxColumn.Name = "NumberDataGridViewTextBoxColumn"
+        Me.NumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NumberDataGridViewTextBoxColumn.Visible = False
+        '
+        'PackageDataGridViewTextBoxColumn1
+        '
+        Me.PackageDataGridViewTextBoxColumn1.DataPropertyName = "Package"
+        Me.PackageDataGridViewTextBoxColumn1.HeaderText = "Package"
+        Me.PackageDataGridViewTextBoxColumn1.Name = "PackageDataGridViewTextBoxColumn1"
+        Me.PackageDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DeviceDataGridViewTextBoxColumn1
+        '
+        Me.DeviceDataGridViewTextBoxColumn1.DataPropertyName = "Device"
+        Me.DeviceDataGridViewTextBoxColumn1.HeaderText = "Device"
+        Me.DeviceDataGridViewTextBoxColumn1.Name = "DeviceDataGridViewTextBoxColumn1"
+        Me.DeviceDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'LotNoDataGridViewTextBoxColumn1
+        '
+        Me.LotNoDataGridViewTextBoxColumn1.DataPropertyName = "LotNo"
+        Me.LotNoDataGridViewTextBoxColumn1.HeaderText = "LotNo"
+        Me.LotNoDataGridViewTextBoxColumn1.Name = "LotNoDataGridViewTextBoxColumn1"
+        Me.LotNoDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DateWIPDataGridViewTextBoxColumn1
+        '
+        Me.DateWIPDataGridViewTextBoxColumn1.DataPropertyName = "DateWIP"
+        Me.DateWIPDataGridViewTextBoxColumn1.HeaderText = "DateWIP"
+        Me.DateWIPDataGridViewTextBoxColumn1.Name = "DateWIPDataGridViewTextBoxColumn1"
+        Me.DateWIPDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'ReqDateDataGridViewTextBoxColumn1
+        '
+        Me.ReqDateDataGridViewTextBoxColumn1.DataPropertyName = "ReqDate"
+        Me.ReqDateDataGridViewTextBoxColumn1.HeaderText = "ReqDate"
+        Me.ReqDateDataGridViewTextBoxColumn1.Name = "ReqDateDataGridViewTextBoxColumn1"
+        Me.ReqDateDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DayDataGridViewTextBoxColumn
+        '
+        Me.DayDataGridViewTextBoxColumn.DataPropertyName = "Day"
+        Me.DayDataGridViewTextBoxColumn.HeaderText = "Day"
+        Me.DayDataGridViewTextBoxColumn.Name = "DayDataGridViewTextBoxColumn"
+        Me.DayDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NightDataGridViewTextBoxColumn
+        '
+        Me.NightDataGridViewTextBoxColumn.DataPropertyName = "Night"
+        Me.NightDataGridViewTextBoxColumn.HeaderText = "Night"
+        Me.NightDataGridViewTextBoxColumn.Name = "NightDataGridViewTextBoxColumn"
+        Me.NightDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StartTimeDataGridViewTextBoxColumn1
+        '
+        Me.StartTimeDataGridViewTextBoxColumn1.DataPropertyName = "StartTime"
+        Me.StartTimeDataGridViewTextBoxColumn1.HeaderText = "StartTime"
+        Me.StartTimeDataGridViewTextBoxColumn1.Name = "StartTimeDataGridViewTextBoxColumn1"
+        Me.StartTimeDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'EndTimeDataGridViewTextBoxColumn1
+        '
+        Me.EndTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime"
+        Me.EndTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime"
+        Me.EndTimeDataGridViewTextBoxColumn1.Name = "EndTimeDataGridViewTextBoxColumn1"
+        Me.EndTimeDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'RequestModeName1DataGridViewTextBoxColumn1
+        '
+        Me.RequestModeName1DataGridViewTextBoxColumn1.DataPropertyName = "RequestModeName1"
+        Me.RequestModeName1DataGridViewTextBoxColumn1.HeaderText = "RequestModeName1"
+        Me.RequestModeName1DataGridViewTextBoxColumn1.Name = "RequestModeName1DataGridViewTextBoxColumn1"
+        Me.RequestModeName1DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'RequestModeName2DataGridViewTextBoxColumn1
+        '
+        Me.RequestModeName2DataGridViewTextBoxColumn1.DataPropertyName = "RequestModeName2"
+        Me.RequestModeName2DataGridViewTextBoxColumn1.HeaderText = "RequestModeName2"
+        Me.RequestModeName2DataGridViewTextBoxColumn1.Name = "RequestModeName2DataGridViewTextBoxColumn1"
+        Me.RequestModeName2DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'ProcessDataGridViewTextBoxColumn1
+        '
+        Me.ProcessDataGridViewTextBoxColumn1.DataPropertyName = "Process"
+        Me.ProcessDataGridViewTextBoxColumn1.HeaderText = "Process"
+        Me.ProcessDataGridViewTextBoxColumn1.Name = "ProcessDataGridViewTextBoxColumn1"
+        Me.ProcessDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'StatusDataGridViewTextBoxColumn1
+        '
+        Me.StatusDataGridViewTextBoxColumn1.DataPropertyName = "Status"
+        Me.StatusDataGridViewTextBoxColumn1.HeaderText = "Status"
+        Me.StatusDataGridViewTextBoxColumn1.Name = "StatusDataGridViewTextBoxColumn1"
+        Me.StatusDataGridViewTextBoxColumn1.ReadOnly = True
         '
         'DBWBINSQueryDataBindingSource
         '
         Me.DBWBINSQueryDataBindingSource.DataMember = "DBWBINS_Query_Data"
         Me.DBWBINSQueryDataBindingSource.DataSource = Me.DBxDataSet
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(285, 47)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 8
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(23, 46)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 9
-        '
-        'gvDaywip
-        '
-        Me.gvDaywip.AutoGenerateColumns = False
-        Me.gvDaywip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.gvDaywip.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DeviceDataGridViewTextBoxColumn, Me.LotNoDataGridViewTextBoxColumn, Me.PackageDataGridViewTextBoxColumn, Me.ReqDateDataGridViewTextBoxColumn, Me.StartTimeDataGridViewTextBoxColumn, Me.EndTimeDataGridViewTextBoxColumn, Me.RequestModeName1DataGridViewTextBoxColumn, Me.RequestModeName2DataGridViewTextBoxColumn, Me.ProcessDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.DateWIPDataGridViewTextBoxColumn})
-        Me.gvDaywip.DataSource = Me.DBWBINSQueryBindingSource
-        Me.gvDaywip.Location = New System.Drawing.Point(892, 31)
-        Me.gvDaywip.Name = "gvDaywip"
-        Me.gvDaywip.Size = New System.Drawing.Size(238, 154)
-        Me.gvDaywip.TabIndex = 6
-        Me.gvDaywip.Visible = False
         '
         'DeviceDataGridViewTextBoxColumn
         '
@@ -294,168 +456,6 @@ Partial Class QueryWIP
         '
         Me.DBWBINS_Query_DataTableAdapter.ClearBeforeFill = True
         '
-        'BackgroundWorker1
-        '
-        '
-        'btQuery
-        '
-        Me.btQuery.Location = New System.Drawing.Point(508, 44)
-        Me.btQuery.Name = "btQuery"
-        Me.btQuery.Size = New System.Drawing.Size(75, 23)
-        Me.btQuery.TabIndex = 15
-        Me.btQuery.Text = "Query"
-        Me.btQuery.UseVisualStyleBackColor = True
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 200
-        '
-        'lbLoad
-        '
-        Me.lbLoad.AutoSize = True
-        Me.lbLoad.Location = New System.Drawing.Point(24, 661)
-        Me.lbLoad.Name = "lbLoad"
-        Me.lbLoad.Size = New System.Drawing.Size(21, 13)
-        Me.lbLoad.TabIndex = 16
-        Me.lbLoad.Text = "0%"
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(23, 635)
-        Me.ProgressBar1.Maximum = 100000
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(1095, 23)
-        Me.ProgressBar1.TabIndex = 18
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(245, 52)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(20, 13)
-        Me.Label1.TabIndex = 19
-        Me.Label1.Text = "To"
-        '
-        'NumberDataGridViewTextBoxColumn
-        '
-        Me.NumberDataGridViewTextBoxColumn.DataPropertyName = "Number"
-        Me.NumberDataGridViewTextBoxColumn.HeaderText = "Number"
-        Me.NumberDataGridViewTextBoxColumn.Name = "NumberDataGridViewTextBoxColumn"
-        Me.NumberDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NumberDataGridViewTextBoxColumn.Visible = False
-        '
-        'PackageDataGridViewTextBoxColumn1
-        '
-        Me.PackageDataGridViewTextBoxColumn1.DataPropertyName = "Package"
-        Me.PackageDataGridViewTextBoxColumn1.HeaderText = "Package"
-        Me.PackageDataGridViewTextBoxColumn1.Name = "PackageDataGridViewTextBoxColumn1"
-        Me.PackageDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DeviceDataGridViewTextBoxColumn1
-        '
-        Me.DeviceDataGridViewTextBoxColumn1.DataPropertyName = "Device"
-        Me.DeviceDataGridViewTextBoxColumn1.HeaderText = "Device"
-        Me.DeviceDataGridViewTextBoxColumn1.Name = "DeviceDataGridViewTextBoxColumn1"
-        Me.DeviceDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'LotNoDataGridViewTextBoxColumn1
-        '
-        Me.LotNoDataGridViewTextBoxColumn1.DataPropertyName = "LotNo"
-        Me.LotNoDataGridViewTextBoxColumn1.HeaderText = "LotNo"
-        Me.LotNoDataGridViewTextBoxColumn1.Name = "LotNoDataGridViewTextBoxColumn1"
-        Me.LotNoDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'RequestMode1
-        '
-        Me.RequestMode1.DataPropertyName = "RequestMode1"
-        Me.RequestMode1.HeaderText = "RequestMode1"
-        Me.RequestMode1.Name = "RequestMode1"
-        Me.RequestMode1.ReadOnly = True
-        '
-        'DateWIPDataGridViewTextBoxColumn1
-        '
-        Me.DateWIPDataGridViewTextBoxColumn1.DataPropertyName = "DateWIP"
-        Me.DateWIPDataGridViewTextBoxColumn1.HeaderText = "DateWIP"
-        Me.DateWIPDataGridViewTextBoxColumn1.Name = "DateWIPDataGridViewTextBoxColumn1"
-        Me.DateWIPDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'Day
-        '
-        Me.Day.DataPropertyName = "Day"
-        Me.Day.HeaderText = "Day"
-        Me.Day.Name = "Day"
-        Me.Day.ReadOnly = True
-        '
-        'Night
-        '
-        Me.Night.DataPropertyName = "Night"
-        Me.Night.HeaderText = "Night"
-        Me.Night.Name = "Night"
-        Me.Night.ReadOnly = True
-        '
-        'ReqDateDataGridViewTextBoxColumn1
-        '
-        Me.ReqDateDataGridViewTextBoxColumn1.DataPropertyName = "ReqDate"
-        Me.ReqDateDataGridViewTextBoxColumn1.HeaderText = "ReqDate"
-        Me.ReqDateDataGridViewTextBoxColumn1.Name = "ReqDateDataGridViewTextBoxColumn1"
-        Me.ReqDateDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DayDataGridViewTextBoxColumn
-        '
-        Me.DayDataGridViewTextBoxColumn.DataPropertyName = "Day"
-        Me.DayDataGridViewTextBoxColumn.HeaderText = "Day"
-        Me.DayDataGridViewTextBoxColumn.Name = "DayDataGridViewTextBoxColumn"
-        Me.DayDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NightDataGridViewTextBoxColumn
-        '
-        Me.NightDataGridViewTextBoxColumn.DataPropertyName = "Night"
-        Me.NightDataGridViewTextBoxColumn.HeaderText = "Night"
-        Me.NightDataGridViewTextBoxColumn.Name = "NightDataGridViewTextBoxColumn"
-        Me.NightDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'StartTimeDataGridViewTextBoxColumn1
-        '
-        Me.StartTimeDataGridViewTextBoxColumn1.DataPropertyName = "StartTime"
-        Me.StartTimeDataGridViewTextBoxColumn1.HeaderText = "StartTime"
-        Me.StartTimeDataGridViewTextBoxColumn1.Name = "StartTimeDataGridViewTextBoxColumn1"
-        Me.StartTimeDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'EndTimeDataGridViewTextBoxColumn1
-        '
-        Me.EndTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime"
-        Me.EndTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime"
-        Me.EndTimeDataGridViewTextBoxColumn1.Name = "EndTimeDataGridViewTextBoxColumn1"
-        Me.EndTimeDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'RequestModeName1DataGridViewTextBoxColumn1
-        '
-        Me.RequestModeName1DataGridViewTextBoxColumn1.DataPropertyName = "RequestModeName1"
-        Me.RequestModeName1DataGridViewTextBoxColumn1.HeaderText = "RequestModeName1"
-        Me.RequestModeName1DataGridViewTextBoxColumn1.Name = "RequestModeName1DataGridViewTextBoxColumn1"
-        Me.RequestModeName1DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'RequestModeName2DataGridViewTextBoxColumn1
-        '
-        Me.RequestModeName2DataGridViewTextBoxColumn1.DataPropertyName = "RequestModeName2"
-        Me.RequestModeName2DataGridViewTextBoxColumn1.HeaderText = "RequestModeName2"
-        Me.RequestModeName2DataGridViewTextBoxColumn1.Name = "RequestModeName2DataGridViewTextBoxColumn1"
-        Me.RequestModeName2DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'ProcessDataGridViewTextBoxColumn1
-        '
-        Me.ProcessDataGridViewTextBoxColumn1.DataPropertyName = "Process"
-        Me.ProcessDataGridViewTextBoxColumn1.HeaderText = "Process"
-        Me.ProcessDataGridViewTextBoxColumn1.Name = "ProcessDataGridViewTextBoxColumn1"
-        Me.ProcessDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'StatusDataGridViewTextBoxColumn1
-        '
-        Me.StatusDataGridViewTextBoxColumn1.DataPropertyName = "Status"
-        Me.StatusDataGridViewTextBoxColumn1.HeaderText = "Status"
-        Me.StatusDataGridViewTextBoxColumn1.Name = "StatusDataGridViewTextBoxColumn1"
-        Me.StatusDataGridViewTextBoxColumn1.ReadOnly = True
-        '
         'QueryWIP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -477,11 +477,11 @@ Partial Class QueryWIP
         Me.Name = "QueryWIP"
         Me.Text = "QueryWIP"
         CType(Me.dgWipSumDay, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgListwip, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvDaywip, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuerySumWIPBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgListwip, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBWBINSQueryDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gvDaywip, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBWBINSQueryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
