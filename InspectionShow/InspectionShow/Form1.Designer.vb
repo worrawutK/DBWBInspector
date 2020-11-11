@@ -24,21 +24,21 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle61 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle62 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle63 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle64 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle73 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle65 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle66 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle67 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle68 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle69 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle70 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle71 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle72 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle74 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle75 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtExit2 = New System.Windows.Forms.Button()
         Me.MinimizeButton = New System.Windows.Forms.Button()
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
@@ -52,8 +52,6 @@ Partial Class Form1
         Me.lbDevice = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.RadioDB = New System.Windows.Forms.RadioButton()
-        Me.RadioWB = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.SearchLotNo = New System.Windows.Forms.TextBox()
         Me.PanelNG = New System.Windows.Forms.Panel()
@@ -225,6 +223,9 @@ Partial Class Form1
         Me.WipinsToatalTableAdapter1 = New InspectionShow.DBxDataSetTableAdapters.WIPINSToatalTableAdapter()
         Me.SumwipTotalTableAdapter1 = New InspectionShow.DBxDataSetTableAdapters.SUMWIPTotalTableAdapter()
         Me.SUMWIPTotalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ComboBoxProcessName = New System.Windows.Forms.ComboBox()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.PanelNG.SuspendLayout()
@@ -305,6 +306,9 @@ Partial Class Form1
         '
         Me.TabPage2.AutoScroll = True
         Me.TabPage2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TabPage2.Controls.Add(Me.Label40)
+        Me.TabPage2.Controls.Add(Me.Label37)
+        Me.TabPage2.Controls.Add(Me.ComboBoxProcessName)
         Me.TabPage2.Controls.Add(Me.lbVersion)
         Me.TabPage2.Controls.Add(Me.lbRemark)
         Me.TabPage2.Controls.Add(Me.lbRUN)
@@ -313,8 +317,6 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.lbDevice)
         Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.Button4)
-        Me.TabPage2.Controls.Add(Me.RadioDB)
-        Me.TabPage2.Controls.Add(Me.RadioWB)
         Me.TabPage2.Controls.Add(Me.Button1)
         Me.TabPage2.Controls.Add(Me.SearchLotNo)
         Me.TabPage2.Controls.Add(Me.PanelNG)
@@ -379,7 +381,7 @@ Partial Class Form1
         Me.lbVersion.Name = "lbVersion"
         Me.lbVersion.Size = New System.Drawing.Size(184, 23)
         Me.lbVersion.TabIndex = 257
-        Me.lbVersion.Text = "Ver 1.08"
+        Me.lbVersion.Text = "Ver 1.09"
         Me.lbVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbRemark
@@ -445,26 +447,6 @@ Partial Class Form1
         Me.Button4.Text = "Save"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'RadioDB
-        '
-        Me.RadioDB.Location = New System.Drawing.Point(18, 91)
-        Me.RadioDB.Name = "RadioDB"
-        Me.RadioDB.Size = New System.Drawing.Size(70, 20)
-        Me.RadioDB.TabIndex = 76
-        Me.RadioDB.Text = "DB"
-        Me.RadioDB.UseVisualStyleBackColor = True
-        '
-        'RadioWB
-        '
-        Me.RadioWB.Checked = True
-        Me.RadioWB.Location = New System.Drawing.Point(18, 69)
-        Me.RadioWB.Name = "RadioWB"
-        Me.RadioWB.Size = New System.Drawing.Size(70, 20)
-        Me.RadioWB.TabIndex = 76
-        Me.RadioWB.TabStop = True
-        Me.RadioWB.Text = "WB"
-        Me.RadioWB.UseVisualStyleBackColor = True
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(18, 115)
@@ -476,9 +458,9 @@ Partial Class Form1
         '
         'SearchLotNo
         '
-        Me.SearchLotNo.Location = New System.Drawing.Point(18, 34)
+        Me.SearchLotNo.Location = New System.Drawing.Point(73, 34)
         Me.SearchLotNo.Name = "SearchLotNo"
-        Me.SearchLotNo.Size = New System.Drawing.Size(168, 20)
+        Me.SearchLotNo.Size = New System.Drawing.Size(113, 20)
         Me.SearchLotNo.TabIndex = 74
         '
         'PanelNG
@@ -497,14 +479,14 @@ Partial Class Form1
         Me.ViewData.AutoGenerateColumns = False
         Me.ViewData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.ViewData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ViewData.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle61.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle61.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ViewData.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle61
         Me.ViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ViewData.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InspectionItemDataGridViewTextBoxColumn2, Me.MDataGridViewTextBoxColumn15, Me.MDataGridViewTextBoxColumn16, Me.MDataGridViewTextBoxColumn17, Me.MDataGridViewTextBoxColumn18, Me.MDataGridViewTextBoxColumn19, Me.MDataGridViewTextBoxColumn20, Me.MDataGridViewTextBoxColumn21, Me.MDataGridViewTextBoxColumn22, Me.MDataGridViewTextBoxColumn23, Me.MDataGridViewTextBoxColumn24, Me.MDataGridViewTextBoxColumn25, Me.MDataGridViewTextBoxColumn26, Me.TL})
         Me.ViewData.DataSource = Me.InspectionDetailBindingSource
@@ -659,24 +641,24 @@ Partial Class Form1
         Me.dgvTotal.AllowUserToDeleteRows = False
         Me.dgvTotal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvTotal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTotal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle62.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTotal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle62
         Me.dgvTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTotal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.INS, Me.S1, Me.S2, Me.S3, Me.S4, Me.S5, Me.S6, Me.S7, Me.S8, Me.S9, Me.S10, Me.S11, Me.S12, Me.Total})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvTotal.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle63.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle63.ForeColor = System.Drawing.Color.Blue
+        DataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvTotal.DefaultCellStyle = DataGridViewCellStyle63
         Me.dgvTotal.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgvTotal.Enabled = False
         Me.dgvTotal.Location = New System.Drawing.Point(0, 357)
@@ -1819,24 +1801,24 @@ Partial Class Form1
         Me.dgWIP.AllowUserToDeleteRows = False
         Me.dgWIP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgWIP.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgWIP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle64.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgWIP.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle64
         Me.dgWIP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgWIP.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Package, Me.In_Day, Me.Out_Day, Me.WIP_Day, Me.In_Night, Me.Out_Night, Me.Total_In, Me.Total_Out, Me.WIP_Night})
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgWIP.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle73.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle73.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgWIP.DefaultCellStyle = DataGridViewCellStyle73
         Me.dgWIP.Location = New System.Drawing.Point(8, 8)
         Me.dgWIP.Name = "dgWIP"
         Me.dgWIP.ReadOnly = True
@@ -1857,9 +1839,9 @@ Partial Class Form1
         'In_Day
         '
         Me.In_Day.DataPropertyName = "In_Day"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.In_Day.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.In_Day.DefaultCellStyle = DataGridViewCellStyle65
         Me.In_Day.HeaderText = "In" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Day"
         Me.In_Day.Name = "In_Day"
         Me.In_Day.ReadOnly = True
@@ -1870,8 +1852,8 @@ Partial Class Form1
         'Out_Day
         '
         Me.Out_Day.DataPropertyName = "Out_Day"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Out_Day.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Out_Day.DefaultCellStyle = DataGridViewCellStyle66
         Me.Out_Day.HeaderText = "Out" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Day"
         Me.Out_Day.Name = "Out_Day"
         Me.Out_Day.ReadOnly = True
@@ -1881,8 +1863,8 @@ Partial Class Form1
         'WIP_Day
         '
         Me.WIP_Day.DataPropertyName = "WIP_Day"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.WIP_Day.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.WIP_Day.DefaultCellStyle = DataGridViewCellStyle67
         Me.WIP_Day.HeaderText = "WIP" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Day"
         Me.WIP_Day.Name = "WIP_Day"
         Me.WIP_Day.ReadOnly = True
@@ -1892,8 +1874,8 @@ Partial Class Form1
         'In_Night
         '
         Me.In_Night.DataPropertyName = "In_Night"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.In_Night.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.In_Night.DefaultCellStyle = DataGridViewCellStyle68
         Me.In_Night.HeaderText = "In" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Night"
         Me.In_Night.Name = "In_Night"
         Me.In_Night.ReadOnly = True
@@ -1903,8 +1885,8 @@ Partial Class Form1
         'Out_Night
         '
         Me.Out_Night.DataPropertyName = "Out_Night"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Out_Night.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Out_Night.DefaultCellStyle = DataGridViewCellStyle69
         Me.Out_Night.HeaderText = "Out" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Night"
         Me.Out_Night.Name = "Out_Night"
         Me.Out_Night.ReadOnly = True
@@ -1914,8 +1896,8 @@ Partial Class Form1
         'Total_In
         '
         Me.Total_In.DataPropertyName = "Total_In"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Total_In.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Total_In.DefaultCellStyle = DataGridViewCellStyle70
         Me.Total_In.HeaderText = "Total" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "In"
         Me.Total_In.Name = "Total_In"
         Me.Total_In.ReadOnly = True
@@ -1925,8 +1907,8 @@ Partial Class Form1
         'Total_Out
         '
         Me.Total_Out.DataPropertyName = "Total_Out"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Total_Out.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Total_Out.DefaultCellStyle = DataGridViewCellStyle71
         Me.Total_Out.HeaderText = "Total" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Out"
         Me.Total_Out.Name = "Total_Out"
         Me.Total_Out.ReadOnly = True
@@ -1936,8 +1918,8 @@ Partial Class Form1
         'WIP_Night
         '
         Me.WIP_Night.DataPropertyName = "WIP_Night"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.WIP_Night.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.WIP_Night.DefaultCellStyle = DataGridViewCellStyle72
         Me.WIP_Night.HeaderText = "WIP" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Night"
         Me.WIP_Night.Name = "WIP_Night"
         Me.WIP_Night.ReadOnly = True
@@ -1949,23 +1931,23 @@ Partial Class Form1
         Me.dgSumWip.AllowUserToDeleteRows = False
         Me.dgSumWip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgSumWip.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgSumWip.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle74.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle74.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgSumWip.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle74
         Me.dgSumWip.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SUM, Me.INDAY, Me.OUTDAY, Me.SUMDAY, Me.INNIGHT, Me.OUTNIGHT, Me.TotalLotIn, Me.TotalLotOut, Me.SUMNIGHT})
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgSumWip.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle75.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle75.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle75.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle75.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle75.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgSumWip.DefaultCellStyle = DataGridViewCellStyle75
         Me.dgSumWip.Location = New System.Drawing.Point(8, 466)
         Me.dgSumWip.Name = "dgSumWip"
         Me.dgSumWip.ReadOnly = True
@@ -2202,6 +2184,33 @@ Partial Class Form1
         Me.SUMWIPTotalBindingSource.DataMember = "SUMWIPTotal"
         Me.SUMWIPTotalBindingSource.DataSource = Me.DBxDataSet1
         '
+        'ComboBoxProcessName
+        '
+        Me.ComboBoxProcessName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxProcessName.FormattingEnabled = True
+        Me.ComboBoxProcessName.Location = New System.Drawing.Point(73, 74)
+        Me.ComboBoxProcessName.Name = "ComboBoxProcessName"
+        Me.ComboBoxProcessName.Size = New System.Drawing.Size(113, 21)
+        Me.ComboBoxProcessName.TabIndex = 259
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(15, 77)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(52, 13)
+        Me.Label37.TabIndex = 260
+        Me.Label37.Text = "Process"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(15, 37)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(41, 13)
+        Me.Label40.TabIndex = 261
+        Me.Label40.Text = "LotNo"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2322,8 +2331,6 @@ Partial Class Form1
     Friend WithEvents WiplotTableAdapter1 As DBxDataSetTableAdapters.WIPLOTTableAdapter
     Friend WithEvents DataGridView5 As DataGridView
     Friend WithEvents SumwipTableAdapter1 As DBxDataSetTableAdapters.SUMWIPTableAdapter
-    Friend WithEvents RadioDB As RadioButton
-    Friend WithEvents RadioWB As RadioButton
     Friend WithEvents Allpkgwip As RadioButton
     Friend WithEvents WBpkgwip As RadioButton
     Friend WithEvents DBpkgwip As RadioButton
@@ -2438,4 +2445,7 @@ Partial Class Form1
     Friend WithEvents SUMNIGHT As DataGridViewTextBoxColumn
     Friend WithEvents btQuery As Button
     Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents ComboBoxProcessName As ComboBox
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label40 As Label
 End Class

@@ -12,7 +12,34 @@ Public Class Form1
         SearchLotNo.Focus()
         'lbVersion.Text = My.Settings.Version
         '   lbProcessTitle.Text = "Width:" & ViewData.Width & "-Hight:" & ViewData.Height & ">>" & "Width:" & PanelNG.Width & "-Hight:" & PanelNG.Height
+        Dim data = GetProcessList()
+        ComboBoxProcessName.Items.Clear()
+        For Each processName As String In data
+            ComboBoxProcessName.Items.Add(processName)
+        Next
+
+
+
     End Sub
+    Private Function GetProcessList() As List(Of String)
+        Dim processList As List(Of String) = New List(Of String)
+        Dim data As DataTable = New DataTable()
+        Using cmd As New SqlClient.SqlCommand()
+            cmd.Connection = New SqlClient.SqlConnection("Server=172.16.0.110;Database=DBx;User Id=system;Password=p@$$w0rd")
+            cmd.CommandText = "SELECT distinct Process FROM [DBx].[INS].[DBWBINSData] order by Process"
+            cmd.Connection.Open()
+            Dim reader = cmd.ExecuteReader()
+            data.Load(reader)
+            cmd.Connection.Close()
+        End Using
+        For Each rowData As DataRow In data.Rows
+            If rowData("Process") IsNot Nothing Then
+                processList.Add(rowData("Process").ToString)
+            End If
+
+        Next
+        Return processList
+    End Function
     Private Sub APCSStaffToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles APCSStaffToolStripMenuItem.Click
         Call Shell("C:\Program Files\Internet Explorer\iexplore.exe http://webserv.thematrix.net/ApcsStaff", AppWinStyle.NormalFocus)
     End Sub
@@ -109,13 +136,13 @@ Public Class Form1
                 SearchLotNo.Focus()
                 Exit Sub
             End If
-            Dim process As String
-            If RadioDB.Checked Then
-                process = RadioDB.Text
-            Else
-                '  RadioWB.Checked
-                process = RadioWB.Text
-            End If
+            Dim process As String = ComboBoxProcessName.Text
+            'If RadioDB.Checked Then
+            '    process = RadioDB.Text
+            'Else
+            '    '  RadioWB.Checked
+            '    process = RadioWB.Text
+            'End If
             InspectionDetailTableAdapter1.Fill(DBxDataSet1.InspectionDetail, SearchLotNo.Text, process)
             'If DBxDataSet1.InspectionDetail.Rows.Count < 1 Then
             '    MsgBox("ไม่ได้ INS ใน Process นี้")
@@ -908,11 +935,11 @@ Public Class Form1
         Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub RadioWB_CheckedChanged(sender As Object, e As EventArgs) Handles RadioWB.CheckedChanged
+    Private Sub RadioWB_CheckedChanged(sender As Object, e As EventArgs)
         SearchLotNo.Focus()
     End Sub
 
-    Private Sub RadioDB_CheckedChanged(sender As Object, e As EventArgs) Handles RadioDB.CheckedChanged
+    Private Sub RadioDB_CheckedChanged(sender As Object, e As EventArgs)
         SearchLotNo.Focus()
     End Sub
     Dim frm As QueryWIP = New QueryWIP
