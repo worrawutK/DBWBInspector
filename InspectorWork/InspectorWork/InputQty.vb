@@ -1,6 +1,21 @@
 ﻿Public Class InputQty
-   
 
+    Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Sub New(input As Integer)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        DisplayInput.Text = input.ToString()
+    End Sub
     Private Sub Button10_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click, Button10.Click, Button11.Click, Button12.Click, Button2.Click, Button3.Click, Button4.Click, Button5.Click, Button6.Click, Button7.Click, Button8.Click, Button9.Click
         Dim val As String
         val = sender.text

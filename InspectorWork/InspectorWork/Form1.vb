@@ -356,7 +356,7 @@ BypassAuter:
                     layerNo = "0213"
                 End If
                 Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
-                If result.IsPass = SetupLotResult.Status.NotPass AndAlso result.Type = MessageType.Apcs Then
+                If result.IsPass = SetupLotResult.Status.NotPass Then
                     MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
                     Exit Sub
                 ElseIf result.IsPass = SetupLotResult.Status.Warning Then
@@ -402,7 +402,8 @@ BypassAuter:
 
             If DR.IsTotalQtyNull Then
                 KeyNumInput = StatusKey.Total 'Input Qty.if already input in data base will no pop up form
-                Dim Input As New InputQty
+                Dim lotinfo As LotInformation = c_ServiceiLibrary.GetLotInfo(WorkSlipQR.LotNo, My.Settings.MachineNo)
+                Dim Input As New InputQty(lotinfo.GoPiece)
                 Input.ShowDialog()
                 DR.TotalQty = OprData.InputQtyFrmVal                  'From inputQty Frm
 
