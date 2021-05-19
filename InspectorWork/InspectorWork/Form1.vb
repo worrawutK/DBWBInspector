@@ -127,7 +127,7 @@ Public Class Form1
 
         'Link Mode No data Inspect
         'Dim ModeNoLinkCbitem() As String = {"WB10", "WB1", "WB2", "WB3", "WB27", "WB27", "WB27", "WB27", "WB27", "DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14"}
-        Dim ModeNoLinkCbitem() As String = {"WB10", "WB1", "WB2", "WB3", "WB27", "WB22", "WB27", "WB27", "WB27", "DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14"}
+        Dim ModeNoLinkCbitem() As String = {"WB1", "WB2", "WB3", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22"}
         For i = 0 To cbxItem.Items.Count - 1
             Dim List As New InspectionList
             List.ModeName = cbxItem.Items(i)
@@ -135,7 +135,7 @@ Public Class Form1
             ModeListCbItem.Add(List)
         Next
 
-
+        SetDefultItem(ProcessName.WB)
         'TabControl1.TabPages.Remove(TabPage2) '**********
 
 
@@ -274,295 +274,301 @@ Public Class Form1
     End Sub
     Dim Check_InputTotal As Boolean
     Private Sub ReadData(ByVal informationText As String)
-        lbDB01.Text = "-"
-        lbDb04.Text = "-"
-        lbDb06.Text = "-"
-        lbDb07.Text = "-"
-        lbDb14.Text = "-"
-        lbDb16.Text = "-"
-        lbDB99.Text = "-"
-        lbWb01.Text = "-"
-        lbWb02.Text = "-"
-        lbWb04.Text = "-"
-        lbWb17.Text = "-"
-        lbWb18.Text = "-"
-        lbWb19.Text = "-"
-        lbWb99.Text = "-"
-
-        If informationText <> Nothing Then
-            SaveCatchLog(informationText, "ReadData()")
-            Dim DataSplit As String() = informationText.Split(CChar(","))
-            '   Dim strHostName As String = System.Net.Dns.GetHostName()
-            If strHostName <> DataSplit(1) Then
-                Send(strHostName & ",02", SocketTCP)
-                '  SaveCatchLog(strHostName & ",02", "ReadData()Set Machine")
-                Exit Sub
-            End If
-            OprData.OPID = DataSplit(0)
-            btnOPID.Text = OprData.OPID
-            QR_OPIDRead()
-            btnOPID.ForeColor = Color.Black
-            btQR.BackColor = SystemColors.Control
-            tbQR_GL.Text = Nothing
-            OprData.QrData = DataSplit(2)
-        Else
-
-            SaveCatchLog(OprData.OPID & "," & OprData.QrData, "ReadData()")
-        End If
-
         Try
-            tbQR_GL.Text = Nothing
-            btQR.BackColor = SystemColors.Control
-            rbtLotJudgeOK.Checked = False
-            rbtLotJudgeNG.Checked = False
-            tbJudgeReason.Enabled = False
-            slMessage.Text = "QR Work Slip Read Success_" & Format(Now, "HH:mm:ss.fff")
-            If Not InspectorPermission(OprData.QrData, OprData.OPID, My.Settings.UserAuthenOP, My.Settings.UserAuthenGL) Then
-                If My.Settings.UserAuthenOP = "NOUSE" Then  'Bypass Auten  Check only Lot automotive
-                    GoTo BypassAuter
-                End If
-                MsgBox(ErrMesETG)
-                If ErrMesETG Like "OP*" Then
-                    btnOPID.Text = "OPID"
-                    lbinspectorID.Text = "OPID"
-                End If
-                '    pbxAutoM.Visible = False
-                Exit Sub
-            End If
-BypassAuter:
-            If OprData.AutoMotiveLot Then     'CD Machine lot 1:n nouse
-                '      pbxAutoM.Visible = True
-            End If
-
-            '----- initial data ----------------------------------------------------------------------------------------
-            Dim WorkSlipQR As New WorkingSlipQRCode
-            WorkSlipQR.SplitQRCode(OprData.QrData)
-
-            DBWB_InsTbl = New DBxDataSet.DBWBINSDataDataTable
-            Dim DR As DBxDataSet.DBWBINSDataRow
-            DR = DBWB_InsTbl.NewRow
-            If DBWB_InsTblQuery.Fill(DBWB_InsTbl, WorkSlipQR.LotNo) = 0 Then
-                Send(strHostName & ",01", SocketTCP)
-                'SaveCatchLog(strHostName & ",01", "ReadData()No Inspection Request or End Inspection")
-                slMessage.Text = "Lot นี้ยังไม่ได้ ทำการ บันทึก Inspection Request หรือ End Inspection แล้ว"
-                Exit Sub
-            End If
-            DR = DBWB_InsTbl.Rows(0)                        '  Use DRcan make sure  update only one row to table
-
-            Try
-                Dim layerNo As String = ""
-                If DR.Process.Trim() = "DB" Then
-                    'DB M BRARI100%INS 0213
-                    layerNo = "0213"
-                End If
-                Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
-                If result.IsPass = SetupLotResult.Status.NotPass Then
-                    MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
-                    Exit Sub
-                ElseIf result.IsPass = SetupLotResult.Status.Warning Then
-                    MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
-                End If
-                c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.LotSetUp)
-                c_ServiceiLibrary.StartLot(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, result.Recipe)
-                c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Execute)
-            Catch ex As Exception
-                MessageBoxDialog.ShowMessage("SetupLot,StartLot", ex.Message.ToString, "iLibrary Service")
-            End Try
-
-
-            SPss = 0
-            SPHH = 0
-            SPMM = 0
-            RHH = 0
-            RMM = 0
-            Rss = 0
-            lbToVal.Text = Nothing
-            lbSTOP.Text = "00:00:00"
-            lbSTOP.ForeColor = Color.Black
-            btTimePause.Text = "STOP"
-            btTimePause.BackColor = Color.Red
-            TimerRun.Start()
-            TimerStop.Stop()
-            lbStartTime.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
-            lbEndTime.Text = ""
-            btnWorkSlip.ForeColor = Color.Black
-            lbNG.Text = Nothing
-            lbGood.Text = Nothing
-            lbFinYld.Text = Nothing
-            tbJudgeReason.Text = Nothing
-            cbxItem.Text = Nothing
+            lbDB01.Text = "-"
+            lbDb04.Text = "-"
+            lbDb06.Text = "-"
+            lbDb07.Text = "-"
+            lbDb14.Text = "-"
+            lbDb16.Text = "-"
+            lbDB99.Text = "-"
+            lbWb01.Text = "-"
+            lbWb02.Text = "-"
+            lbWb04.Text = "-"
+            lbWb17.Text = "-"
+            lbWb18.Text = "-"
+            lbWb19.Text = "-"
+            lbWb99.Text = "-"
 
             If informationText <> Nothing Then
-                Send(strHostName & ",00", SocketTCP)
-                '  SaveCatchLog(strHostName & ",00", "ReadData()")
-            End If
-
-
-
-
-            If DR.IsTotalQtyNull Then
-                KeyNumInput = StatusKey.Total 'Input Qty.if already input in data base will no pop up form
-                Dim lotinfo As LotInformation = c_ServiceiLibrary.GetLotInfo(WorkSlipQR.LotNo, My.Settings.MachineNo)
-                Dim Input As New InputQty(lotinfo.GoPiece)
-                Input.ShowDialog()
-                DR.TotalQty = OprData.InputQtyFrmVal                  'From inputQty Frm
-
-            End If
-
-            If DR.IsStartTimeNull Then     ' If already start time will continue And DR.Process = "" 
-                DR.StartTime = CDate(lbStartTime.Text) 'Format(Now, "yyyy/MM/dd HH:mm:ss")
-            End If
-            DR.InsName = My.Settings.MachineNo 'strHostName
-
-            lbStartTime.Text = Format(DR.StartTime, "yyyy/MM/dd HH:mm:ss")
-
-            'DB WB Alarm display --- ---- --- --- --- ---- ---- ---- ----
-
-            LotAlarmQtyTbl = New DBxDataSet.LotAlarmQtyDataTable
-            'Dim AlDr As DBxDataSet.LotAlarmQtyRow
-            'AlDr = LotAlarmQtyTbl.NewRow
-            If LotAlarmQtyTblQuery.Fill(LotAlarmQtyTbl, WorkSlipQR.LotNo) <> 0 Then ' Alarm Qty data from record
-                For Each row As DBxDataSet.LotAlarmQtyRow In LotAlarmQtyTbl
-                    Select Case row.AlarmNo
-                        Case 1, 20
-                            If row.AlarmMess Like "*PICK UP*" Then ' If row.Process = "DB" Then
-                                lbDB01.Text = row.Qty
-                            Else
-                                lbWb01.Text = row.Qty
-                            End If
-                        Case 2
-                            lbWb02.Text = row.Qty
-                        Case 4
-                            If row.AlarmMess Like "*PREFORM*" Then ' If row.Process = "DB" Then
-                                lbDb04.Text = row.Qty
-                            Else
-                                lbWb04.Text = row.Qty
-                            End If
-                        Case 6
-                            lbDb06.Text = row.Qty
-                        Case 7
-                            lbDb07.Text = row.Qty
-                        Case 14
-                            lbDb14.Text = row.Qty
-                        Case 16
-                            lbDb16.Text = row.Qty
-                        Case 17
-                            lbWb17.Text = row.Qty
-                        Case 18
-                            lbWb18.Text = row.Qty
-                        Case 19
-                            lbWb19.Text = row.Qty
-                        Case 99
-                            If row.AlarmMess Like "*DB*" Then ' If row.Process = "DB" Then
-                                lbDB99.Text = row.Qty
-                            Else
-                                lbWb99.Text = row.Qty
-
-                            End If
-                    End Select
-                Next
-
-            End If
-            '--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-
-            lbLotNo.Text = WorkSlipQR.LotNo
-            OprData.LotNo = lbLotNo.Text
-            lbPackage.Text = WorkSlipQR.Package
-            lbDevice.Text = WorkSlipQR.Device
-            If DR.IsMCNoNull = False Then
-                lbMCNo.Text = DR.MCNo
-            End If
-            If DR.IsRemarkNull = False Then
-                lbRemark.Text = "Remark : " & DR.Remark
-            End If
-
-
-            lbinspectorID.Text = OprData.OPID
-            lbObjInsp.Text = DR.ObjectIns
-            lbProcess.Text = DR.Process
-            DR.InspectorNo = lbinspectorID.Text
-            ImageLoad(OprData.OPID)
-            'lbLotNo.Text = WorkSlipQR.LotNo
-            'lbPackage.Text = WorkSlipQR.Package
-            'lbDevice.Text = WorkSlipQR.Device
-            'lbinspectorID.Text = OprData.OPID
-            'lbObjInsp.Text = DR.ObjectIns
-            'lbProcess.Text = DR.Process
-            'DR.InspectorNo = lbinspectorID.Text
-
-            If DR.IsStartTimeNull Then     ' If already start time will continue
-                DR.StartTime = Format(Now, "yyyy/MM/dd HH:mm:ss")
-            End If
-
-            lbTotal.Text = DR.TotalQty
-            Check_InputTotal = False
-            If DR.ObjectIns <> "ALL" Then
-                lbTotal.BackColor = Color.Red
+                SaveCatchLog(informationText, "ReadData()")
+                Dim DataSplit As String() = informationText.Split(CChar(","))
+                '   Dim strHostName As String = System.Net.Dns.GetHostName()
+                If strHostName <> DataSplit(1) Then
+                    Send(strHostName & ",02", SocketTCP)
+                    '  SaveCatchLog(strHostName & ",02", "ReadData()Set Machine")
+                    Exit Sub
+                End If
+                OprData.OPID = DataSplit(0)
+                btnOPID.Text = OprData.OPID
+                QR_OPIDRead()
+                btnOPID.ForeColor = Color.Black
+                btQR.BackColor = SystemColors.Control
+                tbQR_GL.Text = Nothing
+                OprData.QrData = DataSplit(2)
             Else
-                lbTotal.BackColor = Color.LawnGreen
+
+                SaveCatchLog(OprData.OPID & "," & OprData.QrData, "ReadData()")
             End If
 
             Try
-                'dgvTotal.Item(13, 0).Value = 0                'Gross Total cell
-                lbNG.Text = 0
-                lbGood.Text = CInt(lbTotal.Text) - CInt(lbNG.Text)
-                lbFinYld.Text = FormatNumber((1 - (CInt(lbNG.Text) / CInt(lbTotal.Text))) * 100, 2)
+                tbQR_GL.Text = Nothing
+                btQR.BackColor = SystemColors.Control
+                rbtLotJudgeOK.Checked = False
+                rbtLotJudgeNG.Checked = False
+                tbJudgeReason.Enabled = False
+                slMessage.Text = "QR Work Slip Read Success_" & Format(Now, "HH:mm:ss.fff")
+                If Not InspectorPermission(OprData.QrData, OprData.OPID, My.Settings.UserAuthenOP, My.Settings.UserAuthenGL) Then
+                    If My.Settings.UserAuthenOP = "NOUSE" Then  'Bypass Auten  Check only Lot automotive
+                        GoTo BypassAuter
+                    End If
+                    MsgBox(ErrMesETG)
+                    If ErrMesETG Like "OP*" Then
+                        btnOPID.Text = "OPID"
+                        lbinspectorID.Text = "OPID"
+                    End If
+                    '    pbxAutoM.Visible = False
+                    Exit Sub
+                End If
+BypassAuter:
+                If OprData.AutoMotiveLot Then     'CD Machine lot 1:n nouse
+                    '      pbxAutoM.Visible = True
+                End If
+
+                '----- initial data ----------------------------------------------------------------------------------------
+                Dim WorkSlipQR As New WorkingSlipQRCode
+                WorkSlipQR.SplitQRCode(OprData.QrData)
+
+                DBWB_InsTbl = New DBxDataSet.DBWBINSDataDataTable
+                Dim DR As DBxDataSet.DBWBINSDataRow
+                DR = DBWB_InsTbl.NewRow
+                If DBWB_InsTblQuery.Fill(DBWB_InsTbl, WorkSlipQR.LotNo) = 0 Then
+                    Send(strHostName & ",01", SocketTCP)
+                    'SaveCatchLog(strHostName & ",01", "ReadData()No Inspection Request or End Inspection")
+                    slMessage.Text = "Lot นี้ยังไม่ได้ ทำการ บันทึก Inspection Request หรือ End Inspection แล้ว"
+                    Exit Sub
+                End If
+                DR = DBWB_InsTbl.Rows(0)                        '  Use DRcan make sure  update only one row to table
+
+                Try
+                    Dim layerNo As String = ""
+                    If DR.Process.Trim() = "DB" Then
+                        'DB M BRARI100%INS 0213
+                        layerNo = "0213"
+                    End If
+                    Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
+                    If result.IsPass = SetupLotResult.Status.NotPass Then
+                        MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
+                        Exit Sub
+                    ElseIf result.IsPass = SetupLotResult.Status.Warning Then
+                        MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
+                    End If
+                    c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.LotSetUp)
+                    c_ServiceiLibrary.StartLot(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, result.Recipe)
+                    c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Execute)
+                Catch ex As Exception
+                    MessageBoxDialog.ShowMessage("SetupLot,StartLot", ex.Message.ToString, "iLibrary Service")
+                End Try
+
+
+                SPss = 0
+                SPHH = 0
+                SPMM = 0
+                RHH = 0
+                RMM = 0
+                Rss = 0
+                lbToVal.Text = Nothing
+                lbSTOP.Text = "00:00:00"
+                lbSTOP.ForeColor = Color.Black
+                btTimePause.Text = "STOP"
+                btTimePause.BackColor = Color.Red
+                TimerRun.Start()
+                TimerStop.Stop()
+                lbStartTime.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
+                lbEndTime.Text = ""
+                btnWorkSlip.ForeColor = Color.Black
+                lbNG.Text = Nothing
+                lbGood.Text = Nothing
+                lbFinYld.Text = Nothing
+                tbJudgeReason.Text = Nothing
+                cbxItem.Text = Nothing
+
+                If informationText <> Nothing Then
+                    Send(strHostName & ",00", SocketTCP)
+                    '  SaveCatchLog(strHostName & ",00", "ReadData()")
+                End If
+
+
+
+
+                If DR.IsTotalQtyNull Then
+                    KeyNumInput = StatusKey.Total 'Input Qty.if already input in data base will no pop up form
+                    Dim lotinfo As LotInformation = c_ServiceiLibrary.GetLotInfo(WorkSlipQR.LotNo, My.Settings.MachineNo)
+                    Dim Input As New InputQty(lotinfo.GoPiece)
+                    Input.ShowDialog()
+                    DR.TotalQty = OprData.InputQtyFrmVal                  'From inputQty Frm
+
+                End If
+
+                If DR.IsStartTimeNull Then     ' If already start time will continue And DR.Process = "" 
+                    DR.StartTime = CDate(lbStartTime.Text) 'Format(Now, "yyyy/MM/dd HH:mm:ss")
+                End If
+                DR.InsName = My.Settings.MachineNo 'strHostName
+
+                lbStartTime.Text = Format(DR.StartTime, "yyyy/MM/dd HH:mm:ss")
+
+                'DB WB Alarm display --- ---- --- --- --- ---- ---- ---- ----
+
+                LotAlarmQtyTbl = New DBxDataSet.LotAlarmQtyDataTable
+                'Dim AlDr As DBxDataSet.LotAlarmQtyRow
+                'AlDr = LotAlarmQtyTbl.NewRow
+                If LotAlarmQtyTblQuery.Fill(LotAlarmQtyTbl, WorkSlipQR.LotNo) <> 0 Then ' Alarm Qty data from record
+                    For Each row As DBxDataSet.LotAlarmQtyRow In LotAlarmQtyTbl
+                        Select Case row.AlarmNo
+                            Case 1, 20
+                                If row.AlarmMess Like "*PICK UP*" Then ' If row.Process = "DB" Then
+                                    lbDB01.Text = row.Qty
+                                Else
+                                    lbWb01.Text = row.Qty
+                                End If
+                            Case 2
+                                lbWb02.Text = row.Qty
+                            Case 4
+                                If row.AlarmMess Like "*PREFORM*" Then ' If row.Process = "DB" Then
+                                    lbDb04.Text = row.Qty
+                                Else
+                                    lbWb04.Text = row.Qty
+                                End If
+                            Case 6
+                                lbDb06.Text = row.Qty
+                            Case 7
+                                lbDb07.Text = row.Qty
+                            Case 14
+                                lbDb14.Text = row.Qty
+                            Case 16
+                                lbDb16.Text = row.Qty
+                            Case 17
+                                lbWb17.Text = row.Qty
+                            Case 18
+                                lbWb18.Text = row.Qty
+                            Case 19
+                                lbWb19.Text = row.Qty
+                            Case 99
+                                If row.AlarmMess Like "*DB*" Then ' If row.Process = "DB" Then
+                                    lbDB99.Text = row.Qty
+                                Else
+                                    lbWb99.Text = row.Qty
+
+                                End If
+                        End Select
+                    Next
+
+                End If
+                '--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+                lbLotNo.Text = WorkSlipQR.LotNo
+                OprData.LotNo = lbLotNo.Text
+                lbPackage.Text = WorkSlipQR.Package
+                lbDevice.Text = WorkSlipQR.Device
+                If DR.IsMCNoNull = False Then
+                    lbMCNo.Text = DR.MCNo
+                End If
+                If DR.IsRemarkNull = False Then
+                    lbRemark.Text = "Remark : " & DR.Remark
+                End If
+
+
+                lbinspectorID.Text = OprData.OPID
+                lbObjInsp.Text = DR.ObjectIns
+                lbProcess.Text = DR.Process
+                DR.InspectorNo = lbinspectorID.Text
+                ImageLoad(OprData.OPID)
+                'lbLotNo.Text = WorkSlipQR.LotNo
+                'lbPackage.Text = WorkSlipQR.Package
+                'lbDevice.Text = WorkSlipQR.Device
+                'lbinspectorID.Text = OprData.OPID
+                'lbObjInsp.Text = DR.ObjectIns
+                'lbProcess.Text = DR.Process
+                'DR.InspectorNo = lbinspectorID.Text
+
+                If DR.IsStartTimeNull Then     ' If already start time will continue
+                    DR.StartTime = Format(Now, "yyyy/MM/dd HH:mm:ss")
+                End If
+
+                lbTotal.Text = DR.TotalQty
+                Check_InputTotal = False
+                If DR.ObjectIns <> "ALL" Then
+                    lbTotal.BackColor = Color.Red
+                Else
+                    lbTotal.BackColor = Color.LawnGreen
+                End If
+
+                Try
+                    'dgvTotal.Item(13, 0).Value = 0                'Gross Total cell
+                    lbNG.Text = 0
+                    lbGood.Text = CInt(lbTotal.Text) - CInt(lbNG.Text)
+                    lbFinYld.Text = FormatNumber((1 - (CInt(lbNG.Text) / CInt(lbTotal.Text))) * 100, 2)
+                Catch ex As Exception
+
+                End Try
+                If dgvInspDetail.RowCount > 0 Then DBxDataSet.Inspection_Detail.Rows.Clear() 'Clear Inspection_Detail
+
+                If dgvTotal.RowCount > 0 Then dgvTotal.Rows.Clear()
+
+                If Not DR.IsRequestModeName1Null Then                                     'Set initail item Inspection_Detail
+                    If DR.RequestModeName1 <> "" Then
+                        lbReq1.Text = "1. " & DR.RequestModeName1
+                        lbReq1Remark.Text = DR.RequestModeRemark1
+                        'DBxDataSet.Inspection_Detail.Rows.Add(DR.RequestModeName1)        'Add to inspection table
+                        'DBxDataSet.Inspection_Detail.Rows(DR.RequestModeName1).Item("ModeNo") = DR.RequestMode1
+                    End If
+
+                End If
+                If Not DR.IsRequestModeName2Null Then
+                    If DR.RequestModeName2 <> "" Then
+                        lbReq2.Text = "2. " & DR.RequestModeName2
+                        lbReq2Remark.Text = DR.RequestModeRemark2
+                        'DBxDataSet.Inspection_Detail.Rows.Add(DR.RequestModeName2)          'Add to inspection table
+                        'DBxDataSet.Inspection_Detail.Rows(DR.RequestModeName2).Item("ModeNo") = DR.RequestMode2
+                    End If
+                End If
+
+                Try
+                    DBWB_InsTblQuery.Update(DR)   'Update start time and inspector ID
+
+                Catch ex As InvalidOperationException
+                    MsgBox("Update Fail : " & ex.ToString)
+                    SaveCatchLog(ex.ToString, "DBWB_InsTblQuery.Update(DR)")
+                Catch ex As DBConcurrencyException
+                    MsgBox("Update Fail : " & ex.ToString)
+                    SaveCatchLog(ex.ToString, "DBWB_InsTblQuery.Update(DR)")
+                End Try
+
+                '----------------------------------------------------------------------------------------------------------------
+                SetDefultItem(ProcessName.WB)
+                TabControl1.SelectedTab = TabPage2
+
+                Hilight()
+                'Dim Ans = WorkSlipQR.TransactionDataSave(OprData.QrData)
+                'If Ans Like "False*" Then
+                '    slMessage.Text = Ans
+                'End If
+                PictureBox2.BackgroundImage = Nothing
+                PictureBox1.BackgroundImage = Nothing
+                If File.Exists(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG") Then
+                    PictureBox1.BackgroundImage = Image.FromFile(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG")
+                End If
+
             Catch ex As Exception
-
+                slMessage.Text = "Catch Error ReadData()" & ex.ToString
+                SaveCatchLog(ex.ToString, "ReadData()")
             End Try
-            If dgvInspDetail.RowCount > 0 Then DBxDataSet.Inspection_Detail.Rows.Clear() 'Clear Inspection_Detail
-
-            If dgvTotal.RowCount > 0 Then dgvTotal.Rows.Clear()
-
-            If Not DR.IsRequestModeName1Null Then                                     'Set initail item Inspection_Detail
-                If DR.RequestModeName1 <> "" Then
-                    lbReq1.Text = "1. " & DR.RequestModeName1
-                    lbReq1Remark.Text = DR.RequestModeRemark1
-                    'DBxDataSet.Inspection_Detail.Rows.Add(DR.RequestModeName1)        'Add to inspection table
-                    'DBxDataSet.Inspection_Detail.Rows(DR.RequestModeName1).Item("ModeNo") = DR.RequestMode1
-                End If
-
-            End If
-            If Not DR.IsRequestModeName2Null Then
-                If DR.RequestModeName2 <> "" Then
-                    lbReq2.Text = "2. " & DR.RequestModeName2
-                    lbReq2Remark.Text = DR.RequestModeRemark2
-                    'DBxDataSet.Inspection_Detail.Rows.Add(DR.RequestModeName2)          'Add to inspection table
-                    'DBxDataSet.Inspection_Detail.Rows(DR.RequestModeName2).Item("ModeNo") = DR.RequestMode2
-                End If
-            End If
-
-            Try
-                DBWB_InsTblQuery.Update(DR)   'Update start time and inspector ID
-
-            Catch ex As InvalidOperationException
-                MsgBox("Update Fail : " & ex.ToString)
-                SaveCatchLog(ex.ToString, "DBWB_InsTblQuery.Update(DR)")
-            Catch ex As DBConcurrencyException
-                MsgBox("Update Fail : " & ex.ToString)
-                SaveCatchLog(ex.ToString, "DBWB_InsTblQuery.Update(DR)")
-            End Try
-
-            '----------------------------------------------------------------------------------------------------------------
-
-            TabControl1.SelectedTab = TabPage2
-
-            Hilight()
-            'Dim Ans = WorkSlipQR.TransactionDataSave(OprData.QrData)
-            'If Ans Like "False*" Then
-            '    slMessage.Text = Ans
-            'End If
-            PictureBox2.BackgroundImage = Nothing
-            PictureBox1.BackgroundImage = Nothing
-            If File.Exists(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG") Then
-                PictureBox1.BackgroundImage = Image.FromFile(PathServer & lbProcess.Text & "\" & lbLotNo.Text & "_NG Sample.JPG")
-            End If
-
+            dgvTotal.Rows.Add("Total")
         Catch ex As Exception
             slMessage.Text = "Catch Error ReadData()" & ex.ToString
-            SaveCatchLog(ex.ToString, "ReadData()")
+            SaveCatchLog(ex.ToString, "ReadData() main")
         End Try
-        dgvTotal.Rows.Add("Total")
+
     End Sub
     Private Sub Send(ByVal msg As String, ByVal client As Socket)
 
@@ -633,14 +639,50 @@ BypassAuter:
 
         End Select
     End Sub
+    Enum ProcessName
+        DB
+        WB
+    End Enum
+    Private Sub SetDefultItem(process As ProcessName)
 
+        Dim itemDbNg As String = "DB NG"
+        If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemDbNg).Any Then
+            Dim nRow1 As DBxDataSet.Inspection_DetailRow
+            nRow1 = DBxDataSet.Inspection_Detail.NewInspection_DetailRow
+            nRow1.INSPECTION_ITEM = itemDbNg
+            nRow1.ModeNo = "DB22"
+            DBxDataSet.Inspection_Detail.Rows.Add(nRow1)
+        End If
+
+
+        If process = ProcessName.WB Then
+            Dim itemWBNg As String = "WB NG"
+            If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemWBNg).Any Then
+                Dim nRow3 As DBxDataSet.Inspection_DetailRow
+                nRow3 = DBxDataSet.Inspection_Detail.NewInspection_DetailRow
+                nRow3.INSPECTION_ITEM = itemWBNg
+                nRow3.ModeNo = "WB27"
+                DBxDataSet.Inspection_Detail.Rows.Add(nRow3)
+            End If
+            Dim itemMakerNg As String = "Marker NG"
+            If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemMakerNg).Any Then
+                Dim nRow2 As DBxDataSet.Inspection_DetailRow
+                nRow2 = DBxDataSet.Inspection_Detail.NewInspection_DetailRow
+                nRow2.INSPECTION_ITEM = itemMakerNg
+                nRow2.ModeNo = "WB27"
+                DBxDataSet.Inspection_Detail.Rows.Add(nRow2)
+            End If
+        End If
+    End Sub
     Private Sub btnAddItem_Click(sender As System.Object, e As System.EventArgs) Handles btnAddItem.Click
+        'SetDefultItem(ProcessName.DB)
         '  btnClear.Text = cbxItem.SelectedIndex
         SaveCatchLog("", "btnAddItem_Click()")
         For Each row As DBxDataSet.Inspection_DetailRow In DBxDataSet.Inspection_Detail.Rows
             If row.INSPECTION_ITEM.ToUpper = cbxItem.Text.Trim.ToUpper Then
                 Exit Sub
             End If
+
         Next
         Dim CHECK As Boolean
         If cbxItem.SelectedIndex = -1 Then
@@ -691,6 +733,7 @@ BypassAuter:
         'If dgvInspDetail.Rows.Count <> 0 Then
         '    Exit Sub
         'End If
+        'SetDefultItem(ProcessName.WB)
         Try
             For i = 0 To ModeListCbItem.Count - 1
                 For Each row As DBxDataSet.Inspection_DetailRow In DBxDataSet.Inspection_Detail.Rows    'Already exist in table confor
@@ -717,11 +760,12 @@ ConFor:
 
     Private Sub btnDB_Click(sender As System.Object, e As System.EventArgs) Handles btnDB.Click
         SaveCatchLog("", "btnDB_Click()")
+        'SetDefultItem(ProcessName.DB)
         'If dgvInspDetail.Rows.Count <> 0 Then
         '    Exit Sub
         'End If
         Try
-            For i = 9 To ModeListCbItem.Count - 1
+            For i = 7 To ModeListCbItem.Count - 1
                 For Each row As DBxDataSet.Inspection_DetailRow In DBxDataSet.Inspection_Detail.Rows    'Already exist in table confor
                     If row.INSPECTION_ITEM.ToUpper = ModeListCbItem(i).ModeName.ToUpper Then
                         GoTo ConFor
@@ -746,8 +790,9 @@ ConFor:
         '    Exit Sub
         'End If
         SaveCatchLog("", "btnWB_Click()")
+        'SetDefultItem(ProcessName.WB)
         Try
-            For i = 0 To 8
+            For i = 0 To 20
                 For Each row As DBxDataSet.Inspection_DetailRow In DBxDataSet.Inspection_Detail.Rows    'Already exist in table confor
                     If row.INSPECTION_ITEM.ToUpper = ModeListCbItem(i).ModeName.ToUpper Then
                         GoTo ConFor
@@ -1048,18 +1093,79 @@ EndLoop:
 
     Private Sub btnSave_Click(sender As System.Object, e As System.EventArgs) Handles btnSave.Click
 
-        SaveCatchLog("", "btnSave_Click()")
-        '  btTimePause.Visible = False
-        Try
-            Dim result As EndLotResult = c_ServiceiLibrary.EndLotNoCheckLicenser(lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, lbNG.Text)
-            If Not result.IsPass AndAlso result.Type = MessageType.Apcs Then
-                MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString)
+        Dim frameScrap As Integer = 0
+        Dim frmEndAdjust As FormEndLotAdjust = New FormEndLotAdjust(DBxDataSet.Inspection_Detail)
+        Dim frmEndAdjustResult As DialogResult = frmEndAdjust.ShowDialog()
+        If frmEndAdjustResult = DialogResult.No Then
+            Dim frmSrcap As InputAdjustScrapDailog = New InputAdjustScrapDailog(DBxDataSet.Inspection_Detail)
+            Dim frmSrcapResult As DialogResult = frmSrcap.ShowDialog()
+            If frmSrcapResult <> DialogResult.OK Then
                 Exit Sub
             End If
-            c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Idle)
-        Catch ex As Exception
-            MessageBoxDialog.ShowMessage("EndLot", ex.Message.ToString, "iLibrary Service")
-        End Try
+            frameScrap = frmSrcap.FrameScrap.Value
+        ElseIf frmEndAdjustResult <> DialogResult.Yes Then
+            Exit Sub
+        End If
+
+
+        Dim inspNgAdjustlist As List(Of InspectionDataAdjust) = New List(Of InspectionDataAdjust)
+        Dim dbNg As InspectionDataAdjust = New InspectionDataAdjust
+        dbNg.InspectionItem = "DB NG"
+        dbNg.TotalNg = 0
+        dbNg.Scrap = 0
+        inspNgAdjustlist.Add(dbNg)
+        Dim wbNg As InspectionDataAdjust = New InspectionDataAdjust
+        wbNg.InspectionItem = "WB NG"
+        wbNg.TotalNg = 0
+        wbNg.Scrap = 0
+        inspNgAdjustlist.Add(wbNg)
+        Dim markerNG As InspectionDataAdjust = New InspectionDataAdjust
+        markerNG.InspectionItem = "Marker NG"
+        markerNG.TotalNg = 0
+        markerNG.Scrap = 0
+        inspNgAdjustlist.Add(markerNG)
+        Dim inspectionNG As InspectionDataAdjust = New InspectionDataAdjust
+        inspectionNG.InspectionItem = "Inspection NG"
+        inspectionNG.TotalNg = 0
+        inspectionNG.Scrap = 0
+        inspNgAdjustlist.Add(inspectionNG)
+
+        'Dim NgList As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)
+
+        'NgList.Add("DB NG", 0)
+        'NgList.Add("WB NG", 0)
+        'NgList.Add("Marker NG", 0)
+        'NgList.Add("Inspection NG", 0)
+        For Each lotdata As DBxDataSet.Inspection_DetailRow In DBxDataSet.Inspection_Detail
+
+            If (lotdata.IsTLNull) Then
+                lotdata.TL = 0
+            End If
+            If (lotdata.IsScrapNull) Then
+                lotdata.Scrap = 0
+            End If
+
+            'Select Case lotdata.INSPECTION_ITEM.ToUpper
+            '    Case "DB NG".ToUpper, "WB NG".ToUpper, "Marker NG".ToUpper
+            '        NgList(lotdata.INSPECTION_ITEM) = lotdata.TL - lotdata.Scrap
+            '    Case Else
+            '        NgList("Inspection NG") = NgList("Inspection NG") + lotdata.TL - lotdata.Scrap
+            'End Select
+            If inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).Any Then
+                Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).First
+                data.TotalNg = lotdata.TL
+                data.Scrap = lotdata.Scrap
+            Else
+                Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
+                data.TotalNg += lotdata.TL
+                data.Scrap += lotdata.Scrap
+            End If
+        Next
+
+        SaveCatchLog("", "btnSave_Click()")
+        '  btTimePause.Visible = False
+
+
 
         Try
             'If dgvTotal.Item(13, 0).Value = 0 And rbtLotJudgeOK.Checked = False Then              'If no data no action
@@ -1114,6 +1220,38 @@ EndLoop:
                     slMessage.Text = "Lot นี้ยังไม่ได้ ทำการ บันทึก Inspection Request หรือ End Inspection แล้ว"
                     Exit Sub
                 End If
+
+                Try  'lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, lbNG.Text
+                    Dim lotInfo = c_ServiceiLibrary.GetLotInfo(lbLotNo.Text, My.Settings.MachineNo)
+
+                    Dim inspDbAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "DB NG").First
+                    Dim inspWbAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "WB NG").First
+                    Dim inspMarkerAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Marker NG").First
+                    Dim insFrontNg As Integer = (inspDbAdjust.TotalNg - inspDbAdjust.Scrap) + (inspWbAdjust.TotalNg - inspWbAdjust.Scrap) + (inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap)
+
+                    Dim piecePerFrame As Double = lotInfo.GoPiece / lotInfo.FramePass
+                    Dim inspAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
+                    Dim inspNg As Integer = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap - inspDbAdjust.Scrap - inspWbAdjust.Scrap - inspMarkerAdjust.Scrap)
+
+                    Dim carrierInfo = c_ServiceiLibrary.GetCarrierInfo(My.Settings.MachineNo, lbLotNo.Text, lbinspectorID.Text)
+                    Dim endLotSpecial As EndLotSpecialParametersEventArgs = New EndLotSpecialParametersEventArgs
+                    endLotSpecial.FrameFail = frameScrap
+                    endLotSpecial.FramePass = lotInfo.FramePass - frameScrap
+                    endLotSpecial.Front_Ng = insFrontNg
+                    endLotSpecial.MarkerNg = inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap
+                    'endLotSpecial.Front_Ng = 0
+                    'endLotSpecial.PNashi = 0
+                    'endLotSpecial.MarkerNg = 0
+                    Dim result As EndLotResult = c_ServiceiLibrary.EndLotPhase2(lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, inspNg, Licenser.NoCheck, carrierInfo, endLotSpecial)
+                    If Not result.IsPass AndAlso result.Type = MessageType.Apcs Then
+                        MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString)
+                        Exit Sub
+                    End If
+                    c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Idle)
+                Catch ex As Exception
+                    MessageBoxDialog.ShowMessage("EndLot", ex.Message.ToString, "iLibrary Service")
+                End Try
+
                 '  lbEndTime.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
                 DR = DBWB_InsTbl.Rows(0)
                 DR.TotalQty = lbTotal.Text
@@ -1199,6 +1337,7 @@ EndLoop:
                         If Not row.Is_10MNull Then Detail._10M = row._10M
                         If Not row.Is_11MNull Then Detail._11M = row._11M
                         If Not row.Is_12MNull Then Detail._12M = row._12M
+                        If Not row.IsScrapNull Then Detail.Scrap = row.Scrap
                         Detail.InspectionItem = row.INSPECTION_ITEM
                         Detail.ModeNo = row.ModeNo
                         'Detail.InsEndTime = DateTime.Parse(lbEndTime.Text)

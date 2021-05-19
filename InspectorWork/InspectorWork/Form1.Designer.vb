@@ -876,6 +876,7 @@ Partial Class Form1
         Me.btnWB.TabIndex = 5
         Me.btnWB.Text = "WB"
         Me.btnWB.UseVisualStyleBackColor = True
+        Me.btnWB.Visible = False
         '
         'btnDB
         '
@@ -885,6 +886,7 @@ Partial Class Form1
         Me.btnDB.TabIndex = 5
         Me.btnDB.Text = "DB"
         Me.btnDB.UseVisualStyleBackColor = True
+        Me.btnDB.Visible = False
         '
         'btnKeyBoard
         '
@@ -903,6 +905,7 @@ Partial Class Form1
         Me.btnAddAll.TabIndex = 4
         Me.btnAddAll.Text = "Add All"
         Me.btnAddAll.UseVisualStyleBackColor = True
+        Me.btnAddAll.Visible = False
         '
         'btnAddItem
         '
@@ -916,7 +919,7 @@ Partial Class Form1
         'cbxItem
         '
         Me.cbxItem.FormattingEnabled = True
-        Me.cbxItem.Items.AddRange(New Object() {"Ball Hazure", "1st Open", "2nd Open", "2nd Cut", "AU-CUT", "WB NASHI", "MISSING DIE", "OP SHORI", "INSPECTOR SHORI", "Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure"})
+        Me.cbxItem.Items.AddRange(New Object() {"1st Open", "2nd Open", "2nd Cut", "INSPECTOR SHORI", "B-ZURE", "BALL OFF CENTER", "SMASHED BALL", "WIRE TOUCH", "WIRE CURL", "NECK CUT", "2ND ZURE", "ALUMINUM SPREAD", "V-TSUKI", "BALL THICKNESS", "B-HAZURE", "2ND DAGON", "SECURITY BONDING/2ND BONDING", "WIRE SCAR", "LOOP NG", "LOOP HEIGHT", "WIRE TARE", "Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure", "DIE TWIST", "DIE MISALIGNMENT", "SCRATCH", "PREFROM/SOLDER ON CHIP", "PREFROM/SOLDER ON LEAD", "IBUTSU ON CHIP", "IBUTSU ON LEAD", "FRAME BENT", "INNER LEAD BENT", "ZINK BENT", "ISLAND FLOAT", "BAD MAKE", "PAD HAGARE", "DIE DROP OFF"})
         Me.cbxItem.Location = New System.Drawing.Point(12, 76)
         Me.cbxItem.Name = "cbxItem"
         Me.cbxItem.Size = New System.Drawing.Size(183, 24)
@@ -1566,11 +1569,12 @@ Partial Class Form1
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.btnSave.Location = New System.Drawing.Point(13, 807)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(226, 35)
         Me.btnSave.TabIndex = 13
-        Me.btnSave.Text = "Save Record (End Inspection)"
+        Me.btnSave.Text = "Confirm Lot"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'Label23

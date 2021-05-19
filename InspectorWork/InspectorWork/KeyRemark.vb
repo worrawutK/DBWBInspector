@@ -1,13 +1,24 @@
 ﻿Public Class KeyRemark
-    Public TargetTextBox As TextBox
+    Public Shared TargetTextBox As TextBox
 
-    Public Key As String
-
+    Public Shared Key As String
+    Public Shared Sub ShowkeyBoard(txtBox As TextBox)
+        Dim frm As KeyRemark = New KeyRemark
+        frm.Show()
+        Key = Form1.StatusKey.Remark
+        TargetTextBox = txtBox
+    End Sub
+    Public Shared c_TextBox As TextBox
+    Public Shared newKeyboard As Boolean
     Private Sub ClickButtoN_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Bt0.Click, Bt1.Click, Bt2.Click, Bt3.Click _
                                  , Bt4.Click, Bt5.Click, Bt6.Click, Bt7.Click, Bt8.Click, Bt9.Click, BtA.Click, BtB.Click, BtC.Click _
                                  , BtD.Click, BtE.Click, BtF.Click, BtG.Click, BtH.Click, BtI.Click, BtJ.Click, BtK.Click, BtL.Click _
                                  , BtM.Click, BtN.Click, BtO.Click, BtP.Click, BtQ.Click, BtR.Click, BtS.Click, Btt.Click, BtU.Click _
                                  , BtV.Click, BtW.Click, BtX.Click, BtY.Click, BtZ.Click, BtBS.Click, BtMinus.Click, BtClear.Click, BtPlus.Click, BtLeft.Click, BtRight.Click
+        'If c_TextBox IsNot Nothing Then
+        '    c_TextBox.Text += sender.text
+        '    Exit Sub
+        'End If
         If Key = Form1.StatusKey.Remark Then
             TargetTextBox.Focus()
             Dim bt As Button = CType(sender, Button)

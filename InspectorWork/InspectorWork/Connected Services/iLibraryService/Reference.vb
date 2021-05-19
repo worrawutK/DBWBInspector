@@ -2252,10 +2252,28 @@ Namespace iLibraryService
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CutFrameField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FrameFailField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FramePassField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Front_NgField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private IsOfflineField As Boolean
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MarkerNgField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private McNoOvenApcsField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PNashiField As System.Nullable(Of Integer)
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -2264,6 +2282,58 @@ Namespace iLibraryService
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CutFrame() As System.Nullable(Of Integer)
+            Get
+                Return Me.CutFrameField
+            End Get
+            Set
+                If (Me.CutFrameField.Equals(value) <> true) Then
+                    Me.CutFrameField = value
+                    Me.RaisePropertyChanged("CutFrame")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FrameFail() As System.Nullable(Of Integer)
+            Get
+                Return Me.FrameFailField
+            End Get
+            Set
+                If (Me.FrameFailField.Equals(value) <> true) Then
+                    Me.FrameFailField = value
+                    Me.RaisePropertyChanged("FrameFail")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FramePass() As System.Nullable(Of Integer)
+            Get
+                Return Me.FramePassField
+            End Get
+            Set
+                If (Me.FramePassField.Equals(value) <> true) Then
+                    Me.FramePassField = value
+                    Me.RaisePropertyChanged("FramePass")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Front_Ng() As System.Nullable(Of Integer)
+            Get
+                Return Me.Front_NgField
+            End Get
+            Set
+                If (Me.Front_NgField.Equals(value) <> true) Then
+                    Me.Front_NgField = value
+                    Me.RaisePropertyChanged("Front_Ng")
+                End If
             End Set
         End Property
         
@@ -2281,6 +2351,19 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property MarkerNg() As System.Nullable(Of Integer)
+            Get
+                Return Me.MarkerNgField
+            End Get
+            Set
+                If (Me.MarkerNgField.Equals(value) <> true) Then
+                    Me.MarkerNgField = value
+                    Me.RaisePropertyChanged("MarkerNg")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property McNoOvenApcs() As String
             Get
                 Return Me.McNoOvenApcsField
@@ -2289,6 +2372,19 @@ Namespace iLibraryService
                 If (Object.ReferenceEquals(Me.McNoOvenApcsField, value) <> true) Then
                     Me.McNoOvenApcsField = value
                     Me.RaisePropertyChanged("McNoOvenApcs")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PNashi() As System.Nullable(Of Integer)
+            Get
+                Return Me.PNashiField
+            End Get
+            Set
+                If (Me.PNashiField.Equals(value) <> true) Then
+                    Me.PNashiField = value
+                    Me.RaisePropertyChanged("PNashi")
                 End If
             End Set
         End Property
