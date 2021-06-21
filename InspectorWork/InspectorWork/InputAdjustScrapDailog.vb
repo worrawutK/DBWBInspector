@@ -26,7 +26,7 @@
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         '  Dim dataTable As DataTable = New DataTable
         'Inspection_DetailBindingSource = bindingData
-
+        ComboBoxMultiplier.SelectedIndex = 0
         dgvInspDetail.DataSource = c_InspectionDetall
         'Dim old As Long
         'If Environment.Is64BitOperatingSystem Then
@@ -92,18 +92,20 @@
                 If IsDBNull(c_InspectionDetall.Rows(e.RowIndex).Item("Scrap")) Then
                     c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") = 0
                 End If
-                If c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") < c_InspectionDetall.Rows(e.RowIndex).Item("TL") Then
-                    c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") += 1
+                If (c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") + (1 * CInt(ComboBoxMultiplier.Text))) <= c_InspectionDetall.Rows(e.RowIndex).Item("TL") Then
+                    c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") += 1 * CInt(ComboBoxMultiplier.Text)
+                Else
+                    c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") = c_InspectionDetall.Rows(e.RowIndex).Item("TL")
                 End If
 
                 'Dim data = senderGrid.Columns(e.ColumnIndex)
                 'TODO - Button Clicked - Execute Code Here
             ElseIf (e.ColumnIndex = 1) Then 'negative
-                    If IsDBNull(c_InspectionDetall.Rows(e.RowIndex).Item("Scrap")) OrElse c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") <= 0 Then
+                If IsDBNull(c_InspectionDetall.Rows(e.RowIndex).Item("Scrap")) OrElse c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") - (1 * CInt(ComboBoxMultiplier.Text)) <= 0 Then
                     c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") = 0
                     Exit Sub
                 End If
-                c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") -= 1
+                c_InspectionDetall.Rows(e.RowIndex).Item("Scrap") -= 1 * CInt(ComboBoxMultiplier.Text)
             End If
         End If
 

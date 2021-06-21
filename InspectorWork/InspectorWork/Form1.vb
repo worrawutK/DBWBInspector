@@ -52,8 +52,14 @@ Public Class Form1
     Structure InspectionList
         Dim ModeName As String
         Dim ModdeNo As String
+        Dim Process As InspNgType
     End Structure
-
+    Public Enum InspNgType
+        DB
+        WB
+        MARKER
+        INSP
+    End Enum
     Private Sub Form1_Load(sender As Object, e As System.EventArgs) Handles Me.Load
 
         Try
@@ -127,13 +133,43 @@ Public Class Form1
 
         'Link Mode No data Inspect
         'Dim ModeNoLinkCbitem() As String = {"WB10", "WB1", "WB2", "WB3", "WB27", "WB27", "WB27", "WB27", "WB27", "DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14"}
-        Dim ModeNoLinkCbitem() As String = {"WB1", "WB2", "WB3", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22"}
-        For i = 0 To cbxItem.Items.Count - 1
+        ' Dim ModeNoLinkCbitem() As String = {"WB1", "WB2", "WB3", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "WB27", "WB27", "WB27", "WB27", "WB27"}
+        '21 item
+        '"Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure", "DIE TWIST", "DIE MISALIGNMENT", "SCRATCH", "PREFROM/SOLDER ON CHIP", "PREFROM/SOLDER ON LEAD", "IBUTSU ON CHIP", "IBUTSU ON LEAD", "FRAME BENT", "INNER LEAD BENT", "ZINK BENT", "ISLAND FLOAT", "BAD MAKE", "PAD HAGARE", "DIE DROP OFF", "AU-CUT [WB NG]", "B-HAZURE [WB NG]", "2ND OPEN ALARM [WB NG]", "WB NASHI [WB NG]", "1ST OPEN ALARM [WB NG]", "V-TSUKI ALARM [WB NG]", "1ST OPEN NO ALARM", "2ND OPEN NO ALARM", "B-HAZURE NO ALARM", "NECK CUT", "2ND CUT", "2ND DAKON", "2ND TOOL MARK", "B-ZURE", "2ND ZURE", "WIRE CURL", "WIRE TARE", "WIRE TAORE", "V-TZUKI", "SMASHED BALL", "BALL OFF CENTER", "LOOP LOW", "LOOP HEIGHT", "2ND BUMP NG", "B-TSUBURE", "BENT DOWN WIRE", "WIRE TOUCH CHIP", "CAP TOUCH WIRE", "CLOSESING WIRE", "ISLAND FLOAT", "CHIP KAKE", "LEAD CHANGE COLOUR", "DOUBLE WIRE", "SMALL BALL", "BIG BALL", "ALUMINUM SPREAD", "WIRE SLIP", "WITHOUT CUT MARK", "CUT POSITION MISS", "WIRE CUT", "LANDING SHAPE", "TOOL TOUCH MARK", "STOMPED WIRE", "PARTICLE", "BENT LEAD"})
+        Dim ModeNoLinkCbitem() As String = {"DB1", "DB2", "DB3", "DB11", "DB12", "DB13", "DB14", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22", "DB22",
+            "WB1", "WB2", "WB27", "WB27", "WB3", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "WB27", "DB22", "DWB"}
+        Dim ItemList() As String = {"Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure", "DIE TWIST", "DIE MISALIGNMENT", "SCRATCH", "PREFROM/SOLDER ON CHIP", "PREFROM/SOLDER ON LEAD", "IBUTSU ON CHIP", "IBUTSU ON LEAD", "FRAME BENT", "INNER LEAD BENT", "ZINK BENT", "ISLAND FLOAT", "BAD MAKE", "PAD HAGARE", "DIE DROP OFF",
+            "1ST OPEN NO ALARM", "2ND OPEN NO ALARM", "B-HAZURE NO ALARM", "NECK CUT", "2ND CUT", "2ND DAKON", "2ND TOOL MARK", "B-ZURE", "2ND ZURE", "WIRE CURL", "WIRE TARE", "WIRE TAORE", "V-TZUKI", "SMASHED BALL", "BALL OFF CENTER", "LOOP LOW", "LOOP HEIGHT", "2ND BUMP NG", "B-TSUBURE", "BENT DOWN WIRE", "WIRE TOUCH CHIP", "CAP TOUCH WIRE", "CLOSESING WIRE", "ISLAND FLOAT", "CHIP KAKE", "LEAD CHANGE COLOUR", "DOUBLE WIRE", "SMALL BALL", "BIG BALL", "ALUMINUM SPREAD", "WIRE SLIP", "WITHOUT CUT MARK", "CUT POSITION MISS", "WIRE CUT", "LANDING SHAPE", "TOOL TOUCH MARK", "STOMPED WIRE", "PARTICLE", "BENT LEAD",
+            "AU-CUT [WB NG]", "B-HAZURE [WB NG]", "2ND OPEN ALARM [WB NG]", "WB NASHI [WB NG]", "1ST OPEN ALARM [WB NG]", "V-TSUKI ALARM [WB NG]", "OP SHORI [WB NG]", "ISLAND FLOAT [WB NG]", "ISLAND FLOAT [WB NG]", "LEAD COLOUR CHANGE [WB NG]", "INNER LEAD BENT [WB NG]", "PAD COLOUR CHANGE [WB NG]", "KAKE [WB NG]", "CRACK [WB NG]", "DIE TWIS [WB NG]T", "DIE MISALIGNMENT [WB NG]", "PREFROM OVER [WB NG]", "P/F ON LEAD [WB NG]", "PASTE BRIDGE [WB NG]", "CHIP OFF [WB NG]", "P/F ON CHIP [WB NG]", "DIE DROP OFF [WB NG]", "BAD MARK [WB NG]", "DOUBLE CHIP [WB NG]", "CHIP OUT [WB NG]", "IBUTSU ON CHIP/LEAD [WB NG]", "HOLIZONTAL CRACK [WB NG]", "DB NG"}
+        '"1st Open", "2nd Open", "2nd Cut", "INSPECTOR SHORI", "B-ZURE", "BALL OFF CENTER", "SMASHED BALL", "WIRE TOUCH", "WIRE CURL", "NECK CUT", "2ND ZURE", "ALUMINUM SPREAD", "V-TSUKI", "BALL THICKNESS", "B-HAZURE", "2ND DAGON", "SECURITY BONDING/2ND BONDING", "WIRE SCAR", "LOOP NG", "LOOP HEIGHT", "WIRE TARE", "Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure", "DIE TWIST", "DIE MISALIGNMENT", "SCRATCH", "PREFROM/SOLDER ON CHIP", "PREFROM/SOLDER ON LEAD", "IBUTSU ON CHIP", "IBUTSU ON LEAD", "FRAME BENT", "INNER LEAD BENT", "ZINK BENT", "ISLAND FLOAT", "BAD MAKE", "PAD HAGARE", "DIE DROP OFF", "AU-CUT [WB NG]", "B-HAZURE [WB NG]", "2ND OPEN ALARM [WB NG]", "WB NASHI [WB NG]", "1ST OPEN ALARM [WB NG]", "V-TSUKI ALARM [WB NG]", "1ST OPEN NO ALARM", "2ND OPEN NO ALARM", "B-HAZURE NO ALARM", "NECK CUT", "2ND CUT", "2ND DAKON", "2ND TOOL MARK", "B-ZURE", "2ND ZURE", "WIRE CURL", "WIRE TARE", "WIRE TAORE", "V-TZUKI", "SMASHED BALL", "BALL OFF CENTER", "LOOP LOW", "LOOP HEIGHT", "2ND BUMP NG", "B-TSUBURE", "BENT DOWN WIRE", "WIRE TOUCH CHIP", "CAP TOUCH WIRE", "CLOSESING WIRE", "ISLAND FLOAT", "CHIP KAKE", "LEAD CHANGE COLOUR", "DOUBLE WIRE", "SMALL BALL", "BIG BALL", "ALUMINUM SPREAD", "WIRE SLIP", "WITHOUT CUT MARK", "CUT POSITION MISS", "WIRE CUT", "LANDING SHAPE", "TOOL TOUCH MARK", "STOMPED WIRE", "PARTICLE", "BENT LEAD"})
+        cbxItem.Items.Clear()
+        For i = 0 To ItemList.Count - 1
             Dim List As New InspectionList
-            List.ModeName = cbxItem.Items(i)
+            List.ModeName = ItemList(i)
+            cbxItem.Items.Add(ItemList(i))
             List.ModdeNo = ModeNoLinkCbitem(i)
+            Dim ngModeName As InspNgType
+
+            If i <= 20 Then 'DB INSP NG
+                ngModeName = InspNgType.INSP
+            ElseIf i > 20 AndAlso i <= 59 Then 'WB NG
+                ngModeName = InspNgType.INSP
+            ElseIf i > 59 AndAlso i <= 86 Then 'WB INSP NG
+                ngModeName = InspNgType.WB
+            ElseIf i = 87 Then
+                ngModeName = InspNgType.DB
+            Else
+                ngModeName = InspNgType.INSP
+            End If
+            List.Process = ngModeName
             ModeListCbItem.Add(List)
         Next
+        'For i = 0 To cbxItem.Items.Count - 1
+        '    Dim List As New InspectionList
+        '    List.ModeName = cbxItem.Items(i)
+        '    List.ModdeNo = ModeNoLinkCbitem(i)
+        '    ModeListCbItem.Add(List)
+        'Next
 
         SetDefultItem(ProcessName.WB)
         'TabControl1.TabPages.Remove(TabPage2) '**********
@@ -656,14 +692,14 @@ BypassAuter:
 
 
         If process = ProcessName.WB Then
-            Dim itemWBNg As String = "WB NG"
-            If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemWBNg).Any Then
-                Dim nRow3 As DBxDataSet.Inspection_DetailRow
-                nRow3 = DBxDataSet.Inspection_Detail.NewInspection_DetailRow
-                nRow3.INSPECTION_ITEM = itemWBNg
-                nRow3.ModeNo = "WB27"
-                DBxDataSet.Inspection_Detail.Rows.Add(nRow3)
-            End If
+            'Dim itemWBNg As String = "WB NG"
+            'If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemWBNg).Any Then
+            '    Dim nRow3 As DBxDataSet.Inspection_DetailRow
+            '    nRow3 = DBxDataSet.Inspection_Detail.NewInspection_DetailRow
+            '    nRow3.INSPECTION_ITEM = itemWBNg
+            '    nRow3.ModeNo = "WB27"
+            '    DBxDataSet.Inspection_Detail.Rows.Add(nRow3)
+            'End If
             Dim itemMakerNg As String = "Marker NG"
             If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemMakerNg).Any Then
                 Dim nRow2 As DBxDataSet.Inspection_DetailRow
@@ -1151,15 +1187,34 @@ EndLoop:
             '    Case Else
             '        NgList("Inspection NG") = NgList("Inspection NG") + lotdata.TL - lotdata.Scrap
             'End Select
-            If inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).Any Then
-                Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).First
-                data.TotalNg = lotdata.TL
-                data.Scrap = lotdata.Scrap
+            Dim itemName As String
+            If lotdata.INSPECTION_ITEM = "DB NG" Then
+                itemName = "DB NG"
+            ElseIf lotdata.INSPECTION_ITEM = "Marker NG" Then
+                itemName = "Marker NG"
+            ElseIf lotdata.INSPECTION_ITEM.Contains("[WB NG]") Then
+                itemName = "WB NG"
             Else
-                Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
-                data.TotalNg += lotdata.TL
-                data.Scrap += lotdata.Scrap
+                itemName = "Inspection NG"
             End If
+            Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = itemName).First
+            data.TotalNg = lotdata.TL
+            data.Scrap = lotdata.Scrap
+
+
+            'If inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).Any Then
+            '    Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).First
+            '    data.TotalNg = lotdata.TL
+            '    data.Scrap = lotdata.Scrap
+            'ElseIf inspNgAdjustlist.Where(Function(x) x.InspectionItem = "WB NG").Any Then
+            '    Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "WB NG").First
+            '    data.TotalNg = lotdata.TL
+            '    data.Scrap = lotdata.Scrap
+            'Else
+            '    Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
+            '    data.TotalNg += lotdata.TL
+            '    data.Scrap += lotdata.Scrap
+            'End If
         Next
 
         SaveCatchLog("", "btnSave_Click()")
@@ -1227,18 +1282,21 @@ EndLoop:
                     Dim inspDbAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "DB NG").First
                     Dim inspWbAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "WB NG").First
                     Dim inspMarkerAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Marker NG").First
-                    Dim insFrontNg As Integer = (inspDbAdjust.TotalNg - inspDbAdjust.Scrap) + (inspWbAdjust.TotalNg - inspWbAdjust.Scrap) + (inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap)
+                    'Dim insFrontNg As Integer = (inspDbAdjust.TotalNg - inspDbAdjust.Scrap) + (inspWbAdjust.TotalNg - inspWbAdjust.Scrap) + (inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap)
 
                     Dim piecePerFrame As Double = lotInfo.GoPiece / lotInfo.FramePass
                     Dim inspAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
                     Dim inspNg As Integer = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap - inspDbAdjust.Scrap - inspWbAdjust.Scrap - inspMarkerAdjust.Scrap)
+                    Dim insFrontNg As Integer = inspAdjust.TotalNg - inspAdjust.Scrap
+                    Dim fronNgScrap As Integer = inspDbAdjust.Scrap + inspWbAdjust.Scrap + inspMarkerAdjust.Scrap
 
                     Dim carrierInfo = c_ServiceiLibrary.GetCarrierInfo(My.Settings.MachineNo, lbLotNo.Text, lbinspectorID.Text)
                     Dim endLotSpecial As EndLotSpecialParametersEventArgs = New EndLotSpecialParametersEventArgs
                     endLotSpecial.FrameFail = frameScrap
                     endLotSpecial.FramePass = lotInfo.FramePass - frameScrap
                     endLotSpecial.Front_Ng = insFrontNg
-                    endLotSpecial.MarkerNg = inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap
+                    endLotSpecial.Front_Ng_Scrap = fronNgScrap
+                    'endLotSpecial.MarkerNg = inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap
                     'endLotSpecial.Front_Ng = 0
                     'endLotSpecial.PNashi = 0
                     'endLotSpecial.MarkerNg = 0

@@ -32,12 +32,21 @@
             If (lotdata.IsTLNull) Then
                 lotdata.TL = 0
             End If
-            Select Case lotdata.INSPECTION_ITEM.ToUpper
-                Case "DB NG".ToUpper, "WB NG".ToUpper, "Marker NG".ToUpper
-                    NgList(lotdata.INSPECTION_ITEM) = lotdata.TL
-                Case Else
-                    NgList("Inspection NG") = NgList("Inspection NG") + lotdata.TL
-            End Select
+            If lotdata.INSPECTION_ITEM.ToUpper = "DB NG".ToUpper OrElse lotdata.INSPECTION_ITEM.ToUpper = "Marker NG".ToUpper Then
+                NgList(lotdata.INSPECTION_ITEM) = lotdata.TL
+            ElseIf lotdata.INSPECTION_ITEM.ToUpper.Contains("[WB NG]") Then
+                NgList("WB NG") = NgList("WB NG") + lotdata.TL
+            Else
+                NgList("Inspection NG") = NgList("Inspection NG") + lotdata.TL
+            End If
+            'Select Case lotdata.INSPECTION_ITEM.ToUpper
+            '    Case "DB NG".ToUpper, "WB NG".ToUpper, "Marker NG".ToUpper
+            '        NgList(lotdata.INSPECTION_ITEM) = lotdata.TL
+            '    Case lotdata.INSPECTION_ITEM.ToUpper.Contains("[WB NG]")
+            '        NgList("WB NG") = NgList("Inspection NG") + lotdata.TL
+            '    Case Else
+            '        NgList("Inspection NG") = NgList("Inspection NG") + lotdata.TL
+            'End Select
 
         Next
         For Each ngData In NgList

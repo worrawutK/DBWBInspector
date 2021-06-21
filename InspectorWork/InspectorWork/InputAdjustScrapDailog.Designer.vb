@@ -22,11 +22,11 @@ Partial Class InputAdjustScrapDailog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelDetail = New System.Windows.Forms.Panel()
         Me.dgvInspDetail = New System.Windows.Forms.DataGridView()
@@ -56,6 +56,8 @@ Partial Class InputAdjustScrapDailog
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxFrameScrap = New System.Windows.Forms.TextBox()
+        Me.ComboBoxMultiplier = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.PanelDetail.SuspendLayout()
         CType(Me.dgvInspDetail, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,14 +92,14 @@ Partial Class InputAdjustScrapDailog
         Me.dgvInspDetail.AllowUserToResizeColumns = False
         Me.dgvInspDetail.AllowUserToResizeRows = False
         Me.dgvInspDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvInspDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvInspDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvInspDetail.ColumnHeadersHeight = 50
         Me.dgvInspDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvInspDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InspectionItem, Me.Scrap, Me.LotNo, Me.ModeNo, Me.M1, Me.M2, Me.M3, Me.M4, Me.M5, Me.M6, Me.M7, Me.M8, Me.M9, Me.M10, Me.M11, Me.M12, Me.TL, Me.AddScrap, Me.RemoveScrap})
@@ -106,18 +108,18 @@ Partial Class InputAdjustScrapDailog
         Me.dgvInspDetail.Name = "dgvInspDetail"
         Me.dgvInspDetail.ReadOnly = True
         Me.dgvInspDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvInspDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvInspDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dgvInspDetail.RowHeadersVisible = False
         Me.dgvInspDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.dgvInspDetail.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.dgvInspDetail.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvInspDetail.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.dgvInspDetail.RowTemplate.Height = 28
         Me.dgvInspDetail.Size = New System.Drawing.Size(600, 509)
@@ -260,9 +262,9 @@ Partial Class InputAdjustScrapDailog
         '
         'AddScrap
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.NullValue = "+"
-        Me.AddScrap.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.NullValue = "+"
+        Me.AddScrap.DefaultCellStyle = DataGridViewCellStyle12
         Me.AddScrap.HeaderText = "AddScrap"
         Me.AddScrap.Name = "AddScrap"
         Me.AddScrap.ReadOnly = True
@@ -272,9 +274,9 @@ Partial Class InputAdjustScrapDailog
         '
         'RemoveScrap
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.NullValue = "-"
-        Me.RemoveScrap.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.NullValue = "-"
+        Me.RemoveScrap.DefaultCellStyle = DataGridViewCellStyle13
         Me.RemoveScrap.HeaderText = "RemoveScrap"
         Me.RemoveScrap.Name = "RemoveScrap"
         Me.RemoveScrap.ReadOnly = True
@@ -314,6 +316,8 @@ Partial Class InputAdjustScrapDailog
         '
         'PanelHeader
         '
+        Me.PanelHeader.Controls.Add(Me.ComboBoxMultiplier)
+        Me.PanelHeader.Controls.Add(Me.Label3)
         Me.PanelHeader.Controls.Add(Me.Label2)
         Me.PanelHeader.Controls.Add(Me.Label1)
         Me.PanelHeader.Controls.Add(Me.TextBoxFrameScrap)
@@ -350,6 +354,27 @@ Partial Class InputAdjustScrapDailog
         Me.TextBoxFrameScrap.Name = "TextBoxFrameScrap"
         Me.TextBoxFrameScrap.Size = New System.Drawing.Size(165, 38)
         Me.TextBoxFrameScrap.TabIndex = 0
+        '
+        'ComboBoxMultiplier
+        '
+        Me.ComboBoxMultiplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxMultiplier.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBoxMultiplier.FormattingEnabled = True
+        Me.ComboBoxMultiplier.Items.AddRange(New Object() {"1", "10", "100", "1000"})
+        Me.ComboBoxMultiplier.Location = New System.Drawing.Point(524, 20)
+        Me.ComboBoxMultiplier.Name = "ComboBoxMultiplier"
+        Me.ComboBoxMultiplier.Size = New System.Drawing.Size(64, 41)
+        Me.ComboBoxMultiplier.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(494, 23)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(27, 31)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "x"
         '
         'InputAdjustScrapDailog
         '
@@ -399,4 +424,6 @@ Partial Class InputAdjustScrapDailog
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxFrameScrap As TextBox
+    Friend WithEvents ComboBoxMultiplier As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

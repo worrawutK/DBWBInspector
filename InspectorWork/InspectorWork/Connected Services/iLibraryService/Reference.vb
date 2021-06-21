@@ -2264,16 +2264,25 @@ Namespace iLibraryService
         Private Front_NgField As System.Nullable(Of Integer)
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Front_Ng_ScrapField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private IsOfflineField As Boolean
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private MarkerNgField As System.Nullable(Of Integer)
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MarkerNg_ScrapField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private McNoOvenApcsField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PNashiField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PNashi_ScrapField As System.Nullable(Of Integer)
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -2338,6 +2347,19 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Front_Ng_Scrap() As System.Nullable(Of Integer)
+            Get
+                Return Me.Front_Ng_ScrapField
+            End Get
+            Set
+                If (Me.Front_Ng_ScrapField.Equals(value) <> true) Then
+                    Me.Front_Ng_ScrapField = value
+                    Me.RaisePropertyChanged("Front_Ng_Scrap")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property IsOffline() As Boolean
             Get
                 Return Me.IsOfflineField
@@ -2364,6 +2386,19 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property MarkerNg_Scrap() As System.Nullable(Of Integer)
+            Get
+                Return Me.MarkerNg_ScrapField
+            End Get
+            Set
+                If (Me.MarkerNg_ScrapField.Equals(value) <> true) Then
+                    Me.MarkerNg_ScrapField = value
+                    Me.RaisePropertyChanged("MarkerNg_Scrap")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property McNoOvenApcs() As String
             Get
                 Return Me.McNoOvenApcsField
@@ -2385,6 +2420,19 @@ Namespace iLibraryService
                 If (Me.PNashiField.Equals(value) <> true) Then
                     Me.PNashiField = value
                     Me.RaisePropertyChanged("PNashi")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PNashi_Scrap() As System.Nullable(Of Integer)
+            Get
+                Return Me.PNashi_ScrapField
+            End Get
+            Set
+                If (Me.PNashi_ScrapField.Equals(value) <> true) Then
+                    Me.PNashi_ScrapField = value
+                    Me.RaisePropertyChanged("PNashi_Scrap")
                 End If
             End Set
         End Property

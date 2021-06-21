@@ -876,7 +876,6 @@ Partial Class Form1
         Me.btnWB.TabIndex = 5
         Me.btnWB.Text = "WB"
         Me.btnWB.UseVisualStyleBackColor = True
-        Me.btnWB.Visible = False
         '
         'btnDB
         '
@@ -919,7 +918,7 @@ Partial Class Form1
         'cbxItem
         '
         Me.cbxItem.FormattingEnabled = True
-        Me.cbxItem.Items.AddRange(New Object() {"1st Open", "2nd Open", "2nd Cut", "INSPECTOR SHORI", "B-ZURE", "BALL OFF CENTER", "SMASHED BALL", "WIRE TOUCH", "WIRE CURL", "NECK CUT", "2ND ZURE", "ALUMINUM SPREAD", "V-TSUKI", "BALL THICKNESS", "B-HAZURE", "2ND DAGON", "SECURITY BONDING/2ND BONDING", "WIRE SCAR", "LOOP NG", "LOOP HEIGHT", "WIRE TARE", "Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure", "DIE TWIST", "DIE MISALIGNMENT", "SCRATCH", "PREFROM/SOLDER ON CHIP", "PREFROM/SOLDER ON LEAD", "IBUTSU ON CHIP", "IBUTSU ON LEAD", "FRAME BENT", "INNER LEAD BENT", "ZINK BENT", "ISLAND FLOAT", "BAD MAKE", "PAD HAGARE", "DIE DROP OFF"})
+        Me.cbxItem.Items.AddRange(New Object() {"1st Open", "2nd Open", "2nd Cut", "INSPECTOR SHORI", "B-ZURE", "BALL OFF CENTER", "SMASHED BALL", "WIRE TOUCH", "WIRE CURL", "NECK CUT", "2ND ZURE", "ALUMINUM SPREAD", "V-TSUKI", "BALL THICKNESS", "B-HAZURE", "2ND DAGON", "SECURITY BONDING/2ND BONDING", "WIRE SCAR", "LOOP NG", "LOOP HEIGHT", "WIRE TARE", "Chip Kake (Chipping)", "Chip Crack", "Aluminium Scratch", "Preform Over Flow", "Preform Thickness", "Preform Spread", "Preform Zure", "DIE TWIST", "DIE MISALIGNMENT", "SCRATCH", "PREFROM/SOLDER ON CHIP", "PREFROM/SOLDER ON LEAD", "IBUTSU ON CHIP", "IBUTSU ON LEAD", "FRAME BENT", "INNER LEAD BENT", "ZINK BENT", "ISLAND FLOAT", "BAD MAKE", "PAD HAGARE", "DIE DROP OFF", "AU-CUT [WB NG]", "B-HAZURE [WB NG]", "2ND OPEN ALARM [WB NG]", "WB NASHI [WB NG]", "1ST OPEN ALARM [WB NG]", "V-TSUKI ALARM [WB NG]", "1ST OPEN NO ALARM", "2ND OPEN NO ALARM", "B-HAZURE NO ALARM", "NECK CUT", "2ND CUT", "2ND DAKON", "2ND TOOL MARK", "B-ZURE", "2ND ZURE", "WIRE CURL", "WIRE TARE", "WIRE TAORE", "V-TZUKI", "SMASHED BALL", "BALL OFF CENTER", "LOOP LOW", "LOOP HEIGHT", "2ND BUMP NG", "B-TSUBURE", "BENT DOWN WIRE", "WIRE TOUCH CHIP", "CAP TOUCH WIRE", "CLOSESING WIRE", "ISLAND FLOAT", "CHIP KAKE", "LEAD CHANGE COLOUR", "DOUBLE WIRE", "SMALL BALL", "BIG BALL", "ALUMINUM SPREAD", "WIRE SLIP", "WITHOUT CUT MARK", "CUT POSITION MISS", "WIRE CUT", "LANDING SHAPE", "TOOL TOUCH MARK", "STOMPED WIRE", "PARTICLE", "BENT LEAD"})
         Me.cbxItem.Location = New System.Drawing.Point(12, 76)
         Me.cbxItem.Name = "cbxItem"
         Me.cbxItem.Size = New System.Drawing.Size(183, 24)
