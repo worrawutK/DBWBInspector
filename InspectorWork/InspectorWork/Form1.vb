@@ -1198,8 +1198,8 @@ EndLoop:
                 itemName = "Inspection NG"
             End If
             Dim data = inspNgAdjustlist.Where(Function(x) x.InspectionItem = itemName).First
-            data.TotalNg = lotdata.TL
-            data.Scrap = lotdata.Scrap
+            data.TotalNg += lotdata.TL
+            data.Scrap += lotdata.Scrap
 
 
             'If inspNgAdjustlist.Where(Function(x) x.InspectionItem = lotdata.INSPECTION_ITEM).Any Then

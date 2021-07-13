@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("InspectorWork")>
-<Assembly: AssemblyDescription("Adjust scrap data")>
+<Assembly: AssemblyDescription("Fix bug total ng")>
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("InspectorWork")> 
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.2.6")>
-<Assembly: AssemblyFileVersion("1.0.2.6")>
+<Assembly: AssemblyVersion("1.0.2.7")>
+<Assembly: AssemblyFileVersion("1.0.2.7")>
