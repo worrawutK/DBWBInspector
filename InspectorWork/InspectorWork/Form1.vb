@@ -1275,7 +1275,7 @@ EndLoop:
                     slMessage.Text = "Lot นี้ยังไม่ได้ ทำการ บันทึก Inspection Request หรือ End Inspection แล้ว"
                     Exit Sub
                 End If
-
+                Dim inspNg As Integer
                 Try  'lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, lbNG.Text
                     Dim lotInfo = c_ServiceiLibrary.GetLotInfo(lbLotNo.Text, My.Settings.MachineNo)
 
@@ -1286,7 +1286,8 @@ EndLoop:
 
                     Dim piecePerFrame As Double = lotInfo.GoPiece / lotInfo.FramePass
                     Dim inspAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
-                    Dim inspNg As Integer = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap - inspDbAdjust.Scrap - inspWbAdjust.Scrap - inspMarkerAdjust.Scrap)
+                    inspNg = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap - inspDbAdjust.Scrap - inspWbAdjust.Scrap - inspMarkerAdjust.Scrap)
+                    Dim inspNg_FrontNgScrap As Integer = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap)
                     Dim insFrontNg As Integer = inspAdjust.TotalNg - inspAdjust.Scrap
                     Dim fronNgScrap As Integer = inspDbAdjust.Scrap + inspWbAdjust.Scrap + inspMarkerAdjust.Scrap
 
@@ -1300,7 +1301,7 @@ EndLoop:
                     'endLotSpecial.Front_Ng = 0
                     'endLotSpecial.PNashi = 0
                     'endLotSpecial.MarkerNg = 0
-                    Dim result As EndLotResult = c_ServiceiLibrary.EndLotPhase2(lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, inspNg, Licenser.NoCheck, carrierInfo, endLotSpecial)
+                    Dim result As EndLotResult = c_ServiceiLibrary.EndLotPhase2(lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, inspNg_FrontNgScrap, Licenser.NoCheck, carrierInfo, endLotSpecial)
                     If Not result.IsPass AndAlso result.Type = MessageType.Apcs Then
                         MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString)
                         Exit Sub
@@ -1316,6 +1317,7 @@ EndLoop:
                 DR.EndTime = dateEnd
                 'DR.EndTime = lbEndTime.Text
                 DR.NGQty = dgvTotal.Item(13, 0).Value
+                DR.InspNGQty = inspNg
                 DR.FinalYield = lbFinYld.Text
                 DR.GoodQty = lbGood.Text
 

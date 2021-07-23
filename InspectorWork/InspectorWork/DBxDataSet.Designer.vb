@@ -603,6 +603,8 @@ Partial Public Class DBxDataSet
         
         Private columnResultModeName5 As Global.System.Data.DataColumn
         
+        Private columnInspNGQty As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1079,6 +1081,14 @@ Partial Public Class DBxDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property InspNGQtyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnInspNGQty
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1170,9 +1180,10 @@ Partial Public Class DBxDataSet
                     ByVal ResultModeName2 As String,  _
                     ByVal ResultModeName3 As String,  _
                     ByVal ResultModeName4 As String,  _
-                    ByVal ResultModeName5 As String) As DBWBINSDataRow
+                    ByVal ResultModeName5 As String,  _
+                    ByVal InspNGQty As Integer) As DBWBINSDataRow
             Dim rowDBWBINSDataRow As DBWBINSDataRow = CType(Me.NewRow,DBWBINSDataRow)
-            Dim columnValuesArray() As Object = New Object() {LotNo, StartTime, EndTime, ReqDate, RequestMode1, RequestMode2, RequestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, ResultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQty, NGQty, TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, NetVersion, RequestModeName1, RequestModeName2, RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ObjectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeName2, ResultModeName3, ResultModeName4, ResultModeName5}
+            Dim columnValuesArray() As Object = New Object() {LotNo, StartTime, EndTime, ReqDate, RequestMode1, RequestMode2, RequestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, ResultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQty, NGQty, TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, NetVersion, RequestModeName1, RequestModeName2, RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ObjectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeName2, ResultModeName3, ResultModeName4, ResultModeName5, InspNGQty}
             rowDBWBINSDataRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDBWBINSDataRow)
             Return rowDBWBINSDataRow
@@ -1256,6 +1267,7 @@ Partial Public Class DBxDataSet
             Me.columnResultModeName3 = MyBase.Columns("ResultModeName3")
             Me.columnResultModeName4 = MyBase.Columns("ResultModeName4")
             Me.columnResultModeName5 = MyBase.Columns("ResultModeName5")
+            Me.columnInspNGQty = MyBase.Columns("InspNGQty")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1371,6 +1383,8 @@ Partial Public Class DBxDataSet
             MyBase.Columns.Add(Me.columnResultModeName4)
             Me.columnResultModeName5 = New Global.System.Data.DataColumn("ResultModeName5", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnResultModeName5)
+            Me.columnInspNGQty = New Global.System.Data.DataColumn("InspNGQty", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnInspNGQty)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnLotNo, Me.columnReqDate}, true))
             Me.columnLotNo.AllowDBNull = false
             Me.columnLotNo.MaxLength = 10
@@ -6100,6 +6114,21 @@ Partial Public Class DBxDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property InspNGQty() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableDBWBINSData.InspNGQtyColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'InspNGQty' in table 'DBWBINSData' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDBWBINSData.InspNGQtyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsStartTimeNull() As Boolean
             Return Me.IsNull(Me.tableDBWBINSData.StartTimeColumn)
         End Function
@@ -6732,6 +6761,18 @@ Partial Public Class DBxDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetResultModeName5Null()
             Me(Me.tableDBWBINSData.ResultModeName5Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsInspNGQtyNull() As Boolean
+            Return Me.IsNull(Me.tableDBWBINSData.InspNGQtyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetInspNGQtyNull()
+            Me(Me.tableDBWBINSData.InspNGQtyColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -11030,6 +11071,7 @@ Namespace DBxDataSetTableAdapters
             tableMapping.ColumnMappings.Add("ResultModeName3", "ResultModeName3")
             tableMapping.ColumnMappings.Add("ResultModeName4", "ResultModeName4")
             tableMapping.ColumnMappings.Add("ResultModeName5", "ResultModeName5")
+            tableMapping.ColumnMappings.Add("InspNGQty", "InspNGQty")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -11102,7 +11144,8 @@ Namespace DBxDataSetTableAdapters
                 "e3] IS NULL) OR ([ResultModeName3] = @Original_ResultModeName3)) AND ((@IsNull_R"& _ 
                 "esultModeName4 = 1 AND [ResultModeName4] IS NULL) OR ([ResultModeName4] = @Origi"& _ 
                 "nal_ResultModeName4)) AND ((@IsNull_ResultModeName5 = 1 AND [ResultModeName5] IS"& _ 
-                " NULL) OR ([ResultModeName5] = @Original_ResultModeName5)))"
+                " NULL) OR ([ResultModeName5] = @Original_ResultModeName5)) AND ((@IsNull_InspNGQ"& _ 
+                "ty = 1 AND [InspNGQty] IS NULL) OR ([InspNGQty] = @Original_InspNGQty)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LotNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_StartTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -11212,6 +11255,8 @@ Namespace DBxDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ResultModeName4", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName4", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ResultModeName5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName5", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ResultModeName5", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName5", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_InspNGQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InspNGQty", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InspNGQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InspNGQty", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [INS].[DBWBINSData] ([LotNo], [StartTime], [EndTime], [ReqDate], [Req"& _ 
@@ -11224,28 +11269,28 @@ Namespace DBxDataSetTableAdapters
                 "ModeName3], [RequestModeName4], [RequestModeName5], [RequestModeRemark1], [Reque"& _ 
                 "stModeRemark2], [RequestModeRemark3], [RequestModeRemark4], [RequestModeRemark5]"& _ 
                 ", [ObjectIns], [Package], [Process], [JudgeReason], [InsName], [ResultModeName1]"& _ 
-                ", [ResultModeName2], [ResultModeName3], [ResultModeName4], [ResultModeName5]) VA"& _ 
-                "LUES (@LotNo, @StartTime, @EndTime, @ReqDate, @RequestMode1, @RequestMode2, @Req"& _ 
-                "uestMode3, @RequestMode4, @RequestMode5, @MCNo, @OPNo, @InspMagQty, @ResultMode1"& _ 
-                ", @ResultQtyMode1, @ResultMode2, @ResultQtyMode2, @ResultMode3, @ResultQtyMode3,"& _ 
-                " @ResultMode4, @ResultQtyMode4, @ResultMode5, @ResultQtyMode5, @GoodQty, @NGQty,"& _ 
-                " @TotalQty, @InspectorNo, @FinalYield, @TotalTime, @InspJudg, @LotJudg, @Remark,"& _ 
-                " @GLCheck, @ComName, @SelfConVersion, @NetVersion, @RequestModeName1, @RequestMo"& _ 
-                "deName2, @RequestModeName3, @RequestModeName4, @RequestModeName5, @RequestModeRe"& _ 
-                "mark1, @RequestModeRemark2, @RequestModeRemark3, @RequestModeRemark4, @RequestMo"& _ 
-                "deRemark5, @ObjectIns, @Package, @Process, @JudgeReason, @InsName, @ResultModeNa"& _ 
-                "me1, @ResultModeName2, @ResultModeName3, @ResultModeName4, @ResultModeName5);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
-                "ELECT LotNo, StartTime, EndTime, ReqDate, RequestMode1, RequestMode2, RequestMod"& _ 
-                "e3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, ResultQtyMo"& _ 
-                "de1, ResultMode2, ResultQtyMode2, ResultMode3, ResultQtyMode3, ResultMode4, Resu"& _ 
-                "ltQtyMode4, ResultMode5, ResultQtyMode5, GoodQty, NGQty, TotalQty, InspectorNo, "& _ 
-                "FinalYield, TotalTime, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersi"& _ 
-                "on, NetVersion, RequestModeName1, RequestModeName2, RequestModeName3, RequestMod"& _ 
-                "eName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, RequestModeRem"& _ 
-                "ark3, RequestModeRemark4, RequestModeRemark5, ObjectIns, Package, Process, Judge"& _ 
-                "Reason, InsName, ResultModeName1, ResultModeName2, ResultModeName3, ResultModeNa"& _ 
-                "me4, ResultModeName5 FROM INS.DBWBINSData WHERE (LotNo = @LotNo) AND (ReqDate = "& _ 
-                "@ReqDate) ORDER BY ReqDate DESC"
+                ", [ResultModeName2], [ResultModeName3], [ResultModeName4], [ResultModeName5], [I"& _ 
+                "nspNGQty]) VALUES (@LotNo, @StartTime, @EndTime, @ReqDate, @RequestMode1, @Reque"& _ 
+                "stMode2, @RequestMode3, @RequestMode4, @RequestMode5, @MCNo, @OPNo, @InspMagQty,"& _ 
+                " @ResultMode1, @ResultQtyMode1, @ResultMode2, @ResultQtyMode2, @ResultMode3, @Re"& _ 
+                "sultQtyMode3, @ResultMode4, @ResultQtyMode4, @ResultMode5, @ResultQtyMode5, @Goo"& _ 
+                "dQty, @NGQty, @TotalQty, @InspectorNo, @FinalYield, @TotalTime, @InspJudg, @LotJ"& _ 
+                "udg, @Remark, @GLCheck, @ComName, @SelfConVersion, @NetVersion, @RequestModeName"& _ 
+                "1, @RequestModeName2, @RequestModeName3, @RequestModeName4, @RequestModeName5, @"& _ 
+                "RequestModeRemark1, @RequestModeRemark2, @RequestModeRemark3, @RequestModeRemark"& _ 
+                "4, @RequestModeRemark5, @ObjectIns, @Package, @Process, @JudgeReason, @InsName, "& _ 
+                "@ResultModeName1, @ResultModeName2, @ResultModeName3, @ResultModeName4, @ResultM"& _ 
+                "odeName5, @InspNGQty);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT LotNo, StartTime, EndTime, ReqDate, RequestMode1,"& _ 
+                " RequestMode2, RequestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty,"& _ 
+                " ResultMode1, ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, ResultQt"& _ 
+                "yMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQty, NGQty"& _ 
+                ", TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Remark, GLChe"& _ 
+                "ck, ComName, SelfConVersion, NetVersion, RequestModeName1, RequestModeName2, Req"& _ 
+                "uestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestMo"& _ 
+                "deRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ObjectIns"& _ 
+                ", Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeName2, Resu"& _ 
+                "ltModeName3, ResultModeName4, ResultModeName5, InspNGQty FROM INS.DBWBINSData WH"& _ 
+                "ERE (LotNo = @LotNo) AND (ReqDate = @ReqDate) ORDER BY ReqDate DESC"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LotNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@StartTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -11302,6 +11347,7 @@ Namespace DBxDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ResultModeName3", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ResultModeName4", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName4", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ResultModeName5", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName5", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InspNGQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InspNGQty", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [INS].[DBWBINSData] SET [LotNo] = @LotNo, [StartTime] = @StartTime, [EndTi"& _ 
@@ -11325,87 +11371,88 @@ Namespace DBxDataSetTableAdapters
                 "kage] = @Package, [Process] = @Process, [JudgeReason] = @JudgeReason, [InsName] "& _ 
                 "= @InsName, [ResultModeName1] = @ResultModeName1, [ResultModeName2] = @ResultMod"& _ 
                 "eName2, [ResultModeName3] = @ResultModeName3, [ResultModeName4] = @ResultModeNam"& _ 
-                "e4, [ResultModeName5] = @ResultModeName5 WHERE (([LotNo] = @Original_LotNo) AND "& _ 
-                "((@IsNull_StartTime = 1 AND [StartTime] IS NULL) OR ([StartTime] = @Original_Sta"& _ 
-                "rtTime)) AND ((@IsNull_EndTime = 1 AND [EndTime] IS NULL) OR ([EndTime] = @Origi"& _ 
-                "nal_EndTime)) AND ([ReqDate] = @Original_ReqDate) AND ((@IsNull_RequestMode1 = 1"& _ 
-                " AND [RequestMode1] IS NULL) OR ([RequestMode1] = @Original_RequestMode1)) AND ("& _ 
-                "(@IsNull_RequestMode2 = 1 AND [RequestMode2] IS NULL) OR ([RequestMode2] = @Orig"& _ 
-                "inal_RequestMode2)) AND ((@IsNull_RequestMode3 = 1 AND [RequestMode3] IS NULL) O"& _ 
-                "R ([RequestMode3] = @Original_RequestMode3)) AND ((@IsNull_RequestMode4 = 1 AND "& _ 
-                "[RequestMode4] IS NULL) OR ([RequestMode4] = @Original_RequestMode4)) AND ((@IsN"& _ 
-                "ull_RequestMode5 = 1 AND [RequestMode5] IS NULL) OR ([RequestMode5] = @Original_"& _ 
-                "RequestMode5)) AND ((@IsNull_MCNo = 1 AND [MCNo] IS NULL) OR ([MCNo] = @Original"& _ 
-                "_MCNo)) AND ((@IsNull_OPNo = 1 AND [OPNo] IS NULL) OR ([OPNo] = @Original_OPNo))"& _ 
-                " AND ((@IsNull_InspMagQty = 1 AND [InspMagQty] IS NULL) OR ([InspMagQty] = @Orig"& _ 
-                "inal_InspMagQty)) AND ((@IsNull_ResultMode1 = 1 AND [ResultMode1] IS NULL) OR (["& _ 
-                "ResultMode1] = @Original_ResultMode1)) AND ((@IsNull_ResultQtyMode1 = 1 AND [Res"& _ 
-                "ultQtyMode1] IS NULL) OR ([ResultQtyMode1] = @Original_ResultQtyMode1)) AND ((@I"& _ 
-                "sNull_ResultMode2 = 1 AND [ResultMode2] IS NULL) OR ([ResultMode2] = @Original_R"& _ 
-                "esultMode2)) AND ((@IsNull_ResultQtyMode2 = 1 AND [ResultQtyMode2] IS NULL) OR ("& _ 
-                "[ResultQtyMode2] = @Original_ResultQtyMode2)) AND ((@IsNull_ResultMode3 = 1 AND "& _ 
-                "[ResultMode3] IS NULL) OR ([ResultMode3] = @Original_ResultMode3)) AND ((@IsNull"& _ 
-                "_ResultQtyMode3 = 1 AND [ResultQtyMode3] IS NULL) OR ([ResultQtyMode3] = @Origin"& _ 
-                "al_ResultQtyMode3)) AND ((@IsNull_ResultMode4 = 1 AND [ResultMode4] IS NULL) OR "& _ 
-                "([ResultMode4] = @Original_ResultMode4)) AND ((@IsNull_ResultQtyMode4 = 1 AND [R"& _ 
-                "esultQtyMode4] IS NULL) OR ([ResultQtyMode4] = @Original_ResultQtyMode4)) AND (("& _ 
-                "@IsNull_ResultMode5 = 1 AND [ResultMode5] IS NULL) OR ([ResultMode5] = @Original"& _ 
-                "_ResultMode5)) AND ((@IsNull_ResultQtyMode5 = 1 AND [ResultQtyMode5] IS NULL) OR"& _ 
-                " ([ResultQtyMode5] = @Original_ResultQtyMode5)) AND ((@IsNull_GoodQty = 1 AND [G"& _ 
-                "oodQty] IS NULL) OR ([GoodQty] = @Original_GoodQty)) AND ((@IsNull_NGQty = 1 AND"& _ 
-                " [NGQty] IS NULL) OR ([NGQty] = @Original_NGQty)) AND ((@IsNull_TotalQty = 1 AND"& _ 
-                " [TotalQty] IS NULL) OR ([TotalQty] = @Original_TotalQty)) AND ((@IsNull_Inspect"& _ 
-                "orNo = 1 AND [InspectorNo] IS NULL) OR ([InspectorNo] = @Original_InspectorNo)) "& _ 
-                "AND ((@IsNull_FinalYield = 1 AND [FinalYield] IS NULL) OR ([FinalYield] = @Origi"& _ 
-                "nal_FinalYield)) AND ((@IsNull_TotalTime = 1 AND [TotalTime] IS NULL) OR ([Total"& _ 
-                "Time] = @Original_TotalTime)) AND ((@IsNull_InspJudg = 1 AND [InspJudg] IS NULL)"& _ 
-                " OR ([InspJudg] = @Original_InspJudg)) AND ((@IsNull_LotJudg = 1 AND [LotJudg] I"& _ 
-                "S NULL) OR ([LotJudg] = @Original_LotJudg)) AND ((@IsNull_Remark = 1 AND [Remark"& _ 
-                "] IS NULL) OR ([Remark] = @Original_Remark)) AND ((@IsNull_GLCheck = 1 AND [GLCh"& _ 
-                "eck] IS NULL) OR ([GLCheck] = @Original_GLCheck)) AND ((@IsNull_ComName = 1 AND "& _ 
-                "[ComName] IS NULL) OR ([ComName] = @Original_ComName)) AND ((@IsNull_SelfConVers"& _ 
-                "ion = 1 AND [SelfConVersion] IS NULL) OR ([SelfConVersion] = @Original_SelfConVe"& _ 
-                "rsion)) AND ((@IsNull_NetVersion = 1 AND [NetVersion] IS NULL) OR ([NetVersion] "& _ 
-                "= @Original_NetVersion)) AND ((@IsNull_RequestModeName1 = 1 AND [RequestModeName"& _ 
-                "1] IS NULL) OR ([RequestModeName1] = @Original_RequestModeName1)) AND ((@IsNull_"& _ 
-                "RequestModeName2 = 1 AND [RequestModeName2] IS NULL) OR ([RequestModeName2] = @O"& _ 
-                "riginal_RequestModeName2)) AND ((@IsNull_RequestModeName3 = 1 AND [RequestModeNa"& _ 
-                "me3] IS NULL) OR ([RequestModeName3] = @Original_RequestModeName3)) AND ((@IsNul"& _ 
-                "l_RequestModeName4 = 1 AND [RequestModeName4] IS NULL) OR ([RequestModeName4] = "& _ 
-                "@Original_RequestModeName4)) AND ((@IsNull_RequestModeName5 = 1 AND [RequestMode"& _ 
-                "Name5] IS NULL) OR ([RequestModeName5] = @Original_RequestModeName5)) AND ((@IsN"& _ 
-                "ull_RequestModeRemark1 = 1 AND [RequestModeRemark1] IS NULL) OR ([RequestModeRem"& _ 
-                "ark1] = @Original_RequestModeRemark1)) AND ((@IsNull_RequestModeRemark2 = 1 AND "& _ 
-                "[RequestModeRemark2] IS NULL) OR ([RequestModeRemark2] = @Original_RequestModeRe"& _ 
-                "mark2)) AND ((@IsNull_RequestModeRemark3 = 1 AND [RequestModeRemark3] IS NULL) O"& _ 
-                "R ([RequestModeRemark3] = @Original_RequestModeRemark3)) AND ((@IsNull_RequestMo"& _ 
-                "deRemark4 = 1 AND [RequestModeRemark4] IS NULL) OR ([RequestModeRemark4] = @Orig"& _ 
-                "inal_RequestModeRemark4)) AND ((@IsNull_RequestModeRemark5 = 1 AND [RequestModeR"& _ 
-                "emark5] IS NULL) OR ([RequestModeRemark5] = @Original_RequestModeRemark5)) AND ("& _ 
-                "(@IsNull_ObjectIns = 1 AND [ObjectIns] IS NULL) OR ([ObjectIns] = @Original_Obje"& _ 
-                "ctIns)) AND ((@IsNull_Package = 1 AND [Package] IS NULL) OR ([Package] = @Origin"& _ 
-                "al_Package)) AND ((@IsNull_Process = 1 AND [Process] IS NULL) OR ([Process] = @O"& _ 
-                "riginal_Process)) AND ((@IsNull_JudgeReason = 1 AND [JudgeReason] IS NULL) OR (["& _ 
-                "JudgeReason] = @Original_JudgeReason)) AND ((@IsNull_InsName = 1 AND [InsName] I"& _ 
-                "S NULL) OR ([InsName] = @Original_InsName)) AND ((@IsNull_ResultModeName1 = 1 AN"& _ 
-                "D [ResultModeName1] IS NULL) OR ([ResultModeName1] = @Original_ResultModeName1))"& _ 
-                " AND ((@IsNull_ResultModeName2 = 1 AND [ResultModeName2] IS NULL) OR ([ResultMod"& _ 
-                "eName2] = @Original_ResultModeName2)) AND ((@IsNull_ResultModeName3 = 1 AND [Res"& _ 
-                "ultModeName3] IS NULL) OR ([ResultModeName3] = @Original_ResultModeName3)) AND ("& _ 
-                "(@IsNull_ResultModeName4 = 1 AND [ResultModeName4] IS NULL) OR ([ResultModeName4"& _ 
-                "] = @Original_ResultModeName4)) AND ((@IsNull_ResultModeName5 = 1 AND [ResultMod"& _ 
-                "eName5] IS NULL) OR ([ResultModeName5] = @Original_ResultModeName5)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT L"& _ 
-                "otNo, StartTime, EndTime, ReqDate, RequestMode1, RequestMode2, RequestMode3, Req"& _ 
-                "uestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, ResultQtyMode1, Re"& _ 
-                "sultMode2, ResultQtyMode2, ResultMode3, ResultQtyMode3, ResultMode4, ResultQtyMo"& _ 
-                "de4, ResultMode5, ResultQtyMode5, GoodQty, NGQty, TotalQty, InspectorNo, FinalYi"& _ 
-                "eld, TotalTime, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, Net"& _ 
-                "Version, RequestModeName1, RequestModeName2, RequestModeName3, RequestModeName4,"& _ 
-                " RequestModeName5, RequestModeRemark1, RequestModeRemark2, RequestModeRemark3, R"& _ 
-                "equestModeRemark4, RequestModeRemark5, ObjectIns, Package, Process, JudgeReason,"& _ 
-                " InsName, ResultModeName1, ResultModeName2, ResultModeName3, ResultModeName4, Re"& _ 
-                "sultModeName5 FROM INS.DBWBINSData WHERE (LotNo = @LotNo) AND (ReqDate = @ReqDat"& _ 
-                "e) ORDER BY ReqDate DESC"
+                "e4, [ResultModeName5] = @ResultModeName5, [InspNGQty] = @InspNGQty WHERE (([LotN"& _ 
+                "o] = @Original_LotNo) AND ((@IsNull_StartTime = 1 AND [StartTime] IS NULL) OR (["& _ 
+                "StartTime] = @Original_StartTime)) AND ((@IsNull_EndTime = 1 AND [EndTime] IS NU"& _ 
+                "LL) OR ([EndTime] = @Original_EndTime)) AND ([ReqDate] = @Original_ReqDate) AND "& _ 
+                "((@IsNull_RequestMode1 = 1 AND [RequestMode1] IS NULL) OR ([RequestMode1] = @Ori"& _ 
+                "ginal_RequestMode1)) AND ((@IsNull_RequestMode2 = 1 AND [RequestMode2] IS NULL) "& _ 
+                "OR ([RequestMode2] = @Original_RequestMode2)) AND ((@IsNull_RequestMode3 = 1 AND"& _ 
+                " [RequestMode3] IS NULL) OR ([RequestMode3] = @Original_RequestMode3)) AND ((@Is"& _ 
+                "Null_RequestMode4 = 1 AND [RequestMode4] IS NULL) OR ([RequestMode4] = @Original"& _ 
+                "_RequestMode4)) AND ((@IsNull_RequestMode5 = 1 AND [RequestMode5] IS NULL) OR (["& _ 
+                "RequestMode5] = @Original_RequestMode5)) AND ((@IsNull_MCNo = 1 AND [MCNo] IS NU"& _ 
+                "LL) OR ([MCNo] = @Original_MCNo)) AND ((@IsNull_OPNo = 1 AND [OPNo] IS NULL) OR "& _ 
+                "([OPNo] = @Original_OPNo)) AND ((@IsNull_InspMagQty = 1 AND [InspMagQty] IS NULL"& _ 
+                ") OR ([InspMagQty] = @Original_InspMagQty)) AND ((@IsNull_ResultMode1 = 1 AND [R"& _ 
+                "esultMode1] IS NULL) OR ([ResultMode1] = @Original_ResultMode1)) AND ((@IsNull_R"& _ 
+                "esultQtyMode1 = 1 AND [ResultQtyMode1] IS NULL) OR ([ResultQtyMode1] = @Original"& _ 
+                "_ResultQtyMode1)) AND ((@IsNull_ResultMode2 = 1 AND [ResultMode2] IS NULL) OR (["& _ 
+                "ResultMode2] = @Original_ResultMode2)) AND ((@IsNull_ResultQtyMode2 = 1 AND [Res"& _ 
+                "ultQtyMode2] IS NULL) OR ([ResultQtyMode2] = @Original_ResultQtyMode2)) AND ((@I"& _ 
+                "sNull_ResultMode3 = 1 AND [ResultMode3] IS NULL) OR ([ResultMode3] = @Original_R"& _ 
+                "esultMode3)) AND ((@IsNull_ResultQtyMode3 = 1 AND [ResultQtyMode3] IS NULL) OR ("& _ 
+                "[ResultQtyMode3] = @Original_ResultQtyMode3)) AND ((@IsNull_ResultMode4 = 1 AND "& _ 
+                "[ResultMode4] IS NULL) OR ([ResultMode4] = @Original_ResultMode4)) AND ((@IsNull"& _ 
+                "_ResultQtyMode4 = 1 AND [ResultQtyMode4] IS NULL) OR ([ResultQtyMode4] = @Origin"& _ 
+                "al_ResultQtyMode4)) AND ((@IsNull_ResultMode5 = 1 AND [ResultMode5] IS NULL) OR "& _ 
+                "([ResultMode5] = @Original_ResultMode5)) AND ((@IsNull_ResultQtyMode5 = 1 AND [R"& _ 
+                "esultQtyMode5] IS NULL) OR ([ResultQtyMode5] = @Original_ResultQtyMode5)) AND (("& _ 
+                "@IsNull_GoodQty = 1 AND [GoodQty] IS NULL) OR ([GoodQty] = @Original_GoodQty)) A"& _ 
+                "ND ((@IsNull_NGQty = 1 AND [NGQty] IS NULL) OR ([NGQty] = @Original_NGQty)) AND "& _ 
+                "((@IsNull_TotalQty = 1 AND [TotalQty] IS NULL) OR ([TotalQty] = @Original_TotalQ"& _ 
+                "ty)) AND ((@IsNull_InspectorNo = 1 AND [InspectorNo] IS NULL) OR ([InspectorNo] "& _ 
+                "= @Original_InspectorNo)) AND ((@IsNull_FinalYield = 1 AND [FinalYield] IS NULL)"& _ 
+                " OR ([FinalYield] = @Original_FinalYield)) AND ((@IsNull_TotalTime = 1 AND [Tota"& _ 
+                "lTime] IS NULL) OR ([TotalTime] = @Original_TotalTime)) AND ((@IsNull_InspJudg ="& _ 
+                " 1 AND [InspJudg] IS NULL) OR ([InspJudg] = @Original_InspJudg)) AND ((@IsNull_L"& _ 
+                "otJudg = 1 AND [LotJudg] IS NULL) OR ([LotJudg] = @Original_LotJudg)) AND ((@IsN"& _ 
+                "ull_Remark = 1 AND [Remark] IS NULL) OR ([Remark] = @Original_Remark)) AND ((@Is"& _ 
+                "Null_GLCheck = 1 AND [GLCheck] IS NULL) OR ([GLCheck] = @Original_GLCheck)) AND "& _ 
+                "((@IsNull_ComName = 1 AND [ComName] IS NULL) OR ([ComName] = @Original_ComName))"& _ 
+                " AND ((@IsNull_SelfConVersion = 1 AND [SelfConVersion] IS NULL) OR ([SelfConVers"& _ 
+                "ion] = @Original_SelfConVersion)) AND ((@IsNull_NetVersion = 1 AND [NetVersion] "& _ 
+                "IS NULL) OR ([NetVersion] = @Original_NetVersion)) AND ((@IsNull_RequestModeName"& _ 
+                "1 = 1 AND [RequestModeName1] IS NULL) OR ([RequestModeName1] = @Original_Request"& _ 
+                "ModeName1)) AND ((@IsNull_RequestModeName2 = 1 AND [RequestModeName2] IS NULL) O"& _ 
+                "R ([RequestModeName2] = @Original_RequestModeName2)) AND ((@IsNull_RequestModeNa"& _ 
+                "me3 = 1 AND [RequestModeName3] IS NULL) OR ([RequestModeName3] = @Original_Reque"& _ 
+                "stModeName3)) AND ((@IsNull_RequestModeName4 = 1 AND [RequestModeName4] IS NULL)"& _ 
+                " OR ([RequestModeName4] = @Original_RequestModeName4)) AND ((@IsNull_RequestMode"& _ 
+                "Name5 = 1 AND [RequestModeName5] IS NULL) OR ([RequestModeName5] = @Original_Req"& _ 
+                "uestModeName5)) AND ((@IsNull_RequestModeRemark1 = 1 AND [RequestModeRemark1] IS"& _ 
+                " NULL) OR ([RequestModeRemark1] = @Original_RequestModeRemark1)) AND ((@IsNull_R"& _ 
+                "equestModeRemark2 = 1 AND [RequestModeRemark2] IS NULL) OR ([RequestModeRemark2]"& _ 
+                " = @Original_RequestModeRemark2)) AND ((@IsNull_RequestModeRemark3 = 1 AND [Requ"& _ 
+                "estModeRemark3] IS NULL) OR ([RequestModeRemark3] = @Original_RequestModeRemark3"& _ 
+                ")) AND ((@IsNull_RequestModeRemark4 = 1 AND [RequestModeRemark4] IS NULL) OR ([R"& _ 
+                "equestModeRemark4] = @Original_RequestModeRemark4)) AND ((@IsNull_RequestModeRem"& _ 
+                "ark5 = 1 AND [RequestModeRemark5] IS NULL) OR ([RequestModeRemark5] = @Original_"& _ 
+                "RequestModeRemark5)) AND ((@IsNull_ObjectIns = 1 AND [ObjectIns] IS NULL) OR ([O"& _ 
+                "bjectIns] = @Original_ObjectIns)) AND ((@IsNull_Package = 1 AND [Package] IS NUL"& _ 
+                "L) OR ([Package] = @Original_Package)) AND ((@IsNull_Process = 1 AND [Process] I"& _ 
+                "S NULL) OR ([Process] = @Original_Process)) AND ((@IsNull_JudgeReason = 1 AND [J"& _ 
+                "udgeReason] IS NULL) OR ([JudgeReason] = @Original_JudgeReason)) AND ((@IsNull_I"& _ 
+                "nsName = 1 AND [InsName] IS NULL) OR ([InsName] = @Original_InsName)) AND ((@IsN"& _ 
+                "ull_ResultModeName1 = 1 AND [ResultModeName1] IS NULL) OR ([ResultModeName1] = @"& _ 
+                "Original_ResultModeName1)) AND ((@IsNull_ResultModeName2 = 1 AND [ResultModeName"& _ 
+                "2] IS NULL) OR ([ResultModeName2] = @Original_ResultModeName2)) AND ((@IsNull_Re"& _ 
+                "sultModeName3 = 1 AND [ResultModeName3] IS NULL) OR ([ResultModeName3] = @Origin"& _ 
+                "al_ResultModeName3)) AND ((@IsNull_ResultModeName4 = 1 AND [ResultModeName4] IS "& _ 
+                "NULL) OR ([ResultModeName4] = @Original_ResultModeName4)) AND ((@IsNull_ResultMo"& _ 
+                "deName5 = 1 AND [ResultModeName5] IS NULL) OR ([ResultModeName5] = @Original_Res"& _ 
+                "ultModeName5)) AND ((@IsNull_InspNGQty = 1 AND [InspNGQty] IS NULL) OR ([InspNGQ"& _ 
+                "ty] = @Original_InspNGQty)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT LotNo, StartTime, EndTime, ReqDate, Reques"& _ 
+                "tMode1, RequestMode2, RequestMode3, RequestMode4, RequestMode5, MCNo, OPNo, Insp"& _ 
+                "MagQty, ResultMode1, ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, R"& _ 
+                "esultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQty"& _ 
+                ", NGQty, TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Remark"& _ 
+                ", GLCheck, ComName, SelfConVersion, NetVersion, RequestModeName1, RequestModeNam"& _ 
+                "e2, RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, Re"& _ 
+                "questModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, Ob"& _ 
+                "jectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeName"& _ 
+                "2, ResultModeName3, ResultModeName4, ResultModeName5, InspNGQty FROM INS.DBWBINS"& _ 
+                "Data WHERE (LotNo = @LotNo) AND (ReqDate = @ReqDate) ORDER BY ReqDate DESC"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LotNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@StartTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -11462,6 +11509,7 @@ Namespace DBxDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ResultModeName3", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ResultModeName4", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName4", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ResultModeName5", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName5", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InspNGQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InspNGQty", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LotNo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_StartTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_StartTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -11570,6 +11618,8 @@ Namespace DBxDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ResultModeName4", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName4", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ResultModeName5", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName5", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ResultModeName5", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ResultModeName5", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_InspNGQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InspNGQty", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InspNGQty", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InspNGQty", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11586,66 +11636,65 @@ Namespace DBxDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        LotNo, StartTime, EndTime, ReqDate, RequestMode1, RequestMode2, Req"& _ 
-                "uestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3,"& _ 
+                "uestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, Resu"& _ 
+                "ltQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                        "& _ 
                 " ResultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQ"& _ 
-                "ty, NGQty, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TotalQty, InspectorNo, FinalYield, TotalTi"& _ 
-                "me, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, NetVersion, Req"& _ 
-                "uestModeName1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RequestModeName2, RequestModeName3, Re"& _ 
-                "questModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, Reques"& _ 
-                "tModeRemark3, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RequestModeRemark4, RequestModeRemark5,"& _ 
-                " ObjectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeN"& _ 
-                "ame2, ResultModeName3, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ResultModeName4, ResultModeNam"& _ 
-                "e5"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            INS.DBWBINSData"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (LotNo = @LotNo) AND (ReqDate "& _ 
-                "IS NOT NULL) AND (EndTime IS NULL)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ReqDate DESC"
+                "ty, NGQty, TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Rema"& _ 
+                "rk, GLCheck, ComName, SelfConVersion, NetVersion, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Req"& _ 
+                "uestModeName1, RequestModeName2, RequestModeName3, RequestModeName4, RequestMode"& _ 
+                "Name5, RequestModeRemark1, RequestModeRemark2, RequestModeRemark3, RequestModeRe"& _ 
+                "mark4, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RequestModeRemark5, ObjectIns, Package, Proces"& _ 
+                "s, JudgeReason, InsName, ResultModeName1, ResultModeName2, ResultModeName3, Resu"& _ 
+                "ltModeName4, ResultModeName5, InspNGQty"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            INS.DBWBINSData"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
+                "       (LotNo = @LotNo) AND (ReqDate IS NOT NULL) AND (EndTime IS NULL)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER B"& _ 
+                "Y ReqDate DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LotNo", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT ComName, EndTime, FinalYield, GLCheck, GoodQty, InsName, InspJudg, InspMag"& _ 
-                "Qty, InspectorNo, JudgeReason, LotJudg, LotNo, MCNo, NGQty, NetVersion, OPNo, Ob"& _ 
-                "jectIns, Package, Process, Remark, ReqDate, RequestMode1, RequestMode2, RequestM"& _ 
-                "ode3, RequestMode4, RequestMode5, RequestModeName1, RequestModeName2, RequestMod"& _ 
-                "eName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemar"& _ 
-                "k2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ResultMode1, Res"& _ 
-                "ultMode2, ResultMode3, ResultMode4, ResultMode5, ResultModeName1, ResultModeName"& _ 
-                "2, ResultModeName3, ResultModeName4, ResultModeName5, ResultQtyMode1, ResultQtyM"& _ 
-                "ode2, ResultQtyMode3, ResultQtyMode4, ResultQtyMode5, SelfConVersion, StartTime,"& _ 
-                " TotalQty, TotalTime FROM INS.DBWBINSData WHERE (ReqDate IS NOT NULL) AND (EndTi"& _ 
-                "me IS NULL) ORDER BY ReqDate DESC"
+                "Qty, InspNGQty, InspectorNo, JudgeReason, LotJudg, LotNo, MCNo, NGQty, NetVersio"& _ 
+                "n, OPNo, ObjectIns, Package, Process, Remark, ReqDate, RequestMode1, RequestMode"& _ 
+                "2, RequestMode3, RequestMode4, RequestMode5, RequestModeName1, RequestModeName2,"& _ 
+                " RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, Reque"& _ 
+                "stModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, Resul"& _ 
+                "tMode1, ResultMode2, ResultMode3, ResultMode4, ResultMode5, ResultModeName1, Res"& _ 
+                "ultModeName2, ResultModeName3, ResultModeName4, ResultModeName5, ResultQtyMode1,"& _ 
+                " ResultQtyMode2, ResultQtyMode3, ResultQtyMode4, ResultQtyMode5, SelfConVersion,"& _ 
+                " StartTime, TotalQty, TotalTime FROM INS.DBWBINSData WHERE (ReqDate IS NOT NULL)"& _ 
+                " AND (EndTime IS NULL) ORDER BY ReqDate DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT ComName, EndTime, FinalYield, GLCheck, GoodQty, InsName, InspJudg, InspMag"& _ 
-                "Qty, InspectorNo, JudgeReason, LotJudg, LotNo, MCNo, NGQty, NetVersion, OPNo, Ob"& _ 
-                "jectIns, Package, Process, Remark, ReqDate, RequestMode1, RequestMode2, RequestM"& _ 
-                "ode3, RequestMode4, RequestMode5, RequestModeName1, RequestModeName2, RequestMod"& _ 
-                "eName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemar"& _ 
-                "k2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ResultMode1, Res"& _ 
-                "ultMode2, ResultMode3, ResultMode4, ResultMode5, ResultModeName1, ResultModeName"& _ 
-                "2, ResultModeName3, ResultModeName4, ResultModeName5, ResultQtyMode1, ResultQtyM"& _ 
-                "ode2, ResultQtyMode3, ResultQtyMode4, ResultQtyMode5, SelfConVersion, StartTime,"& _ 
-                " TotalQty, TotalTime FROM INS.DBWBINSData WHERE (LotNo = @LotNo) AND (ReqDate IS"& _ 
-                " NOT NULL) AND (EndTime IS NULL) AND (Process = @Process) ORDER BY ReqDate DESC"
+                "Qty, InspNGQty, InspectorNo, JudgeReason, LotJudg, LotNo, MCNo, NGQty, NetVersio"& _ 
+                "n, OPNo, ObjectIns, Package, Process, Remark, ReqDate, RequestMode1, RequestMode"& _ 
+                "2, RequestMode3, RequestMode4, RequestMode5, RequestModeName1, RequestModeName2,"& _ 
+                " RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, Reque"& _ 
+                "stModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, Resul"& _ 
+                "tMode1, ResultMode2, ResultMode3, ResultMode4, ResultMode5, ResultModeName1, Res"& _ 
+                "ultModeName2, ResultModeName3, ResultModeName4, ResultModeName5, ResultQtyMode1,"& _ 
+                " ResultQtyMode2, ResultQtyMode3, ResultQtyMode4, ResultQtyMode5, SelfConVersion,"& _ 
+                " StartTime, TotalQty, TotalTime FROM INS.DBWBINSData WHERE (LotNo = @LotNo) AND "& _ 
+                "(ReqDate IS NOT NULL) AND (EndTime IS NULL) AND (Process = @Process) ORDER BY Re"& _ 
+                "qDate DESC"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LotNo", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Process", Global.System.Data.SqlDbType.VarChar, 3, Global.System.Data.ParameterDirection.Input, 0, 0, "Process", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        LotNo, StartTime, EndTime, ReqDate, RequestMode1, RequestMode2, Req"& _ 
-                "uestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3,"& _ 
-                " ResultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQ"& _ 
-                "ty, NGQty, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TotalQty, InspectorNo, FinalYield, TotalTi"& _ 
-                "me, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, NetVersion, Req"& _ 
-                "uestModeName1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RequestModeName2, RequestModeName3, Re"& _ 
-                "questModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, Reques"& _ 
-                "tModeRemark3, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RequestModeRemark4, RequestModeRemark5,"& _ 
-                " ObjectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeN"& _ 
-                "ame2, ResultModeName3, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ResultModeName4, ResultModeNam"& _ 
-                "e5"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            INS.DBWBINSData"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (LotNo = @LotNo) AND (ReqDate "& _ 
-                "IS NOT NULL) AND (Remark <> 'CANCEL LOT' OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Remark IS "& _ 
-                "NULL) AND (Process = @Process)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ReqDate DESC"
+            Me._commandCollection(3).CommandText = "SELECT ComName, EndTime, FinalYield, GLCheck, GoodQty, InsName, InspJudg, InspMag"& _ 
+                "Qty, InspNGQty, InspectorNo, JudgeReason, LotJudg, LotNo, MCNo, NGQty, NetVersio"& _ 
+                "n, OPNo, ObjectIns, Package, Process, Remark, ReqDate, RequestMode1, RequestMode"& _ 
+                "2, RequestMode3, RequestMode4, RequestMode5, RequestModeName1, RequestModeName2,"& _ 
+                " RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, Reque"& _ 
+                "stModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, Resul"& _ 
+                "tMode1, ResultMode2, ResultMode3, ResultMode4, ResultMode5, ResultModeName1, Res"& _ 
+                "ultModeName2, ResultModeName3, ResultModeName4, ResultModeName5, ResultQtyMode1,"& _ 
+                " ResultQtyMode2, ResultQtyMode3, ResultQtyMode4, ResultQtyMode5, SelfConVersion,"& _ 
+                " StartTime, TotalQty, TotalTime FROM INS.DBWBINSData WHERE (LotNo = @LotNo) AND "& _ 
+                "(ReqDate IS NOT NULL) AND (Remark <> 'CANCEL LOT' OR Remark IS NULL) AND (Proces"& _ 
+                "s = @Process) ORDER BY ReqDate DESC"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LotNo", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "LotNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Process", Global.System.Data.SqlDbType.VarChar, 3, Global.System.Data.ParameterDirection.Input, 0, 0, "Process", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -11884,7 +11933,8 @@ Namespace DBxDataSetTableAdapters
                     ByVal Original_ResultModeName2 As String,  _
                     ByVal Original_ResultModeName3 As String,  _
                     ByVal Original_ResultModeName4 As String,  _
-                    ByVal Original_ResultModeName5 As String) As Integer
+                    ByVal Original_ResultModeName5 As String,  _
+                    ByVal Original_InspNGQty As Global.System.Nullable(Of Integer)) As Integer
             If (Original_LotNo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_LotNo")
             Else
@@ -12262,6 +12312,13 @@ Namespace DBxDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(106).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(107).Value = CType(Original_ResultModeName5,String)
             End If
+            If (Original_InspNGQty.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(108).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(109).Value = CType(Original_InspNGQty.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(108).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(109).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12336,7 +12393,8 @@ Namespace DBxDataSetTableAdapters
                     ByVal ResultModeName2 As String,  _
                     ByVal ResultModeName3 As String,  _
                     ByVal ResultModeName4 As String,  _
-                    ByVal ResultModeName5 As String) As Integer
+                    ByVal ResultModeName5 As String,  _
+                    ByVal InspNGQty As Global.System.Nullable(Of Integer)) As Integer
             If (LotNo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("LotNo")
             Else
@@ -12608,6 +12666,11 @@ Namespace DBxDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(54).Value = CType(ResultModeName5,String)
             End If
+            If (InspNGQty.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(55).Value = CType(InspNGQty.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(55).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -12683,6 +12746,7 @@ Namespace DBxDataSetTableAdapters
                     ByVal ResultModeName3 As String,  _
                     ByVal ResultModeName4 As String,  _
                     ByVal ResultModeName5 As String,  _
+                    ByVal InspNGQty As Global.System.Nullable(Of Integer),  _
                     ByVal Original_LotNo As String,  _
                     ByVal Original_StartTime As Global.System.Nullable(Of Date),  _
                     ByVal Original_EndTime As Global.System.Nullable(Of Date),  _
@@ -12737,7 +12801,8 @@ Namespace DBxDataSetTableAdapters
                     ByVal Original_ResultModeName2 As String,  _
                     ByVal Original_ResultModeName3 As String,  _
                     ByVal Original_ResultModeName4 As String,  _
-                    ByVal Original_ResultModeName5 As String) As Integer
+                    ByVal Original_ResultModeName5 As String,  _
+                    ByVal Original_InspNGQty As Global.System.Nullable(Of Integer)) As Integer
             If (LotNo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("LotNo")
             Else
@@ -13009,382 +13074,394 @@ Namespace DBxDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(54).Value = CType(ResultModeName5,String)
             End If
+            If (InspNGQty.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(InspNGQty.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
+            End If
             If (Original_LotNo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_LotNo")
             Else
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_LotNo,String)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_LotNo,String)
             End If
             If (Original_StartTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_StartTime.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_StartTime.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
             End If
             If (Original_EndTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_EndTime.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_EndTime.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_ReqDate,Date)
+            Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_ReqDate,Date)
             If (Original_RequestMode1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_RequestMode1,String)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_RequestMode1,String)
             End If
             If (Original_RequestMode2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_RequestMode2,String)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_RequestMode2,String)
             End If
             If (Original_RequestMode3 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_RequestMode3,String)
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_RequestMode3,String)
             End If
             If (Original_RequestMode4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(68).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(69).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_RequestMode4,String)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_RequestMode4,String)
             End If
             If (Original_RequestMode5 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(71).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_RequestMode5,String)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_RequestMode5,String)
             End If
             If (Original_MCNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(73).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(Original_MCNo,String)
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_MCNo,String)
             End If
             If (Original_OPNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(74).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(75).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(Original_OPNo,String)
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_OPNo,String)
             End If
             If (Original_InspMagQty Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(76).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(77).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(Original_InspMagQty,String)
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_InspMagQty,String)
             End If
             If (Original_ResultMode1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(78).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(79).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(Original_ResultMode1,String)
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_ResultMode1,String)
             End If
             If (Original_ResultQtyMode1.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(Original_ResultQtyMode1.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_ResultQtyMode1.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(80).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(81).Value = Global.System.DBNull.Value
             End If
             If (Original_ResultMode2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(82).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(83).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(Original_ResultMode2,String)
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_ResultMode2,String)
             End If
             If (Original_ResultQtyMode2.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(Original_ResultQtyMode2.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_ResultQtyMode2.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(84).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
             End If
             If (Original_ResultMode3 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(86).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(Original_ResultMode3,String)
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_ResultMode3,String)
             End If
             If (Original_ResultQtyMode3.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(Original_ResultQtyMode3.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_ResultQtyMode3.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(88).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
             End If
             If (Original_ResultMode4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(90).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(Original_ResultMode4,String)
+                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_ResultMode4,String)
             End If
             If (Original_ResultQtyMode4.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(Original_ResultQtyMode4.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_ResultQtyMode4.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(92).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
             End If
             If (Original_ResultMode5 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(94).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(Original_ResultMode5,String)
+                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_ResultMode5,String)
             End If
             If (Original_ResultQtyMode5.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(Original_ResultQtyMode5.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_ResultQtyMode5.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(96).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
             End If
             If (Original_GoodQty.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(Original_GoodQty.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_GoodQty.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(98).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
             End If
             If (Original_NGQty.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(Original_NGQty.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_NGQty.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(100).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
             End If
             If (Original_TotalQty.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(Original_TotalQty.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_TotalQty.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(102).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
             End If
             If (Original_InspectorNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(104).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(105).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(Original_InspectorNo,String)
+                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(Original_InspectorNo,String)
             End If
             If (Original_FinalYield.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(Original_FinalYield.Value,Single)
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Original_FinalYield.Value,Single)
             Else
-                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(106).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(107).Value = Global.System.DBNull.Value
             End If
             If (Original_TotalTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(Original_TotalTime.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(Original_TotalTime.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(108).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(109).Value = Global.System.DBNull.Value
             End If
             If (Original_InspJudg Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(110).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(111).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(Original_InspJudg,String)
+                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(Original_InspJudg,String)
             End If
             If (Original_LotJudg Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(112).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(113).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(Original_LotJudg,String)
+                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(Original_LotJudg,String)
             End If
             If (Original_Remark Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(114).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(115).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(Original_Remark,String)
+                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(Original_Remark,String)
             End If
             If (Original_GLCheck Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(116).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(117).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(Original_GLCheck,String)
+                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(Original_GLCheck,String)
             End If
             If (Original_ComName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(118).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(119).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(Original_ComName,String)
+                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(Original_ComName,String)
             End If
             If (Original_SelfConVersion Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(120).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(121).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(Original_SelfConVersion,String)
+                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(Original_SelfConVersion,String)
             End If
             If (Original_NetVersion Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(122).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(123).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(Original_NetVersion,String)
+                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(Original_NetVersion,String)
             End If
             If (Original_RequestModeName1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(124).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(125).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(Original_RequestModeName1,String)
+                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(Original_RequestModeName1,String)
             End If
             If (Original_RequestModeName2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(126).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(127).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(Original_RequestModeName2,String)
+                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(Original_RequestModeName2,String)
             End If
             If (Original_RequestModeName3 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(128).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(129).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(Original_RequestModeName3,String)
+                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(Original_RequestModeName3,String)
             End If
             If (Original_RequestModeName4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(130).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(131).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(Original_RequestModeName4,String)
+                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(Original_RequestModeName4,String)
             End If
             If (Original_RequestModeName5 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(132).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(133).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(Original_RequestModeName5,String)
+                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(Original_RequestModeName5,String)
             End If
             If (Original_RequestModeRemark1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(134).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(135).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(Original_RequestModeRemark1,String)
+                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(Original_RequestModeRemark1,String)
             End If
             If (Original_RequestModeRemark2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(136).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(137).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(Original_RequestModeRemark2,String)
+                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(Original_RequestModeRemark2,String)
             End If
             If (Original_RequestModeRemark3 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(138).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(139).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(Original_RequestModeRemark3,String)
+                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(Original_RequestModeRemark3,String)
             End If
             If (Original_RequestModeRemark4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(140).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(141).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(Original_RequestModeRemark4,String)
+                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(Original_RequestModeRemark4,String)
             End If
             If (Original_RequestModeRemark5 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(142).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(143).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(Original_RequestModeRemark5,String)
+                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(Original_RequestModeRemark5,String)
             End If
             If (Original_ObjectIns Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(144).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(145).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(Original_ObjectIns,String)
+                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(Original_ObjectIns,String)
             End If
             If (Original_Package Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(146).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(147).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(Original_Package,String)
+                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(Original_Package,String)
             End If
             If (Original_Process Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(148).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(149).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(Original_Process,String)
+                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(Original_Process,String)
             End If
             If (Original_JudgeReason Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(150).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(151).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(Original_JudgeReason,String)
+                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(Original_JudgeReason,String)
             End If
             If (Original_InsName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(152).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(153).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(Original_InsName,String)
+                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(Original_InsName,String)
             End If
             If (Original_ResultModeName1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(154).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(155).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(Original_ResultModeName1,String)
+                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(Original_ResultModeName1,String)
             End If
             If (Original_ResultModeName2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(156).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(157).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(Original_ResultModeName2,String)
+                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(Original_ResultModeName2,String)
             End If
             If (Original_ResultModeName3 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(158).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(159).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(Original_ResultModeName3,String)
+                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(Original_ResultModeName3,String)
             End If
             If (Original_ResultModeName4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(160).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(160).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(161).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(160).Value = CType(Original_ResultModeName4,String)
+                Me.Adapter.UpdateCommand.Parameters(160).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(Original_ResultModeName4,String)
             End If
             If (Original_ResultModeName5 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(162).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(162).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(163).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(162).Value = CType(Original_ResultModeName5,String)
+                Me.Adapter.UpdateCommand.Parameters(162).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(163).Value = CType(Original_ResultModeName5,String)
+            End If
+            If (Original_InspNGQty.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(164).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(165).Value = CType(Original_InspNGQty.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(164).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(165).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -13459,6 +13536,7 @@ Namespace DBxDataSetTableAdapters
                     ByVal ResultModeName3 As String,  _
                     ByVal ResultModeName4 As String,  _
                     ByVal ResultModeName5 As String,  _
+                    ByVal InspNGQty As Global.System.Nullable(Of Integer),  _
                     ByVal Original_LotNo As String,  _
                     ByVal Original_StartTime As Global.System.Nullable(Of Date),  _
                     ByVal Original_EndTime As Global.System.Nullable(Of Date),  _
@@ -13513,8 +13591,9 @@ Namespace DBxDataSetTableAdapters
                     ByVal Original_ResultModeName2 As String,  _
                     ByVal Original_ResultModeName3 As String,  _
                     ByVal Original_ResultModeName4 As String,  _
-                    ByVal Original_ResultModeName5 As String) As Integer
-            Return Me.Update(Original_LotNo, StartTime, EndTime, Original_ReqDate, RequestMode1, RequestMode2, RequestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, ResultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQty, NGQty, TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, NetVersion, RequestModeName1, RequestModeName2, RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ObjectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeName2, ResultModeName3, ResultModeName4, ResultModeName5, Original_LotNo, Original_StartTime, Original_EndTime, Original_ReqDate, Original_RequestMode1, Original_RequestMode2, Original_RequestMode3, Original_RequestMode4, Original_RequestMode5, Original_MCNo, Original_OPNo, Original_InspMagQty, Original_ResultMode1, Original_ResultQtyMode1, Original_ResultMode2, Original_ResultQtyMode2, Original_ResultMode3, Original_ResultQtyMode3, Original_ResultMode4, Original_ResultQtyMode4, Original_ResultMode5, Original_ResultQtyMode5, Original_GoodQty, Original_NGQty, Original_TotalQty, Original_InspectorNo, Original_FinalYield, Original_TotalTime, Original_InspJudg, Original_LotJudg, Original_Remark, Original_GLCheck, Original_ComName, Original_SelfConVersion, Original_NetVersion, Original_RequestModeName1, Original_RequestModeName2, Original_RequestModeName3, Original_RequestModeName4, Original_RequestModeName5, Original_RequestModeRemark1, Original_RequestModeRemark2, Original_RequestModeRemark3, Original_RequestModeRemark4, Original_RequestModeRemark5, Original_ObjectIns, Original_Package, Original_Process, Original_JudgeReason, Original_InsName, Original_ResultModeName1, Original_ResultModeName2, Original_ResultModeName3, Original_ResultModeName4, Original_ResultModeName5)
+                    ByVal Original_ResultModeName5 As String,  _
+                    ByVal Original_InspNGQty As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(Original_LotNo, StartTime, EndTime, Original_ReqDate, RequestMode1, RequestMode2, RequestMode3, RequestMode4, RequestMode5, MCNo, OPNo, InspMagQty, ResultMode1, ResultQtyMode1, ResultMode2, ResultQtyMode2, ResultMode3, ResultQtyMode3, ResultMode4, ResultQtyMode4, ResultMode5, ResultQtyMode5, GoodQty, NGQty, TotalQty, InspectorNo, FinalYield, TotalTime, InspJudg, LotJudg, Remark, GLCheck, ComName, SelfConVersion, NetVersion, RequestModeName1, RequestModeName2, RequestModeName3, RequestModeName4, RequestModeName5, RequestModeRemark1, RequestModeRemark2, RequestModeRemark3, RequestModeRemark4, RequestModeRemark5, ObjectIns, Package, Process, JudgeReason, InsName, ResultModeName1, ResultModeName2, ResultModeName3, ResultModeName4, ResultModeName5, InspNGQty, Original_LotNo, Original_StartTime, Original_EndTime, Original_ReqDate, Original_RequestMode1, Original_RequestMode2, Original_RequestMode3, Original_RequestMode4, Original_RequestMode5, Original_MCNo, Original_OPNo, Original_InspMagQty, Original_ResultMode1, Original_ResultQtyMode1, Original_ResultMode2, Original_ResultQtyMode2, Original_ResultMode3, Original_ResultQtyMode3, Original_ResultMode4, Original_ResultQtyMode4, Original_ResultMode5, Original_ResultQtyMode5, Original_GoodQty, Original_NGQty, Original_TotalQty, Original_InspectorNo, Original_FinalYield, Original_TotalTime, Original_InspJudg, Original_LotJudg, Original_Remark, Original_GLCheck, Original_ComName, Original_SelfConVersion, Original_NetVersion, Original_RequestModeName1, Original_RequestModeName2, Original_RequestModeName3, Original_RequestModeName4, Original_RequestModeName5, Original_RequestModeRemark1, Original_RequestModeRemark2, Original_RequestModeRemark3, Original_RequestModeRemark4, Original_RequestModeRemark5, Original_ObjectIns, Original_Package, Original_Process, Original_JudgeReason, Original_InsName, Original_ResultModeName1, Original_ResultModeName2, Original_ResultModeName3, Original_ResultModeName4, Original_ResultModeName5, Original_InspNGQty)
         End Function
     End Class
     
