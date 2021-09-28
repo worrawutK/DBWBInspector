@@ -247,36 +247,36 @@ Partial Class Form1
         Me.DbwbinsData1TableAdapter2 = New InspectorWork.DBxDataSetTableAdapters.DBWBINSData1TableAdapter()
         Me.LotAlarmQtyTableAdapter1 = New InspectorWork.DBxDataSetTableAdapters.LotAlarmQtyTableAdapter()
         Me.DbwbinsData2TableAdapter1 = New InspectorWork.DBxDataSetTableAdapters.DBWBINSData2TableAdapter()
-        Me.ContextMenuStrip1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout
+        Me.TabPage2.SuspendLayout
+        Me.Panel1.SuspendLayout
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelNG.SuspendLayout()
+        Me.PanelNG.SuspendLayout
         CType(Me.dgvTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvInspDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Inspection_DetailBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout
+        Me.GroupBox1.SuspendLayout
+        Me.TableLayoutPanel1.SuspendLayout
+        Me.TableLayoutPanel6.SuspendLayout
+        Me.TableLayoutPanel5.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.TableLayoutPanel2.SuspendLayout
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel3.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout
+        Me.TabControl1.SuspendLayout
+        Me.TabPage1.SuspendLayout
         CType(Me.pbxOPID, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxQR, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
+        Me.TabPage3.SuspendLayout
+        Me.MenuStrip1.SuspendLayout
+        Me.StatusStrip1.SuspendLayout
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxAutoM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.SuspendLayout
         '
         'ContextMenuStrip1
         '
@@ -2376,48 +2376,48 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.TabPage2.PerformLayout
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelNG.ResumeLayout(False)
-        Me.PanelNG.PerformLayout()
+        Me.PanelNG.PerformLayout
         CType(Me.dgvTotal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvInspDetail, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Inspection_DetailBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GroupBox1.PerformLayout
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.TableLayoutPanel1.PerformLayout
         Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel6.PerformLayout()
+        Me.TableLayoutPanel6.PerformLayout
         Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel5.PerformLayout()
+        Me.TableLayoutPanel5.PerformLayout
         Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.Panel2.PerformLayout
         Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
+        Me.TableLayoutPanel2.PerformLayout
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
+        Me.TableLayoutPanel3.PerformLayout
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.TabPage1.PerformLayout
         CType(Me.pbxOPID, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxQR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
+        Me.TabPage3.PerformLayout
         Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.MenuStrip1.PerformLayout
         Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        Me.StatusStrip1.PerformLayout
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxAutoM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip

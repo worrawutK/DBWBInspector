@@ -14,7 +14,7 @@
                                  , Bt4.Click, Bt5.Click, Bt6.Click, Bt7.Click, Bt8.Click, Bt9.Click, BtA.Click, BtB.Click, BtC.Click _
                                  , BtD.Click, BtE.Click, BtF.Click, BtG.Click, BtH.Click, BtI.Click, BtJ.Click, BtK.Click, BtL.Click _
                                  , BtM.Click, BtN.Click, BtO.Click, BtP.Click, BtQ.Click, BtR.Click, BtS.Click, Btt.Click, BtU.Click _
-                                 , BtV.Click, BtW.Click, BtX.Click, BtY.Click, BtZ.Click, BtBS.Click, BtMinus.Click, BtClear.Click, BtPlus.Click, BtLeft.Click, BtRight.Click
+                                 , BtV.Click, BtW.Click, BtX.Click, BtY.Click, BtZ.Click, BtBS.Click, BtMinus.Click, BtClear.Click, BtPlus.Click, BtLeft.Click, BtRight.Click, Button1.Click, Button2.Click
         'If c_TextBox IsNot Nothing Then
         '    c_TextBox.Text += sender.text
         '    Exit Sub
@@ -60,11 +60,11 @@
             End If
             '--------------------
         End If
-     
-      
+
+
     End Sub
 
- 
+
 
     'Private Sub BtLeft_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtLeft.Click
     '    'Form1.CtlFocust.Focus()
@@ -78,7 +78,7 @@
     '    My.Computer.Keyboard.SendKeys("{RIGHT}", True)
     'End Sub
 
-    
+
 
     Private Sub BtEnter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtEnter.Click
         '  TargetTextBox.Focus()
@@ -103,8 +103,8 @@
     '        Return param
     '    End Get
     'End Property
-  
-    
+
+
     Private Sub KeyRemark_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         ' TextBox1.Focus()
     End Sub

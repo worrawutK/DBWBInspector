@@ -25,6 +25,7 @@ Partial Class KeyRemark
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtEnter = New System.Windows.Forms.Button()
         Me.BtMinus = New System.Windows.Forms.Button()
+        Me.BtPlus = New System.Windows.Forms.Button()
         Me.BtRight = New System.Windows.Forms.Button()
         Me.BtLeft = New System.Windows.Forms.Button()
         Me.BtClear = New System.Windows.Forms.Button()
@@ -65,12 +66,15 @@ Partial Class KeyRemark
         Me.BtB = New System.Windows.Forms.Button()
         Me.Bt0 = New System.Windows.Forms.Button()
         Me.BtA = New System.Windows.Forms.Button()
-        Me.BtPlus = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BtEnter)
         Me.Panel1.Controls.Add(Me.BtMinus)
         Me.Panel1.Controls.Add(Me.BtPlus)
@@ -117,7 +121,7 @@ Partial Class KeyRemark
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(871, 224)
+        Me.Panel1.Size = New System.Drawing.Size(991, 224)
         Me.Panel1.TabIndex = 0
         '
         'BtEnter
@@ -141,6 +145,17 @@ Partial Class KeyRemark
         Me.BtMinus.TabIndex = 130
         Me.BtMinus.Text = "-"
         Me.BtMinus.UseVisualStyleBackColor = False
+        '
+        'BtPlus
+        '
+        Me.BtPlus.BackColor = System.Drawing.Color.White
+        Me.BtPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BtPlus.Location = New System.Drawing.Point(757, 113)
+        Me.BtPlus.Name = "BtPlus"
+        Me.BtPlus.Size = New System.Drawing.Size(108, 50)
+        Me.BtPlus.TabIndex = 129
+        Me.BtPlus.Text = "SPACEBAR"
+        Me.BtPlus.UseVisualStyleBackColor = False
         '
         'BtRight
         '
@@ -179,7 +194,7 @@ Partial Class KeyRemark
         '
         Me.BtBS.BackColor = System.Drawing.Color.White
         Me.BtBS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtBS.Location = New System.Drawing.Point(755, 6)
+        Me.BtBS.Location = New System.Drawing.Point(757, 6)
         Me.BtBS.Name = "BtBS"
         Me.BtBS.Size = New System.Drawing.Size(110, 50)
         Me.BtBS.TabIndex = 125
@@ -582,22 +597,33 @@ Partial Class KeyRemark
         Me.BtA.Text = "A"
         Me.BtA.UseVisualStyleBackColor = False
         '
-        'BtPlus
+        'Button1
         '
-        Me.BtPlus.BackColor = System.Drawing.Color.White
-        Me.BtPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.BtPlus.Location = New System.Drawing.Point(757, 113)
-        Me.BtPlus.Name = "BtPlus"
-        Me.BtPlus.Size = New System.Drawing.Size(108, 50)
-        Me.BtPlus.TabIndex = 129
-        Me.BtPlus.Text = "SPACEBAR"
-        Me.BtPlus.UseVisualStyleBackColor = False
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(873, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(110, 101)
+        Me.Button1.TabIndex = 131
+        Me.Button1.Text = "["
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(871, 113)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(110, 99)
+        Me.Button2.TabIndex = 131
+        Me.Button2.Text = "]"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'KeyRemark
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(871, 224)
+        Me.ClientSize = New System.Drawing.Size(991, 224)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
@@ -654,4 +680,6 @@ Partial Class KeyRemark
     Friend WithEvents Bt0 As System.Windows.Forms.Button
     Friend WithEvents BtA As System.Windows.Forms.Button
     Friend WithEvents BtPlus As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class
