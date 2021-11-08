@@ -186,6 +186,12 @@
     <Compile Include="KeyRemark.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MessageDialog.Designer.vb">
+      <DependentUpon>MessageDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MessageDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KeyRemark.resx">
       <DependentUpon>KeyRemark.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDialog.resx">
+      <DependentUpon>MessageDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -337,6 +346,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <Content Include="Resources\btnGreenOK.png" />
+    <Content Include="Resources\Greenbar.png" />
+    <Content Include="Resources\PictureBoxStickerYeah.png" />
     <Content Include="unnamed.ico" />
   </ItemGroup>
   <ItemGroup>

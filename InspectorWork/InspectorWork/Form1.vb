@@ -1306,6 +1306,9 @@ EndLoop:
                         MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString)
                         Exit Sub
                     End If
+                    Dim msg As MessageDialog = New MessageDialog(result.NextFlow)
+                    msg.ShowDialog()
+
                     c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Idle)
                 Catch ex As Exception
                     MessageBoxDialog.ShowMessage("EndLot", ex.Message.ToString, "iLibrary Service")
