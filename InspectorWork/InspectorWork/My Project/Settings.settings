@@ -20,7 +20,7 @@
       <Value Profile="(Default)">PE1-Software-Senior</Value>
     </Setting>
     <Setting Name="MachineNo" Type="System.String" Scope="User">
-      <Value Profile="(Default)">DWB-INS-I00</Value>
+      <Value Profile="(Default)">DWB-INS-I07</Value>
     </Setting>
     <Setting Name="SECSGEMConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

@@ -2279,6 +2279,9 @@ Namespace iLibraryService
         Private McNoOvenApcsField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private OS_ScrapField As System.Nullable(Of Integer)
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PNashiField As System.Nullable(Of Integer)
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -2412,6 +2415,19 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property OS_Scrap() As System.Nullable(Of Integer)
+            Get
+                Return Me.OS_ScrapField
+            End Get
+            Set
+                If (Me.OS_ScrapField.Equals(value) <> true) Then
+                    Me.OS_ScrapField = value
+                    Me.RaisePropertyChanged("OS_Scrap")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property PNashi() As System.Nullable(Of Integer)
             Get
                 Return Me.PNashiField
@@ -2459,6 +2475,12 @@ Namespace iLibraryService
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CombinedField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CutFrameField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private DeviceNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -2471,7 +2493,13 @@ Namespace iLibraryService
         Private FramePassField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Front_ngField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private GoPieceField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Is_InstockField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private JobNameField As String
@@ -2486,10 +2514,25 @@ Namespace iLibraryService
         Private LotTypeField As iLibraryService.LotInformation.LotTypeState
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Marker_ngField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PNashiField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PackageNameField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PassQtyField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Pcs_per_packField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ShipmentField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private SurplusField As Integer
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
@@ -2498,6 +2541,32 @@ Namespace iLibraryService
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Combined() As Integer
+            Get
+                Return Me.CombinedField
+            End Get
+            Set
+                If (Me.CombinedField.Equals(value) <> true) Then
+                    Me.CombinedField = value
+                    Me.RaisePropertyChanged("Combined")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property CutFrame() As Integer
+            Get
+                Return Me.CutFrameField
+            End Get
+            Set
+                If (Me.CutFrameField.Equals(value) <> true) Then
+                    Me.CutFrameField = value
+                    Me.RaisePropertyChanged("CutFrame")
+                End If
             End Set
         End Property
         
@@ -2554,6 +2623,19 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Front_ng() As Integer
+            Get
+                Return Me.Front_ngField
+            End Get
+            Set
+                If (Me.Front_ngField.Equals(value) <> true) Then
+                    Me.Front_ngField = value
+                    Me.RaisePropertyChanged("Front_ng")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property GoPiece() As Integer
             Get
                 Return Me.GoPieceField
@@ -2562,6 +2644,19 @@ Namespace iLibraryService
                 If (Me.GoPieceField.Equals(value) <> true) Then
                     Me.GoPieceField = value
                     Me.RaisePropertyChanged("GoPiece")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Is_Instock() As Integer
+            Get
+                Return Me.Is_InstockField
+            End Get
+            Set
+                If (Me.Is_InstockField.Equals(value) <> true) Then
+                    Me.Is_InstockField = value
+                    Me.RaisePropertyChanged("Is_Instock")
                 End If
             End Set
         End Property
@@ -2619,6 +2714,32 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Marker_ng() As Integer
+            Get
+                Return Me.Marker_ngField
+            End Get
+            Set
+                If (Me.Marker_ngField.Equals(value) <> true) Then
+                    Me.Marker_ngField = value
+                    Me.RaisePropertyChanged("Marker_ng")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PNashi() As Integer
+            Get
+                Return Me.PNashiField
+            End Get
+            Set
+                If (Me.PNashiField.Equals(value) <> true) Then
+                    Me.PNashiField = value
+                    Me.RaisePropertyChanged("PNashi")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property PackageName() As String
             Get
                 Return Me.PackageNameField
@@ -2640,6 +2761,45 @@ Namespace iLibraryService
                 If (Me.PassQtyField.Equals(value) <> true) Then
                     Me.PassQtyField = value
                     Me.RaisePropertyChanged("PassQty")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Pcs_per_pack() As Integer
+            Get
+                Return Me.Pcs_per_packField
+            End Get
+            Set
+                If (Me.Pcs_per_packField.Equals(value) <> true) Then
+                    Me.Pcs_per_packField = value
+                    Me.RaisePropertyChanged("Pcs_per_pack")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Shipment() As Integer
+            Get
+                Return Me.ShipmentField
+            End Get
+            Set
+                If (Me.ShipmentField.Equals(value) <> true) Then
+                    Me.ShipmentField = value
+                    Me.RaisePropertyChanged("Shipment")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Surplus() As Integer
+            Get
+                Return Me.SurplusField
+            End Get
+            Set
+                If (Me.SurplusField.Equals(value) <> true) Then
+                    Me.SurplusField = value
+                    Me.RaisePropertyChanged("Surplus")
                 End If
             End Set
         End Property

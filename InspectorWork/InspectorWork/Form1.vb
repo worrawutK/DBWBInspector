@@ -709,6 +709,14 @@ BypassAuter:
                 DBxDataSet.Inspection_Detail.Rows.Add(nRow2)
             End If
         End If
+        Dim itemPnashi As String = "P-NASHI"
+        If Not DBxDataSet.Inspection_Detail.Where(Function(x) x.INSPECTION_ITEM = itemPnashi).Any Then
+            Dim nRow3 As DBxDataSet.Inspection_DetailRow
+            nRow3 = DBxDataSet.Inspection_Detail.NewInspection_DetailRow
+            nRow3.INSPECTION_ITEM = itemPnashi
+            nRow3.ModeNo = "WB27"
+            DBxDataSet.Inspection_Detail.Rows.Add(nRow3)
+        End If
     End Sub
     Private Sub btnAddItem_Click(sender As System.Object, e As System.EventArgs) Handles btnAddItem.Click
         'SetDefultItem(ProcessName.DB)
@@ -1165,6 +1173,11 @@ EndLoop:
         inspectionNG.TotalNg = 0
         inspectionNG.Scrap = 0
         inspNgAdjustlist.Add(inspectionNG)
+        Dim inspectionP_Nashi As InspectionDataAdjust = New InspectionDataAdjust
+        inspectionP_Nashi.InspectionItem = "P-NASHI"
+        inspectionP_Nashi.TotalNg = 0
+        inspectionP_Nashi.Scrap = 0
+        inspNgAdjustlist.Add(inspectionP_Nashi)
 
         'Dim NgList As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)
 
@@ -1194,6 +1207,8 @@ EndLoop:
                 itemName = "Marker NG"
             ElseIf lotdata.INSPECTION_ITEM.Contains("[WB NG]") Then
                 itemName = "WB NG"
+            ElseIf lotdata.INSPECTION_ITEM = "P-NASHI" Then
+                itemName = "P-NASHI"
             Else
                 itemName = "Inspection NG"
             End If
@@ -1278,7 +1293,7 @@ EndLoop:
                 Dim inspNg As Integer
                 Try  'lbLotNo.Text, My.Settings.MachineNo, lbinspectorID.Text, lbGood.Text, lbNG.Text
                     Dim lotInfo = c_ServiceiLibrary.GetLotInfo(lbLotNo.Text, My.Settings.MachineNo)
-
+                    Dim inspP_NashiAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "P-NASHI").First
                     Dim inspDbAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "DB NG").First
                     Dim inspWbAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "WB NG").First
                     Dim inspMarkerAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Marker NG").First
@@ -1286,17 +1301,23 @@ EndLoop:
 
                     Dim piecePerFrame As Double = lotInfo.GoPiece / lotInfo.FramePass
                     Dim inspAdjust As InspectionDataAdjust = inspNgAdjustlist.Where(Function(x) x.InspectionItem = "Inspection NG").First
-                    inspNg = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap - inspDbAdjust.Scrap - inspWbAdjust.Scrap - inspMarkerAdjust.Scrap)
+                    inspNg = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap - inspDbAdjust.Scrap - inspWbAdjust.Scrap - inspMarkerAdjust.Scrap - inspP_NashiAdjust.Scrap)
                     Dim inspNg_FrontNgScrap As Integer = inspAdjust.TotalNg + ((frameScrap * piecePerFrame) - inspAdjust.Scrap)
                     Dim insFrontNg As Integer = inspAdjust.TotalNg - inspAdjust.Scrap
                     Dim fronNgScrap As Integer = inspDbAdjust.Scrap + inspWbAdjust.Scrap + inspMarkerAdjust.Scrap
+                    Dim p_NashiScrap As Integer = inspP_NashiAdjust.Scrap
 
                     Dim carrierInfo = c_ServiceiLibrary.GetCarrierInfo(My.Settings.MachineNo, lbLotNo.Text, lbinspectorID.Text)
                     Dim endLotSpecial As EndLotSpecialParametersEventArgs = New EndLotSpecialParametersEventArgs
                     endLotSpecial.FrameFail = frameScrap
                     endLotSpecial.FramePass = lotInfo.FramePass - frameScrap
                     endLotSpecial.Front_Ng = insFrontNg
-                    endLotSpecial.Front_Ng_Scrap = fronNgScrap
+                    If p_NashiScrap >= 0 Then
+                        endLotSpecial.OS_Scrap = p_NashiScrap + fronNgScrap
+                    Else
+                        endLotSpecial.Front_Ng_Scrap = fronNgScrap
+                    End If
+
                     'endLotSpecial.MarkerNg = inspMarkerAdjust.TotalNg - inspMarkerAdjust.Scrap
                     'endLotSpecial.Front_Ng = 0
                     'endLotSpecial.PNashi = 0

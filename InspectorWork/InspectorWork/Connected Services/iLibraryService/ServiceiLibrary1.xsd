@@ -284,6 +284,7 @@
       <xs:element minOccurs="0" name="MarkerNg" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="MarkerNg_Scrap" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="McNoOvenApcs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS_Scrap" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="PNashi" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="PNashi_Scrap" nillable="true" type="xs:int" />
     </xs:sequence>
@@ -291,17 +292,26 @@
   <xs:element name="EndLotSpecialParametersEventArgs" nillable="true" type="tns:EndLotSpecialParametersEventArgs" />
   <xs:complexType name="LotInformation">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Combined" type="xs:int" />
+      <xs:element minOccurs="0" name="CutFrame" type="xs:int" />
       <xs:element minOccurs="0" name="DeviceName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FailQty" type="xs:int" />
       <xs:element minOccurs="0" name="FrameFail" type="xs:int" />
       <xs:element minOccurs="0" name="FramePass" type="xs:int" />
+      <xs:element minOccurs="0" name="Front_ng" type="xs:int" />
       <xs:element minOccurs="0" name="GoPiece" type="xs:int" />
+      <xs:element minOccurs="0" name="Is_Instock" type="xs:int" />
       <xs:element minOccurs="0" name="JobName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LotId" type="xs:int" />
       <xs:element minOccurs="0" name="LotNo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LotType" type="tns:LotInformation.LotTypeState" />
+      <xs:element minOccurs="0" name="Marker_ng" type="xs:int" />
+      <xs:element minOccurs="0" name="PNashi" type="xs:int" />
       <xs:element minOccurs="0" name="PackageName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PassQty" type="xs:int" />
+      <xs:element minOccurs="0" name="Pcs_per_pack" type="xs:int" />
+      <xs:element minOccurs="0" name="Shipment" type="xs:int" />
+      <xs:element minOccurs="0" name="Surplus" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="LotInformation" nillable="true" type="tns:LotInformation" />

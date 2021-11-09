@@ -103,7 +103,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("DWB-INS-I00")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("DWB-INS-I07")>  _
         Public Property MachineNo() As String
             Get
                 Return CType(Me("MachineNo"),String)

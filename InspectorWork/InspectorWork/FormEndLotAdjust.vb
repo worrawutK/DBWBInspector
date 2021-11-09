@@ -26,6 +26,7 @@
         NgList.Add("WB NG", 0)
         NgList.Add("Marker NG", 0)
         NgList.Add("Inspection NG", 0)
+        NgList.Add("P-NASHI", 0)
 
         For Each lotdata As DBxDataSet.Inspection_DetailRow In c_InspectionDetall.Rows
 
@@ -36,6 +37,8 @@
                 NgList(lotdata.INSPECTION_ITEM) = lotdata.TL
             ElseIf lotdata.INSPECTION_ITEM.ToUpper.Contains("[WB NG]") Then
                 NgList("WB NG") = NgList("WB NG") + lotdata.TL
+            ElseIf lotdata.INSPECTION_ITEM.ToUpper = "P-NASHI".ToUpper Then
+                NgList("P-NASHI") = NgList("P-NASHI") + lotdata.TL
             Else
                 NgList("Inspection NG") = NgList("Inspection NG") + lotdata.TL
             End If
