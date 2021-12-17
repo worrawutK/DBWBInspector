@@ -876,6 +876,7 @@ Partial Class Form1
         Me.btnWB.TabIndex = 5
         Me.btnWB.Text = "WB"
         Me.btnWB.UseVisualStyleBackColor = True
+        Me.btnWB.Visible = False
         '
         'btnDB
         '
