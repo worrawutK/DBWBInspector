@@ -1312,7 +1312,7 @@ EndLoop:
                     endLotSpecial.FrameFail = frameScrap
                     endLotSpecial.FramePass = lotInfo.FramePass - frameScrap
                     endLotSpecial.Front_Ng = insFrontNg
-                    If p_NashiScrap >= 0 Then
+                    If p_NashiScrap > 0 Then
                         endLotSpecial.OS_Scrap = p_NashiScrap + fronNgScrap
                     Else
                         endLotSpecial.Front_Ng_Scrap = fronNgScrap
