@@ -2251,7 +2251,7 @@ EndLoop:
             Exit Sub
         End If
         If val.Text = "OK" Then
-            tbJudgeReason.Enabled = False
+            tbJudgeReason.Enabled = True
             tbJudgeReason.Text = Nothing
 
         Else

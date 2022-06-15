@@ -73,7 +73,7 @@ Partial Class MessageDialog
         Me.lbProcess.ForeColor = System.Drawing.Color.Green
         Me.lbProcess.Location = New System.Drawing.Point(12, 74)
         Me.lbProcess.Name = "lbProcess"
-        Me.lbProcess.Size = New System.Drawing.Size(445, 70)
+        Me.lbProcess.Size = New System.Drawing.Size(445, 121)
         Me.lbProcess.TabIndex = 19
         Me.lbProcess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
