@@ -21,3 +21,9 @@ Partial Public Class DBxDataSet
 
     End Class
 End Class
+
+Namespace DBxDataSetTableAdapters
+
+    Partial Public Class InspectionDetailTableAdapter
+    End Class
+End Namespace
