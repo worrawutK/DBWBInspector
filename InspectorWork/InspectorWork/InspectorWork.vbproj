@@ -118,6 +118,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="AQI.Designer.vb">
       <DependentUpon>AQI.vb</DependentUpon>
     </Compile>
@@ -167,6 +168,12 @@
       <DependentUpon>InputAdjustScrapDailog.vb</DependentUpon>
     </Compile>
     <Compile Include="InputAdjustScrapDailog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputCarrierDialog.Designer.vb">
+      <DependentUpon>InputCarrierDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InputCarrierDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="INPUTGLCHECK.Designer.vb">
@@ -231,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InputAdjustScrapDailog.resx">
       <DependentUpon>InputAdjustScrapDailog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputCarrierDialog.resx">
+      <DependentUpon>InputCarrierDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INPUTGLCHECK.resx">
       <DependentUpon>INPUTGLCHECK.vb</DependentUpon>
@@ -352,7 +362,10 @@
     </None>
     <Content Include="Resources\btnGreenOK.png" />
     <Content Include="Resources\Greenbar.png" />
+    <Content Include="Resources\PicturBoxRohmLogo.gif" />
+    <Content Include="Resources\PictureBoxQrCode.png" />
     <Content Include="Resources\PictureBoxStickerYeah.png" />
+    <Content Include="Resources\PictureBoxWrong.png" />
     <Content Include="unnamed.ico" />
   </ItemGroup>
   <ItemGroup>

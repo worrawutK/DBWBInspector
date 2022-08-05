@@ -392,7 +392,19 @@ BypassAuter:
                         'DB M BRARI100%INS 0213
                         layerNo = "0213"
                     End If
-                    Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
+                    Dim carrierInfo As CarrierInfo = c_ServiceiLibrary.GetCarrierInfo(My.Settings.MachineNo, WorkSlipQR.LotNo, OprData.OPID)
+                    If carrierInfo.EnabledControlCarrier = CarrierInfo.CarrierStatus.Use AndAlso carrierInfo.InControlCarrier = CarrierInfo.CarrierStatus.Use Then
+                        If carrierInfo.LoadCarrier = CarrierInfo.CarrierStatus.Use Then
+                            'Input carrier
+                            Dim frm As InputCarrierDialog = New InputCarrierDialog()
+                            If frm.ShowDialog() <> DialogResult.OK Then
+                                Exit Sub
+                            End If
+                            carrierInfo.LoadCarrierNo = frm.FullCode
+                        End If
+                    End If
+                    Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotPhase2(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), Licenser.Check, carrierInfo, Nothing)
+                    'Dim result As SetupLotResult = c_ServiceiLibrary.SetupLotNoCheckLicenser(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, DR.Process.Trim(), layerNo)
                     If result.IsPass = SetupLotResult.Status.NotPass Then
                         MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
                         Exit Sub
@@ -400,7 +412,9 @@ BypassAuter:
                         MessageBoxDialog.ShowMessageDialog(result.FunctionName, result.Cause, result.Type.ToString, result.ErrorNo)
                     End If
                     c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.LotSetUp)
-                    c_ServiceiLibrary.StartLot(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, result.Recipe)
+
+                    'c_ServiceiLibrary.StartLot(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, result.Recipe)
+                    c_ServiceiLibrary.StartLotPhase2(WorkSlipQR.LotNo, My.Settings.MachineNo, OprData.OPID, result.Recipe, carrierInfo, Nothing)
                     c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Execute)
                 Catch ex As Exception
                     MessageBoxDialog.ShowMessage("SetupLot,StartLot", ex.Message.ToString, "iLibrary Service")
@@ -1554,6 +1568,8 @@ EndLoop:
             Else
                 tbxKey.Text = ""
                 slMessage.Text = "QR Slip Read False"
+
+
             End If
         End If
         btnWorkSlip.ForeColor = Color.Black

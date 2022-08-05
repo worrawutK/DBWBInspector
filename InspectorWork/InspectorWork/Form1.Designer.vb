@@ -2273,9 +2273,9 @@ Partial Class Form1
         '
         Me.Label41.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label41.Location = New System.Drawing.Point(1354, 40)
+        Me.Label41.Location = New System.Drawing.Point(1234, 40)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(306, 39)
+        Me.Label41.Size = New System.Drawing.Size(420, 39)
         Me.Label41.TabIndex = 248
         Me.Label41.Text = "MachineNo."
         Me.Label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight
