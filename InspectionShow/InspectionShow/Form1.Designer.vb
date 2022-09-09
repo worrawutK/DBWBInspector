@@ -408,7 +408,7 @@ Partial Class Form1
         Me.lbVersion.Name = "lbVersion"
         Me.lbVersion.Size = New System.Drawing.Size(184, 23)
         Me.lbVersion.TabIndex = 257
-        Me.lbVersion.Text = "Ver 1.09"
+        Me.lbVersion.Text = "Ver 1.10"
         Me.lbVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbRemark
@@ -1748,7 +1748,7 @@ Partial Class Form1
         Me.PackageD.HeaderText = "Package"
         Me.PackageD.Name = "PackageD"
         Me.PackageD.ReadOnly = True
-        Me.PackageD.Width = 88
+        Me.PackageD.Width = 87
         '
         'Device
         '
@@ -1756,7 +1756,7 @@ Partial Class Form1
         Me.Device.HeaderText = "Device"
         Me.Device.Name = "Device"
         Me.Device.ReadOnly = True
-        Me.Device.Width = 76
+        Me.Device.Width = 75
         '
         'LotNo
         '
@@ -1764,7 +1764,7 @@ Partial Class Form1
         Me.LotNo.HeaderText = "LotNo"
         Me.LotNo.Name = "LotNo"
         Me.LotNo.ReadOnly = True
-        Me.LotNo.Width = 69
+        Me.LotNo.Width = 68
         '
         'RequestMode1
         '
@@ -1772,7 +1772,7 @@ Partial Class Form1
         Me.RequestMode1.HeaderText = "Request Mode1"
         Me.RequestMode1.Name = "RequestMode1"
         Me.RequestMode1.ReadOnly = True
-        Me.RequestMode1.Width = 118
+        Me.RequestMode1.Width = 117
         '
         'RequestMode2
         '
@@ -1780,7 +1780,7 @@ Partial Class Form1
         Me.RequestMode2.HeaderText = "Request Mode2"
         Me.RequestMode2.Name = "RequestMode2"
         Me.RequestMode2.ReadOnly = True
-        Me.RequestMode2.Width = 118
+        Me.RequestMode2.Width = 117
         '
         'Day
         '
@@ -1788,7 +1788,7 @@ Partial Class Form1
         Me.Day.HeaderText = "Day"
         Me.Day.Name = "Day"
         Me.Day.ReadOnly = True
-        Me.Day.Width = 58
+        Me.Day.Width = 57
         '
         'Night
         '
@@ -1796,7 +1796,7 @@ Partial Class Form1
         Me.Night.HeaderText = "Night"
         Me.Night.Name = "Night"
         Me.Night.ReadOnly = True
-        Me.Night.Width = 64
+        Me.Night.Width = 63
         '
         'Status
         '
@@ -1804,7 +1804,7 @@ Partial Class Form1
         Me.Status.HeaderText = "Status"
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
-        Me.Status.Width = 70
+        Me.Status.Width = 69
         '
         'DataGridView5
         '
@@ -1874,7 +1874,7 @@ Partial Class Form1
         Me.In_Day.ReadOnly = True
         Me.In_Day.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.In_Day.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.In_Day.Width = 39
+        Me.In_Day.Width = 38
         '
         'Out_Day
         '
@@ -1885,7 +1885,7 @@ Partial Class Form1
         Me.Out_Day.Name = "Out_Day"
         Me.Out_Day.ReadOnly = True
         Me.Out_Day.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Out_Day.Width = 39
+        Me.Out_Day.Width = 38
         '
         'WIP_Day
         '
@@ -1896,7 +1896,7 @@ Partial Class Form1
         Me.WIP_Day.Name = "WIP_Day"
         Me.WIP_Day.ReadOnly = True
         Me.WIP_Day.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.WIP_Day.Width = 39
+        Me.WIP_Day.Width = 38
         '
         'In_Night
         '
@@ -1907,7 +1907,7 @@ Partial Class Form1
         Me.In_Night.Name = "In_Night"
         Me.In_Night.ReadOnly = True
         Me.In_Night.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.In_Night.Width = 45
+        Me.In_Night.Width = 44
         '
         'Out_Night
         '
@@ -1918,7 +1918,7 @@ Partial Class Form1
         Me.Out_Night.Name = "Out_Night"
         Me.Out_Night.ReadOnly = True
         Me.Out_Night.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Out_Night.Width = 45
+        Me.Out_Night.Width = 44
         '
         'Total_In
         '
@@ -1929,7 +1929,7 @@ Partial Class Form1
         Me.Total_In.Name = "Total_In"
         Me.Total_In.ReadOnly = True
         Me.Total_In.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Total_In.Width = 45
+        Me.Total_In.Width = 44
         '
         'Total_Out
         '
@@ -1940,7 +1940,7 @@ Partial Class Form1
         Me.Total_Out.Name = "Total_Out"
         Me.Total_Out.ReadOnly = True
         Me.Total_Out.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Total_Out.Width = 45
+        Me.Total_Out.Width = 44
         '
         'WIP_Night
         '
@@ -1951,7 +1951,7 @@ Partial Class Form1
         Me.WIP_Night.Name = "WIP_Night"
         Me.WIP_Night.ReadOnly = True
         Me.WIP_Night.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.WIP_Night.Width = 45
+        Me.WIP_Night.Width = 44
         '
         'dgSumWip
         '
@@ -2000,7 +2000,7 @@ Partial Class Form1
         Me.INDAY.Name = "INDAY"
         Me.INDAY.ReadOnly = True
         Me.INDAY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.INDAY.Width = 39
+        Me.INDAY.Width = 38
         '
         'OUTDAY
         '
@@ -2009,7 +2009,7 @@ Partial Class Form1
         Me.OUTDAY.Name = "OUTDAY"
         Me.OUTDAY.ReadOnly = True
         Me.OUTDAY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.OUTDAY.Width = 39
+        Me.OUTDAY.Width = 38
         '
         'SUMDAY
         '
@@ -2018,7 +2018,7 @@ Partial Class Form1
         Me.SUMDAY.Name = "SUMDAY"
         Me.SUMDAY.ReadOnly = True
         Me.SUMDAY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.SUMDAY.Width = 39
+        Me.SUMDAY.Width = 38
         '
         'INNIGHT
         '
@@ -2027,7 +2027,7 @@ Partial Class Form1
         Me.INNIGHT.Name = "INNIGHT"
         Me.INNIGHT.ReadOnly = True
         Me.INNIGHT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.INNIGHT.Width = 45
+        Me.INNIGHT.Width = 44
         '
         'OUTNIGHT
         '
@@ -2036,7 +2036,7 @@ Partial Class Form1
         Me.OUTNIGHT.Name = "OUTNIGHT"
         Me.OUTNIGHT.ReadOnly = True
         Me.OUTNIGHT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.OUTNIGHT.Width = 45
+        Me.OUTNIGHT.Width = 44
         '
         'TotalLotIn
         '
@@ -2045,7 +2045,7 @@ Partial Class Form1
         Me.TotalLotIn.Name = "TotalLotIn"
         Me.TotalLotIn.ReadOnly = True
         Me.TotalLotIn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.TotalLotIn.Width = 45
+        Me.TotalLotIn.Width = 44
         '
         'TotalLotOut
         '
@@ -2054,7 +2054,7 @@ Partial Class Form1
         Me.TotalLotOut.Name = "TotalLotOut"
         Me.TotalLotOut.ReadOnly = True
         Me.TotalLotOut.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.TotalLotOut.Width = 45
+        Me.TotalLotOut.Width = 44
         '
         'SUMNIGHT
         '
@@ -2063,7 +2063,7 @@ Partial Class Form1
         Me.SUMNIGHT.Name = "SUMNIGHT"
         Me.SUMNIGHT.ReadOnly = True
         Me.SUMNIGHT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.SUMNIGHT.Width = 45
+        Me.SUMNIGHT.Width = 44
         '
         'DBlotwip
         '
