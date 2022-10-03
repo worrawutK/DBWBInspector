@@ -148,7 +148,7 @@ Public Class Form1
             '    MsgBox("ไม่ได้ INS ใน Process นี้")
             '    '   Exit Sub
             'End If
-            Dim insp_Endtime As Date
+            Dim insp_Endtime As Date = Nothing
             DbwbinsData1TableAdapter1.Fill(DBxDataSet1.DBWBINSData1, SearchLotNo.Text, process)
             For Each Data As DBxDataSet.DBWBINSData1Row In DBxDataSet1.DBWBINSData1
                 If Data.IsStartTimeNull Or Data.IsEndTimeNull Then
@@ -157,7 +157,7 @@ Public Class Form1
                     SearchLotNo.Focus()
                     Exit Sub
                 End If
-                If Data.Remark = "CANCEL LOT" Then
+                If Data.Remark = "CANCEL LOT" OrElse Data.Remark = "RE-INPUT" Then
                     Exit For
                 End If
                 insp_Endtime = Data.EndTime
@@ -273,6 +273,9 @@ Public Class Form1
                 End If
 
             Next
+            If insp_Endtime = Nothing Then
+                Exit Sub
+            End If
             InspectionDetailTableAdapter1.Fill(DBxDataSet1.InspectionDetail, SearchLotNo.Text, process, insp_Endtime)
             LotAlarmQtyTbl = New DBxDataSet.LotAlarmQtyDataTable
             'Dim AlDr As DBxDataSet.LotAlarmQtyRow

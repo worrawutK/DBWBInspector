@@ -408,7 +408,7 @@ Partial Class Form1
         Me.lbVersion.Name = "lbVersion"
         Me.lbVersion.Size = New System.Drawing.Size(184, 23)
         Me.lbVersion.TabIndex = 257
-        Me.lbVersion.Text = "Ver 1.10"
+        Me.lbVersion.Text = "Ver 1.12"
         Me.lbVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbRemark

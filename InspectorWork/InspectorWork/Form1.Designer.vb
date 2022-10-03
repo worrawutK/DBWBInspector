@@ -379,7 +379,7 @@ Partial Class Form1
         Me.lbMCNo.AutoSize = True
         Me.lbMCNo.Location = New System.Drawing.Point(110, 373)
         Me.lbMCNo.Name = "lbMCNo"
-        Me.lbMCNo.Size = New System.Drawing.Size(46, 16)
+        Me.lbMCNo.Size = New System.Drawing.Size(45, 16)
         Me.lbMCNo.TabIndex = 83
         Me.lbMCNo.Text = "MCNo"
         '
@@ -389,7 +389,7 @@ Partial Class Form1
         Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.Location = New System.Drawing.Point(12, 373)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(50, 16)
+        Me.Label42.Size = New System.Drawing.Size(49, 16)
         Me.Label42.TabIndex = 82
         Me.Label42.Text = "MCNo"
         '
@@ -444,7 +444,7 @@ Partial Class Form1
         Me.lbRemark.AutoSize = True
         Me.lbRemark.Location = New System.Drawing.Point(3, 664)
         Me.lbRemark.Name = "lbRemark"
-        Me.lbRemark.Size = New System.Drawing.Size(69, 16)
+        Me.lbRemark.Size = New System.Drawing.Size(68, 16)
         Me.lbRemark.TabIndex = 85
         Me.lbRemark.Text = "Remark : -"
         '
@@ -984,7 +984,7 @@ Partial Class Form1
         Me.lbInspecItem.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.lbInspecItem.Location = New System.Drawing.Point(1386, 15)
         Me.lbInspecItem.Name = "lbInspecItem"
-        Me.lbInspecItem.Size = New System.Drawing.Size(127, 16)
+        Me.lbInspecItem.Size = New System.Drawing.Size(126, 16)
         Me.lbInspecItem.TabIndex = 1
         Me.lbInspecItem.Text = "Now Inspection item"
         '
@@ -1016,7 +1016,7 @@ Partial Class Form1
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.Location = New System.Drawing.Point(9, 419)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(79, 16)
+        Me.Label37.Size = New System.Drawing.Size(78, 16)
         Me.Label37.TabIndex = 70
         Me.Label37.Text = "Time Stop"
         '
@@ -1026,7 +1026,7 @@ Partial Class Form1
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.Location = New System.Drawing.Point(10, 399)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(74, 16)
+        Me.Label30.Size = New System.Drawing.Size(73, 16)
         Me.Label30.TabIndex = 70
         Me.Label30.Text = "Time Run"
         '
@@ -1055,7 +1055,7 @@ Partial Class Form1
         Me.lbProcess.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbProcess.Location = New System.Drawing.Point(111, 194)
         Me.lbProcess.Name = "lbProcess"
-        Me.lbProcess.Size = New System.Drawing.Size(96, 16)
+        Me.lbProcess.Size = New System.Drawing.Size(95, 16)
         Me.lbProcess.TabIndex = 68
         Me.lbProcess.Text = "Lot of Process "
         '
@@ -1065,7 +1065,7 @@ Partial Class Form1
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.Location = New System.Drawing.Point(9, 196)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(105, 16)
+        Me.Label24.Size = New System.Drawing.Size(104, 16)
         Me.Label24.TabIndex = 67
         Me.Label24.Text = "LotOfProcess "
         '
@@ -1532,7 +1532,7 @@ Partial Class Form1
         Me.lbStartTime.AutoSize = True
         Me.lbStartTime.Location = New System.Drawing.Point(110, 319)
         Me.lbStartTime.Name = "lbStartTime"
-        Me.lbStartTime.Size = New System.Drawing.Size(66, 16)
+        Me.lbStartTime.Size = New System.Drawing.Size(65, 16)
         Me.lbStartTime.TabIndex = 53
         Me.lbStartTime.Text = "StartTime"
         '
@@ -1541,7 +1541,7 @@ Partial Class Form1
         Me.lbinspectorID.AutoSize = True
         Me.lbinspectorID.Location = New System.Drawing.Point(110, 294)
         Me.lbinspectorID.Name = "lbinspectorID"
-        Me.lbinspectorID.Size = New System.Drawing.Size(87, 16)
+        Me.lbinspectorID.Size = New System.Drawing.Size(86, 16)
         Me.lbinspectorID.TabIndex = 53
         Me.lbinspectorID.Text = "lbinspectorID"
         '
@@ -1592,7 +1592,7 @@ Partial Class Form1
         Me.lbWb99.AutoSize = True
         Me.lbWb99.Location = New System.Drawing.Point(201, 589)
         Me.lbWb99.Name = "lbWb99"
-        Me.lbWb99.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb99.Size = New System.Drawing.Size(28, 16)
         Me.lbWb99.TabIndex = 10
         Me.lbWb99.Text = "#99"
         '
@@ -1601,7 +1601,7 @@ Partial Class Form1
         Me.lbDB99.AutoSize = True
         Me.lbDB99.Location = New System.Drawing.Point(78, 589)
         Me.lbDB99.Name = "lbDB99"
-        Me.lbDB99.Size = New System.Drawing.Size(29, 16)
+        Me.lbDB99.Size = New System.Drawing.Size(28, 16)
         Me.lbDB99.TabIndex = 10
         Me.lbDB99.Text = "#99"
         '
@@ -1630,7 +1630,7 @@ Partial Class Form1
         Me.lbWb19.AutoSize = True
         Me.lbWb19.Location = New System.Drawing.Point(201, 569)
         Me.lbWb19.Name = "lbWb19"
-        Me.lbWb19.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb19.Size = New System.Drawing.Size(28, 16)
         Me.lbWb19.TabIndex = 10
         Me.lbWb19.Text = "#19"
         '
@@ -1639,7 +1639,7 @@ Partial Class Form1
         Me.lbDb16.AutoSize = True
         Me.lbDb16.Location = New System.Drawing.Point(78, 569)
         Me.lbDb16.Name = "lbDb16"
-        Me.lbDb16.Size = New System.Drawing.Size(29, 16)
+        Me.lbDb16.Size = New System.Drawing.Size(28, 16)
         Me.lbDb16.TabIndex = 10
         Me.lbDb16.Text = "#16"
         '
@@ -1668,7 +1668,7 @@ Partial Class Form1
         Me.lbWb18.AutoSize = True
         Me.lbWb18.Location = New System.Drawing.Point(201, 549)
         Me.lbWb18.Name = "lbWb18"
-        Me.lbWb18.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb18.Size = New System.Drawing.Size(28, 16)
         Me.lbWb18.TabIndex = 10
         Me.lbWb18.Text = "#18"
         '
@@ -1677,7 +1677,7 @@ Partial Class Form1
         Me.lbDb14.AutoSize = True
         Me.lbDb14.Location = New System.Drawing.Point(78, 549)
         Me.lbDb14.Name = "lbDb14"
-        Me.lbDb14.Size = New System.Drawing.Size(29, 16)
+        Me.lbDb14.Size = New System.Drawing.Size(28, 16)
         Me.lbDb14.TabIndex = 10
         Me.lbDb14.Text = "#14"
         '
@@ -1706,7 +1706,7 @@ Partial Class Form1
         Me.lbWb17.AutoSize = True
         Me.lbWb17.Location = New System.Drawing.Point(201, 529)
         Me.lbWb17.Name = "lbWb17"
-        Me.lbWb17.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb17.Size = New System.Drawing.Size(28, 16)
         Me.lbWb17.TabIndex = 10
         Me.lbWb17.Text = "#17"
         '
@@ -1715,7 +1715,7 @@ Partial Class Form1
         Me.lbDb07.AutoSize = True
         Me.lbDb07.Location = New System.Drawing.Point(78, 529)
         Me.lbDb07.Name = "lbDb07"
-        Me.lbDb07.Size = New System.Drawing.Size(29, 16)
+        Me.lbDb07.Size = New System.Drawing.Size(28, 16)
         Me.lbDb07.TabIndex = 10
         Me.lbDb07.Text = "#07"
         '
@@ -1744,7 +1744,7 @@ Partial Class Form1
         Me.lbWb02.AutoSize = True
         Me.lbWb02.Location = New System.Drawing.Point(201, 489)
         Me.lbWb02.Name = "lbWb02"
-        Me.lbWb02.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb02.Size = New System.Drawing.Size(28, 16)
         Me.lbWb02.TabIndex = 10
         Me.lbWb02.Text = "#02"
         '
@@ -1753,7 +1753,7 @@ Partial Class Form1
         Me.lbDb04.AutoSize = True
         Me.lbDb04.Location = New System.Drawing.Point(78, 489)
         Me.lbDb04.Name = "lbDb04"
-        Me.lbDb04.Size = New System.Drawing.Size(29, 16)
+        Me.lbDb04.Size = New System.Drawing.Size(28, 16)
         Me.lbDb04.TabIndex = 10
         Me.lbDb04.Text = "#04"
         '
@@ -1782,7 +1782,7 @@ Partial Class Form1
         Me.lbWb04.AutoSize = True
         Me.lbWb04.Location = New System.Drawing.Point(201, 509)
         Me.lbWb04.Name = "lbWb04"
-        Me.lbWb04.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb04.Size = New System.Drawing.Size(28, 16)
         Me.lbWb04.TabIndex = 10
         Me.lbWb04.Text = "#04"
         '
@@ -1791,7 +1791,7 @@ Partial Class Form1
         Me.lbDb06.AutoSize = True
         Me.lbDb06.Location = New System.Drawing.Point(78, 509)
         Me.lbDb06.Name = "lbDb06"
-        Me.lbDb06.Size = New System.Drawing.Size(29, 16)
+        Me.lbDb06.Size = New System.Drawing.Size(28, 16)
         Me.lbDb06.TabIndex = 10
         Me.lbDb06.Text = "#06"
         '
@@ -1820,7 +1820,7 @@ Partial Class Form1
         Me.lbWb01.AutoSize = True
         Me.lbWb01.Location = New System.Drawing.Point(201, 469)
         Me.lbWb01.Name = "lbWb01"
-        Me.lbWb01.Size = New System.Drawing.Size(29, 16)
+        Me.lbWb01.Size = New System.Drawing.Size(28, 16)
         Me.lbWb01.TabIndex = 10
         Me.lbWb01.Text = "#01"
         '
@@ -1829,7 +1829,7 @@ Partial Class Form1
         Me.lbDB01.AutoSize = True
         Me.lbDB01.Location = New System.Drawing.Point(78, 469)
         Me.lbDB01.Name = "lbDB01"
-        Me.lbDB01.Size = New System.Drawing.Size(29, 16)
+        Me.lbDB01.Size = New System.Drawing.Size(28, 16)
         Me.lbDB01.TabIndex = 10
         Me.lbDB01.Text = "#01"
         '
@@ -1870,7 +1870,7 @@ Partial Class Form1
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.Location = New System.Drawing.Point(10, 346)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(74, 16)
+        Me.Label27.Size = New System.Drawing.Size(73, 16)
         Me.Label27.TabIndex = 6
         Me.Label27.Text = "End Time"
         '
@@ -1880,7 +1880,7 @@ Partial Class Form1
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.Location = New System.Drawing.Point(9, 321)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(79, 16)
+        Me.Label26.Size = New System.Drawing.Size(78, 16)
         Me.Label26.TabIndex = 6
         Me.Label26.Text = "Start Time"
         '
@@ -1890,7 +1890,7 @@ Partial Class Form1
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(9, 296)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(72, 16)
+        Me.Label7.Size = New System.Drawing.Size(71, 16)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Inspector"
         '
@@ -1900,7 +1900,7 @@ Partial Class Form1
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(9, 271)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 16)
+        Me.Label5.Size = New System.Drawing.Size(69, 16)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Package"
         '
@@ -1909,7 +1909,7 @@ Partial Class Form1
         Me.lbPackage.AutoSize = True
         Me.lbPackage.Location = New System.Drawing.Point(110, 269)
         Me.lbPackage.Name = "lbPackage"
-        Me.lbPackage.Size = New System.Drawing.Size(100, 16)
+        Me.lbPackage.Size = New System.Drawing.Size(99, 16)
         Me.lbPackage.TabIndex = 6
         Me.lbPackage.Text = "PackageName"
         '
@@ -1918,7 +1918,7 @@ Partial Class Form1
         Me.lbDevice.AutoSize = True
         Me.lbDevice.Location = New System.Drawing.Point(110, 244)
         Me.lbDevice.Name = "lbDevice"
-        Me.lbDevice.Size = New System.Drawing.Size(64, 16)
+        Me.lbDevice.Size = New System.Drawing.Size(63, 16)
         Me.lbDevice.TabIndex = 6
         Me.lbDevice.Text = "DeviceID"
         '
@@ -1927,7 +1927,7 @@ Partial Class Form1
         Me.lbLotNo.AutoSize = True
         Me.lbLotNo.Location = New System.Drawing.Point(111, 219)
         Me.lbLotNo.Name = "lbLotNo"
-        Me.lbLotNo.Size = New System.Drawing.Size(50, 16)
+        Me.lbLotNo.Size = New System.Drawing.Size(49, 16)
         Me.lbLotNo.TabIndex = 6
         Me.lbLotNo.Text = "Lot No."
         '
@@ -1937,7 +1937,7 @@ Partial Class Form1
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(9, 221)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 16)
+        Me.Label6.Size = New System.Drawing.Size(56, 16)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Lot No."
         '
@@ -1947,7 +1947,7 @@ Partial Class Form1
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(7, 246)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 16)
+        Me.Label2.Size = New System.Drawing.Size(101, 16)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Device Name"
         '
@@ -2023,6 +2023,7 @@ Partial Class Form1
         '
         Me.lsvClients.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.IP})
         Me.lsvClients.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.lsvClients.HideSelection = False
         Me.lsvClients.Location = New System.Drawing.Point(46, 231)
         Me.lsvClients.Name = "lsvClients"
         Me.lsvClients.Size = New System.Drawing.Size(297, 115)
