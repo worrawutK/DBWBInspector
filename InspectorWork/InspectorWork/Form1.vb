@@ -1347,6 +1347,7 @@ EndLoop:
                     c_ServiceiLibrary.UpdateMachineState(My.Settings.MachineNo, MachineProcessingState.Idle)
                 Catch ex As Exception
                     MessageBoxDialog.ShowMessage("EndLot", ex.Message.ToString, "iLibrary Service")
+                    SaveCatchLog(ex.Message, "btnSave_Click()>>EndLot")
                 End Try
 
                 '  lbEndTime.Text = Format(Now, "yyyy/MM/dd HH:mm:ss")
