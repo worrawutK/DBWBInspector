@@ -1,8 +1,0 @@
-﻿
-            'If tbQR_GL.Text.Length <> 6 Then
-            '    slMessage.Text = "กรุณาทำการ GL Check"
-            '    tbQR_GL.Text = ""
-            '    Exit Sub
-            'End If
-ปิดไว้
-เปิดก่อนส่ง

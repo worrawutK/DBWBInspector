@@ -2181,7 +2181,7 @@ Partial Class Form1
         'SendToBackToolStripMenuItem
         '
         Me.SendToBackToolStripMenuItem.Name = "SendToBackToolStripMenuItem"
-        Me.SendToBackToolStripMenuItem.Size = New System.Drawing.Size(138, 22)
+        Me.SendToBackToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.SendToBackToolStripMenuItem.Text = "SendToBack"
         '
         'WBWIP
