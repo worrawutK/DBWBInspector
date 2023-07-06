@@ -54,17 +54,6 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=d"& _ 
-            "bxuser")>  _
-        Public ReadOnly Property DBxConnectionString() As String
-            Get
-                Return CType(Me("DBxConnectionString"),String)
-            End Get
-        End Property
-        
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("DB&WB INSPECTOR")>  _
@@ -219,6 +208,17 @@ Namespace My
             Set
                 Me("SPss") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=172.26.220.59;Initial Catalog=DBx;Persist Security Info=True;User ID="& _ 
+            "SA;Password=$A1234")>  _
+        Public ReadOnly Property DBxConnectionString() As String
+            Get
+                Return CType(Me("DBxConnectionString"),String)
+            End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _

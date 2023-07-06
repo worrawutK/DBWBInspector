@@ -2517,6 +2517,9 @@ Namespace iLibraryService
         Private Marker_ngField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private PCCodeField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private PNashiField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -2527,6 +2530,9 @@ Namespace iLibraryService
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private Pcs_per_packField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ProcessStateField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ShipmentField As Integer
@@ -2727,6 +2733,19 @@ Namespace iLibraryService
         End Property
         
         <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property PCCode() As Integer
+            Get
+                Return Me.PCCodeField
+            End Get
+            Set
+                If (Me.PCCodeField.Equals(value) <> true) Then
+                    Me.PCCodeField = value
+                    Me.RaisePropertyChanged("PCCode")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
         Public Property PNashi() As Integer
             Get
                 Return Me.PNashiField
@@ -2774,6 +2793,19 @@ Namespace iLibraryService
                 If (Me.Pcs_per_packField.Equals(value) <> true) Then
                     Me.Pcs_per_packField = value
                     Me.RaisePropertyChanged("Pcs_per_pack")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property ProcessState() As String
+            Get
+                Return Me.ProcessStateField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ProcessStateField, value) <> true) Then
+                    Me.ProcessStateField = value
+                    Me.RaisePropertyChanged("ProcessState")
                 End If
             End Set
         End Property
@@ -2907,6 +2939,227 @@ Namespace iLibraryService
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="APILotInfo", [Namespace]:="http://schemas.datacontract.org/2004/07/"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class APILotInfo
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private CodeField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private InformationField() As iLibraryService.APILotInfo.Informations
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private MessageField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private StatusField As Boolean
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Code() As Integer
+            Get
+                Return Me.CodeField
+            End Get
+            Set
+                If (Me.CodeField.Equals(value) <> true) Then
+                    Me.CodeField = value
+                    Me.RaisePropertyChanged("Code")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Information() As iLibraryService.APILotInfo.Informations()
+            Get
+                Return Me.InformationField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.InformationField, value) <> true) Then
+                    Me.InformationField = value
+                    Me.RaisePropertyChanged("Information")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Message() As String
+            Get
+                Return Me.MessageField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.MessageField, value) <> true) Then
+                    Me.MessageField = value
+                    Me.RaisePropertyChanged("Message")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Status() As Boolean
+            Get
+                Return Me.StatusField
+            End Get
+            Set
+                If (Me.StatusField.Equals(value) <> true) Then
+                    Me.StatusField = value
+                    Me.RaisePropertyChanged("Status")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+        
+        <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+         System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+         System.Runtime.Serialization.DataContractAttribute(Name:="APILotInfo.Informations", [Namespace]:="http://schemas.datacontract.org/2004/07/"),  _
+         System.SerializableAttribute()>  _
+        Partial Public Class Informations
+            Inherits Object
+            Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+            
+            <System.NonSerializedAttribute()>  _
+            Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+            
+            <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+            Private Error_Message_ENGField As String
+            
+            <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+            Private Error_Message_THAField As String
+            
+            <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+            Private HandlingField As String
+            
+            <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+            Private Is_PassField As Boolean
+            
+            <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+            Private LotNoField As String
+            
+            <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+            Private QRCodeField As String
+            
+            Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+                Get
+                    Return Me.extensionDataField
+                End Get
+                Set
+                    Me.extensionDataField = value
+                End Set
+            End Property
+            
+            <System.Runtime.Serialization.DataMemberAttribute()>  _
+            Public Property Error_Message_ENG() As String
+                Get
+                    Return Me.Error_Message_ENGField
+                End Get
+                Set
+                    If (Object.ReferenceEquals(Me.Error_Message_ENGField, value) <> true) Then
+                        Me.Error_Message_ENGField = value
+                        Me.RaisePropertyChanged("Error_Message_ENG")
+                    End If
+                End Set
+            End Property
+            
+            <System.Runtime.Serialization.DataMemberAttribute()>  _
+            Public Property Error_Message_THA() As String
+                Get
+                    Return Me.Error_Message_THAField
+                End Get
+                Set
+                    If (Object.ReferenceEquals(Me.Error_Message_THAField, value) <> true) Then
+                        Me.Error_Message_THAField = value
+                        Me.RaisePropertyChanged("Error_Message_THA")
+                    End If
+                End Set
+            End Property
+            
+            <System.Runtime.Serialization.DataMemberAttribute()>  _
+            Public Property Handling() As String
+                Get
+                    Return Me.HandlingField
+                End Get
+                Set
+                    If (Object.ReferenceEquals(Me.HandlingField, value) <> true) Then
+                        Me.HandlingField = value
+                        Me.RaisePropertyChanged("Handling")
+                    End If
+                End Set
+            End Property
+            
+            <System.Runtime.Serialization.DataMemberAttribute()>  _
+            Public Property Is_Pass() As Boolean
+                Get
+                    Return Me.Is_PassField
+                End Get
+                Set
+                    If (Me.Is_PassField.Equals(value) <> true) Then
+                        Me.Is_PassField = value
+                        Me.RaisePropertyChanged("Is_Pass")
+                    End If
+                End Set
+            End Property
+            
+            <System.Runtime.Serialization.DataMemberAttribute()>  _
+            Public Property LotNo() As String
+                Get
+                    Return Me.LotNoField
+                End Get
+                Set
+                    If (Object.ReferenceEquals(Me.LotNoField, value) <> true) Then
+                        Me.LotNoField = value
+                        Me.RaisePropertyChanged("LotNo")
+                    End If
+                End Set
+            End Property
+            
+            <System.Runtime.Serialization.DataMemberAttribute()>  _
+            Public Property QRCode() As String
+                Get
+                    Return Me.QRCodeField
+                End Get
+                Set
+                    If (Object.ReferenceEquals(Me.QRCodeField, value) <> true) Then
+                        Me.QRCodeField = value
+                        Me.RaisePropertyChanged("QRCode")
+                    End If
+                End Set
+            End Property
+            
+            Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+            
+            Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+                Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+                If (Not (propertyChanged) Is Nothing) Then
+                    propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+                End If
+            End Sub
+        End Class
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="iLibraryService.IServiceiLibrary")>  _
     Public Interface IServiceiLibrary
@@ -3009,6 +3262,9 @@ Namespace iLibraryService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServiceiLibrary/CheckPermissionUserLotAutoMotive", ReplyAction:="http://tempuri.org/IServiceiLibrary/CheckPermissionUserLotAutoMotiveResponse")>  _
         Function CheckPermissionUserLotAutoMotive(ByVal opNo As String, ByVal lotNo As String, ByVal machineNo As String) As iLibraryService.ResultBase
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IServiceiLibrary/GetLotNoByESLCardId", ReplyAction:="http://tempuri.org/IServiceiLibrary/GetLotNoByESLCardIdResponse")>  _
+        Function GetLotNoByESLCardId(ByVal eslCardBarcode As String, ByVal mcNo As String, ByVal lotType As Integer, ByVal appName As String) As iLibraryService.APILotInfo
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -3172,6 +3428,10 @@ Namespace iLibraryService
         
         Public Function CheckPermissionUserLotAutoMotive(ByVal opNo As String, ByVal lotNo As String, ByVal machineNo As String) As iLibraryService.ResultBase Implements iLibraryService.IServiceiLibrary.CheckPermissionUserLotAutoMotive
             Return MyBase.Channel.CheckPermissionUserLotAutoMotive(opNo, lotNo, machineNo)
+        End Function
+        
+        Public Function GetLotNoByESLCardId(ByVal eslCardBarcode As String, ByVal mcNo As String, ByVal lotType As Integer, ByVal appName As String) As iLibraryService.APILotInfo Implements iLibraryService.IServiceiLibrary.GetLotNoByESLCardId
+            Return MyBase.Channel.GetLotNoByESLCardId(eslCardBarcode, mcNo, lotType, appName)
         End Function
     End Class
 End Namespace

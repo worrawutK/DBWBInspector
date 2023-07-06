@@ -265,6 +265,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\iLibraryService\InspectorWork.iLibraryService.APILotInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\iLibraryService\InspectorWork.iLibraryService.CancelLotResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -316,14 +319,14 @@
     <None Include="Connected Services\iLibraryService\InspectorWork.iLibraryService.UpdateMachineStateResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\iLibraryService\ServiceiLibrary.wsdl" />
-    <None Include="Connected Services\iLibraryService\ServiceiLibrary.xsd">
+    <None Include="Connected Services\iLibraryService\ServiceiLibrary1.wsdl" />
+    <None Include="Connected Services\iLibraryService\ServiceiLibrary3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\iLibraryService\ServiceiLibrary1.xsd">
+    <None Include="Connected Services\iLibraryService\ServiceiLibrary31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\iLibraryService\ServiceiLibrary2.xsd">
+    <None Include="Connected Services\iLibraryService\ServiceiLibrary32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="DBxDataSet.xsc">
@@ -353,13 +356,13 @@
   <ItemGroup>
     <None Include="bin\Debug\Image\001034.jpg" />
     <None Include="Resources\MAPOSFT.png" />
-    <None Include="Connected Services\iLibraryService\ServiceiLibrary.disco" />
     <None Include="Connected Services\iLibraryService\configuration91.svcinfo" />
     <None Include="Connected Services\iLibraryService\configuration.svcinfo" />
     <None Include="Connected Services\iLibraryService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <None Include="Connected Services\iLibraryService\ServiceiLibrary1.disco" />
     <Content Include="Resources\btnGreenOK.png" />
     <Content Include="Resources\Greenbar.png" />
     <Content Include="Resources\PicturBoxRohmLogo.gif" />

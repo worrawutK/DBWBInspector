@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:simpleType name="MachineOnline">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Offline" />
@@ -306,10 +306,12 @@
       <xs:element minOccurs="0" name="LotNo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LotType" type="tns:LotInformation.LotTypeState" />
       <xs:element minOccurs="0" name="Marker_ng" type="xs:int" />
+      <xs:element minOccurs="0" name="PCCode" type="xs:int" />
       <xs:element minOccurs="0" name="PNashi" type="xs:int" />
       <xs:element minOccurs="0" name="PackageName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PassQty" type="xs:int" />
       <xs:element minOccurs="0" name="Pcs_per_pack" type="xs:int" />
+      <xs:element minOccurs="0" name="ProcessState" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Shipment" type="xs:int" />
       <xs:element minOccurs="0" name="Surplus" type="xs:int" />
     </xs:sequence>
@@ -331,4 +333,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultBase" nillable="true" type="tns:ResultBase" />
+  <xs:complexType name="APILotInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Information" nillable="true" type="tns:ArrayOfAPILotInfo.Informations" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="APILotInfo" nillable="true" type="tns:APILotInfo" />
+  <xs:complexType name="ArrayOfAPILotInfo.Informations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="APILotInfo.Informations" nillable="true" type="tns:APILotInfo.Informations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAPILotInfo.Informations" nillable="true" type="tns:ArrayOfAPILotInfo.Informations" />
+  <xs:complexType name="APILotInfo.Informations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error_Message_ENG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Error_Message_THA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Handling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Is_Pass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LotNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QRCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="APILotInfo.Informations" nillable="true" type="tns:APILotInfo.Informations" />
 </xs:schema>

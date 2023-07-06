@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="eElZbBGWVenSW9w+ZSKfJjJWWN8=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="6BUjqPGkkONXBwy/iK1VC3TlhxbXE59QEHmmunJKVag=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IServiceiLibrary">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IServiceiLibrary" contract="iLibraryService.IServiceiLibrary" bindingType="basicHttpBinding" address="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc" bindingConfiguration="BasicHttpBinding_IServiceiLibrary">
+    <endpoint name="BasicHttpBinding_IServiceiLibrary" contract="iLibraryService.IServiceiLibrary" bindingType="basicHttpBinding" address="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc" bindingConfiguration="BasicHttpBinding_IServiceiLibrary">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc</serializedValue>
+          <serializedValue>http://172.26.220.202/iLibraryService/ServiceiLibrary.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

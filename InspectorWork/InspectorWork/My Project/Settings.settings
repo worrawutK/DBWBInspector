@@ -2,14 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="DBxConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=dbxuser&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=172.16.0.102;Initial Catalog=DBx;Persist Security Info=True;User ID=dbxuser</Value>
-    </Setting>
     <Setting Name="ProcessName" Type="System.String" Scope="User">
       <Value Profile="(Default)">DB&amp;WB INSPECTOR</Value>
     </Setting>
@@ -21,14 +13,6 @@
     </Setting>
     <Setting Name="MachineNo" Type="System.String" Scope="User">
       <Value Profile="(Default)">DWB-INS-M01</Value>
-    </Setting>
-    <Setting Name="SECSGEMConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=172.16.0.102;Initial Catalog=SECSGEM;User ID=dbxuser&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=172.16.0.102;Initial Catalog=SECSGEM;User ID=dbxuser</Value>
     </Setting>
     <Setting Name="SetMasterGLCheck" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -56,6 +40,22 @@
     </Setting>
     <Setting Name="SPss" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DBxConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=172.26.220.59;Initial Catalog=DBx;Persist Security Info=True;User ID=SA;Password=$A1234&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=172.26.220.59;Initial Catalog=DBx;Persist Security Info=True;User ID=SA;Password=$A1234</Value>
+    </Setting>
+    <Setting Name="SECSGEMConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=172.16.0.102;Initial Catalog=SECSGEM;User ID=dbxuser&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=172.16.0.102;Initial Catalog=SECSGEM;User ID=dbxuser</Value>
     </Setting>
   </Settings>
 </SettingsFile>

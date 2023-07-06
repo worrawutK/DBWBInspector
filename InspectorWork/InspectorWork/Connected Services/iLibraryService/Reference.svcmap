@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61ee95ea-3237-4c82-882a-d8b0aab29625" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="61ee95ea-3237-4c82-882a-d8b0aab29625" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,14 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://172.26.220.202/ilibraryservice/ServiceiLibrary.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceiLibrary.disco" MetadataType="Disco" ID="9b531d5a-902a-45be-9b36-81971d73c8aa" SourceId="1" SourceUrl="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc?disco" />
-    <MetadataFile FileName="ServiceiLibrary.xsd" MetadataType="Schema" ID="7c1ec6a1-4c91-494d-ba04-dc1becaeb703" SourceId="1" SourceUrl="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc?xsd=xsd1" />
-    <MetadataFile FileName="ServiceiLibrary.wsdl" MetadataType="Wsdl" ID="9d38c4b1-1e97-4915-9428-2a5ce1f56f9e" SourceId="1" SourceUrl="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc?wsdl" />
-    <MetadataFile FileName="ServiceiLibrary1.xsd" MetadataType="Schema" ID="6b9e988b-c244-43da-aff0-efeb9953e867" SourceId="1" SourceUrl="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServiceiLibrary2.xsd" MetadataType="Schema" ID="d474e5af-8f9e-4863-90d2-cf4a42a441bf" SourceId="1" SourceUrl="http://webserv.thematrix.net/iLibraryService/ServiceiLibrary.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceiLibrary1.disco" MetadataType="Disco" ID="490691c3-4d0e-42bb-8496-2060e37fa7ca" SourceId="1" SourceUrl="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc?disco" />
+    <MetadataFile FileName="ServiceiLibrary3.xsd" MetadataType="Schema" ID="e61f86ee-a965-487c-b0f2-9b37b79b467f" SourceId="1" SourceUrl="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceiLibrary31.xsd" MetadataType="Schema" ID="17cc3e27-f157-4bbb-aa9a-a545f2e3f7e9" SourceId="1" SourceUrl="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceiLibrary1.wsdl" MetadataType="Wsdl" ID="d67dd7e8-181b-4501-899e-bff2eecce1c9" SourceId="1" SourceUrl="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc?wsdl" />
+    <MetadataFile FileName="ServiceiLibrary32.xsd" MetadataType="Schema" ID="44ec17b1-88b4-4b32-85e0-4f92c9edbb25" SourceId="1" SourceUrl="http://172.26.220.202/iLibraryService/ServiceiLibrary.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

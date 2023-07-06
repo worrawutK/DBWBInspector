@@ -29,7 +29,7 @@ Public Class Form1
     Dim InspDetailQuery As New DBxDataSetTableAdapters.InspectionDetailTableAdapter
 
     Dim DetailModeHashTbl As New Hashtable
-    Friend Const _ipDbxUser = "172.16.0.102"
+    Friend Const _ipDbxUser = "172.26.220.59"
     Public OprData As New CommonData
     Dim ModeListCbItem As New List(Of InspectionList)    'Link ModeNo and ModeName for cbxitem to InspectionDetail table
 
@@ -89,14 +89,14 @@ Public Class Form1
         'Label41.Text = "Inspection No." & str
         Label41.Text = "No." & My.Settings.MachineNo
 
-        'MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
-        MachinesTableAdapter1.Fill(DBxDataSet.Machines, My.Settings.MachineNo, "WBINS")
-        '  MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
-        For Each Data As DBxDataSet.MachinesRow In DBxDataSet.Machines.Rows
-            Data.IP = strIPAddress
-            Data.SelfConIP = strIPAddress
-            MachinesTableAdapter1.Update(Data)
-        Next
+        ''MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
+        'MachinesTableAdapter1.Fill(DBxDataSet.Machines, My.Settings.MachineNo, "WBINS")
+        ''  MachinesTableAdapter1.Fill(DBxDataSet.Machines, strHostName, "WBINS")
+        'For Each Data As DBxDataSet.MachinesRow In DBxDataSet.Machines.Rows
+        '    Data.IP = strIPAddress
+        '    Data.SelfConIP = strIPAddress
+        '    MachinesTableAdapter1.Update(Data)
+        'Next
 
         '  TabControl1.SelectedTab = TabPage2
 
