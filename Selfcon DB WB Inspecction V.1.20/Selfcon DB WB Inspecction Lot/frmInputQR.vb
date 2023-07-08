@@ -96,12 +96,12 @@ Public Class frmInputQR
 
     End Sub
 
-    Private Sub frmInputQR_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub frmInputQR_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         tbRevQR.Focus()
     End Sub
 
 
-    Private Sub frmInputQR_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Private Sub frmInputQR_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         lbCaption.Text = Caption
         Timer1.Start()
         tbRevQR.Focus()
@@ -122,6 +122,8 @@ Public Class frmInputQR
 
         End Try
     End Sub
+
+
     Function OperatorPermit(ByVal OpNo As String, ByVal role As String) As Boolean
         Dim ret As Boolean = False
 
@@ -151,4 +153,24 @@ Public Class frmInputQR
 
         Return ret
     End Function
+
+    Private Sub timerCheckText_Tick(sender As Object, e As EventArgs) Handles timerCheckText.Tick
+        tbRevQR.Text = ""
+    End Sub
+    Private cloetimer As Boolean = False
+    Private Sub tbRevQR_TextChanged(sender As Object, e As EventArgs) Handles tbRevQR.TextChanged
+        If tbRevQR.Text = "***" Then
+            timerCheckText.Stop()
+            Label1.Text = "Timer Stop"
+            cloetimer = True
+            tbRevQR.Text = ""
+
+        Else
+            If cloetimer = False Then
+                timerCheckText.Stop()
+                timerCheckText.Start()
+
+            End If
+        End If
+    End Sub
 End Class

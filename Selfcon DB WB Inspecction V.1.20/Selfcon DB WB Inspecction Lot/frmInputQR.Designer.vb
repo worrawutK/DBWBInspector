@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmInputQR
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,15 @@ Partial Class frmInputQR
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Me.tbRevQR = New System.Windows.Forms.TextBox
-        Me.lbCaption = New System.Windows.Forms.Label
+        Me.components = New System.ComponentModel.Container()
+        Me.tbRevQR = New System.Windows.Forms.TextBox()
+        Me.lbCaption = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.timerCheckText = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'tbRevQR
@@ -58,11 +60,25 @@ Partial Class frmInputQR
         Me.ProgressBar1.Size = New System.Drawing.Size(442, 23)
         Me.ProgressBar1.TabIndex = 2
         '
+        'timerCheckText
+        '
+        Me.timerCheckText.Interval = 150
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(9, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
+        Me.Label1.TabIndex = 3
+        '
         'frmInputQR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(471, 125)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.lbCaption)
         Me.Controls.Add(Me.tbRevQR)
@@ -77,4 +93,6 @@ Partial Class frmInputQR
     Friend WithEvents lbCaption As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
+    Friend WithEvents timerCheckText As Timer
+    Friend WithEvents Label1 As Label
 End Class

@@ -812,7 +812,7 @@ Partial Class Frmmain
         Me.lbStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.lbStatus.Location = New System.Drawing.Point(1484, 137)
         Me.lbStatus.Name = "lbStatus"
-        Me.lbStatus.Size = New System.Drawing.Size(64, 18)
+        Me.lbStatus.Size = New System.Drawing.Size(65, 18)
         Me.lbStatus.TabIndex = 245
         Me.lbStatus.Text = "ONLINE"
         '

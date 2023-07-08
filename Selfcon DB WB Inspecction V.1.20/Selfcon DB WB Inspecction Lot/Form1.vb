@@ -90,7 +90,7 @@ Public Class Frmmain
         End Try
     End Sub
 
-    
+
 
 
 
@@ -424,23 +424,23 @@ Public Class Frmmain
         Tb_Remark.Text = ""
     End Sub
 
-    Private Sub Frmmain_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+    Private Sub Frmmain_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         SaveDataLotBin()
     End Sub
 
 
 
     Private Sub Frmmain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-       
 
-        Dim processes As Process() = Process.GetProcessesByName("machine")
 
-        If processes.Length = 0 Then
-            Me.m_TDCProcess = Process.Start(My.Application.Info.DirectoryPath & "\Modules\TDC\machine.exe")
-            m_TDCProcess.WaitForInputIdle(My.Settings.TDCWaitTimeOut)
-        Else
-            m_TDCProcess = processes(0)
-        End If
+        'Dim processes As Process() = Process.GetProcessesByName("machine")
+
+        'If processes.Length = 0 Then
+        '    Me.m_TDCProcess = Process.Start(My.Application.Info.DirectoryPath & "\Modules\TDC\machine.exe")
+        '    m_TDCProcess.WaitForInputIdle(My.Settings.TDCWaitTimeOut)
+        'Else
+        '    m_TDCProcess = processes(0)
+        'End If
         m_Numpad = New NumPadForm()
         If Process.GetProcessesByName(Process.GetCurrentProcess.ProcessName).Length > 1 Then        'One application run only 130205
             Me.Close()
@@ -869,7 +869,7 @@ Public Class Frmmain
         End If
     End Sub
 
-   
+
 
     Private Sub SaveDBWBInsdatatoDBx(ByVal lotNo As String)
 
@@ -1053,9 +1053,9 @@ Public Class Frmmain
 
     End Sub
 
-   
 
-    Private Sub tbReq1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles  TB_ReqName1.TextChanged
+
+    Private Sub tbReq1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_ReqName1.TextChanged
         If TB_ReqName1.Text <> "" Then
             TB_ReqName1.BackColor = Color.GreenYellow
             TB_ModeReq1.BackColor = Color.GreenYellow
@@ -1070,11 +1070,11 @@ Public Class Frmmain
 
     End Sub
     Private Sub tbReq2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_ReqName2.TextChanged
-        
+
         If TB_ReqName2.Text <> "" Then
             TB_ReqName2.BackColor = Color.GreenYellow
             TB_ModeReq2.BackColor = Color.GreenYellow
-            
+
         End If
 
 
@@ -1104,8 +1104,8 @@ Public Class Frmmain
 #Region "=== TDC (APCS DATA BASE)"
 
     Private strRecv As String
-    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)> _
-      Private Shared Function FindWindow(ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
+    <DllImport("user32.dll", SetLastError:=True, CharSet:=CharSet.Auto)>
+    Private Shared Function FindWindow(ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
     End Function
     Private Declare Function PostMessage Lib "user32.dll" Alias "PostMessageA" (ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
     Private m_TDCProcess As Process
@@ -1275,7 +1275,7 @@ Public Class Frmmain
     '    DBWBINSData1TableAdapter.FillTop10(DBxDataSet.DBWBINSData1)
     'End Sub
     Private Sub ToolStripMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) _
-   ', OPENMODEToolStripMenuItem.Click, NECKCUTNECKSTRESSToolStripMenuItem.Click, BALLZUREToolStripMenuItem.Click _
+        ', OPENMODEToolStripMenuItem.Click, NECKCUTNECKSTRESSToolStripMenuItem.Click, BALLZUREToolStripMenuItem.Click _
         ', WIRINGMISToolStripMenuItem.Click
 
         Dim bt As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
@@ -1283,7 +1283,7 @@ Public Class Frmmain
     End Sub
 
 
-    Private Sub TestToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem.Click, WBToolStripMenuItem.Click, OTToolStripMenuItem.Click
+    Private Sub TestToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WBToolStripMenuItem.Click, OTToolStripMenuItem.Click, DBToolStripMenuItem.Click
         Dim bt As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
         strProcess = bt.Text
     End Sub
@@ -1342,7 +1342,7 @@ Public Class Frmmain
         Dim timenew As Date = Format(Now, "yyyy/MM/dd HH:mm:ss")
         Dim DataTaCSV As String = ""
         Dim CountWip As Integer = 0
-       
+
         DBWBINSDataTableAdapter.Fill(DBxDataSet.DBWBINSData)
         For Each row As DBxDataSet.DBWBINSDataRow In DBxDataSet.DBWBINSData
             Try
@@ -1414,17 +1414,17 @@ Public Class Frmmain
     End Sub
 
 
-    Private Sub ToolStripMenuItem2_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem1.MouseLeave, DBToolStripMenuItem2.MouseLeave, DBToolStripMenuItem3.MouseLeave _
-       , DBToolStripMenuItem4.MouseLeave, DBToolStripMenuItem5.MouseLeave, DBToolStripMenuItem6.MouseLeave, DBToolStripMenuItem7.MouseLeave, DBToolStripMenuItem8.MouseLeave, DBToolStripMenuItem9.MouseLeave _
-       , DBToolStripMenuItem10.MouseLeave, DBToolStripMenuItem11.MouseLeave, DBToolStripMenuItem12.MouseLeave, DBToolStripMenuItem13.MouseLeave, DBToolStripMenuItem14.MouseLeave _
-       , DBToolStripMenuItem15.MouseLeave, DBToolStripMenuItem16.MouseLeave, DBToolStripMenuItem17.MouseLeave, DBToolStripMenuItem18.MouseLeave, DBToolStripMenuItem19.MouseLeave _
-       , DBToolStripMenuItem20.MouseLeave, DBToolStripMenuItem21.MouseLeave _
-       , WBToolStripMenuItem1.MouseLeave, WBToolStripMenuItem2.MouseLeave, WBToolStripMenuItem3.MouseLeave, WBToolStripMenuItem4.MouseLeave, WBToolStripMenuItem5.MouseLeave _
-        , WBToolStripMenuItem6.MouseLeave, WBToolStripMenuItem7.MouseLeave, WBToolStripMenuItem8.MouseLeave, WBToolStripMenuItem9.MouseLeave, WBToolStripMenuItem10.MouseLeave _
-        , WBToolStripMenuItem11.MouseLeave, WBToolStripMenuItem12.MouseLeave, WBToolStripMenuItem13.MouseLeave, WBToolStripMenuItem14.MouseLeave, WBToolStripMenuItem15.MouseLeave _
-        , WBToolStripMenuItem16.MouseLeave, WBToolStripMenuItem17.MouseLeave, WBToolStripMenuItem18.MouseLeave, WBToolStripMenuItem19.MouseLeave, WBToolStripMenuItem20.MouseLeave _
-        , WBToolStripMenuItem21.MouseLeave, WBToolStripMenuItem22.MouseLeave, WBToolStripMenuItem23.MouseLeave, WBToolStripMenuItem24.MouseLeave, WBToolStripMenuItem25.MouseLeave _
-        , WBToolStripMenuItem26.MouseLeave
+    Private Sub ToolStripMenuItem2_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles WBToolStripMenuItem9.MouseLeave, WBToolStripMenuItem8.MouseLeave, WBToolStripMenuItem7.MouseLeave, WBToolStripMenuItem6.MouseLeave, WBToolStripMenuItem5.MouseLeave, WBToolStripMenuItem4.MouseLeave, WBToolStripMenuItem3.MouseLeave, WBToolStripMenuItem26.MouseLeave, WBToolStripMenuItem25.MouseLeave, WBToolStripMenuItem24.MouseLeave, WBToolStripMenuItem23.MouseLeave, WBToolStripMenuItem22.MouseLeave, WBToolStripMenuItem21.MouseLeave, WBToolStripMenuItem20.MouseLeave, WBToolStripMenuItem2.MouseLeave, WBToolStripMenuItem19.MouseLeave, WBToolStripMenuItem18.MouseLeave, WBToolStripMenuItem17.MouseLeave, WBToolStripMenuItem16.MouseLeave, WBToolStripMenuItem15.MouseLeave, WBToolStripMenuItem14.MouseLeave, WBToolStripMenuItem13.MouseLeave, WBToolStripMenuItem12.MouseLeave, WBToolStripMenuItem11.MouseLeave, WBToolStripMenuItem10.MouseLeave, WBToolStripMenuItem1.MouseLeave, DBToolStripMenuItem9.MouseLeave, DBToolStripMenuItem8.MouseLeave, DBToolStripMenuItem7.MouseLeave, DBToolStripMenuItem6.MouseLeave, DBToolStripMenuItem5.MouseLeave, DBToolStripMenuItem4.MouseLeave, DBToolStripMenuItem3.MouseLeave, DBToolStripMenuItem21.MouseLeave, DBToolStripMenuItem20.MouseLeave, DBToolStripMenuItem2.MouseLeave, DBToolStripMenuItem19.MouseLeave, DBToolStripMenuItem18.MouseLeave, DBToolStripMenuItem17.MouseLeave, DBToolStripMenuItem16.MouseLeave, DBToolStripMenuItem15.MouseLeave, DBToolStripMenuItem14.MouseLeave, DBToolStripMenuItem13.MouseLeave, DBToolStripMenuItem12.MouseLeave, DBToolStripMenuItem11.MouseLeave, DBToolStripMenuItem10.MouseLeave, DBToolStripMenuItem1.MouseLeave
+
+
+
+
+
+
+
+
+
+
 
 
         PictureBox1.Visible = False
@@ -1671,17 +1671,15 @@ Public Class Frmmain
     End Sub
 
 
-    Private Sub DBToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem1.Click, DBToolStripMenuItem2.Click, DBToolStripMenuItem3.Click _
-    , DBToolStripMenuItem4.Click, DBToolStripMenuItem5.Click, DBToolStripMenuItem6.Click, DBToolStripMenuItem7.Click, DBToolStripMenuItem8.Click, DBToolStripMenuItem9.Click, DBToolStripMenuItem10.Click _
-    , DBToolStripMenuItem11.Click, DBToolStripMenuItem12.Click, DBToolStripMenuItem12.Click, DBToolStripMenuItem13.Click, DBToolStripMenuItem14.Click, DBToolStripMenuItem15.Click _
-    , DBToolStripMenuItem16.Click, DBToolStripMenuItem17.Click, DBToolStripMenuItem18.Click, DBToolStripMenuItem19.Click, DBToolStripMenuItem20.Click, DBToolStripMenuItem21.Click _
-    , WBToolStripMenuItem1.Click, WBToolStripMenuItem2.Click, WBToolStripMenuItem3.Click, WBToolStripMenuItem4.Click, WBToolStripMenuItem5.Click, WBToolStripMenuItem6.Click, WBToolStripMenuItem7.Click _
-    , WBToolStripMenuItem8.Click, WBToolStripMenuItem9.Click, WBToolStripMenuItem10.Click, WBToolStripMenuItem11.Click, WBToolStripMenuItem12.Click, WBToolStripMenuItem13.Click _
-    , WBToolStripMenuItem14.Click, WBToolStripMenuItem15.Click, WBToolStripMenuItem16.Click, WBToolStripMenuItem17.Click, WBToolStripMenuItem18.Click, WBToolStripMenuItem19.Click _
-    , WBToolStripMenuItem20.Click, WBToolStripMenuItem21.Click, WBToolStripMenuItem22.Click, WBToolStripMenuItem23.Click, WBToolStripMenuItem24.Click, WBToolStripMenuItem25.Click, WBToolStripMenuItem26.Click _
-    , ADToolStripMenuItem1.Click, ADToolStripMenuItem2.Click, ADToolStripMenuItem3.Click, ADToolStripMenuItem4.Click _
-    , MAToolStripMenuItem1.Click, MAToolStripMenuItem2.Click, MAToolStripMenuItem3.Click, MAToolStripMenuItem4.Click _
-    , OTToolStripMenuItem1.Click, OTToolStripMenuItem2.Click, OTToolStripMenuItem3.Click
+    Private Sub DBToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem12.Click, WBToolStripMenuItem9.Click, WBToolStripMenuItem8.Click, WBToolStripMenuItem7.Click, WBToolStripMenuItem6.Click, WBToolStripMenuItem5.Click, WBToolStripMenuItem4.Click, WBToolStripMenuItem3.Click, WBToolStripMenuItem26.Click, WBToolStripMenuItem25.Click, WBToolStripMenuItem24.Click, WBToolStripMenuItem23.Click, WBToolStripMenuItem22.Click, WBToolStripMenuItem21.Click, WBToolStripMenuItem20.Click, WBToolStripMenuItem2.Click, WBToolStripMenuItem19.Click, WBToolStripMenuItem18.Click, WBToolStripMenuItem17.Click, WBToolStripMenuItem16.Click, WBToolStripMenuItem15.Click, WBToolStripMenuItem14.Click, WBToolStripMenuItem13.Click, WBToolStripMenuItem12.Click, WBToolStripMenuItem11.Click, WBToolStripMenuItem10.Click, WBToolStripMenuItem1.Click, OTToolStripMenuItem3.Click, OTToolStripMenuItem2.Click, OTToolStripMenuItem1.Click, MAToolStripMenuItem4.Click, MAToolStripMenuItem3.Click, MAToolStripMenuItem2.Click, MAToolStripMenuItem1.Click, DBToolStripMenuItem9.Click, DBToolStripMenuItem8.Click, DBToolStripMenuItem7.Click, DBToolStripMenuItem6.Click, DBToolStripMenuItem5.Click, DBToolStripMenuItem4.Click, DBToolStripMenuItem3.Click, DBToolStripMenuItem21.Click, DBToolStripMenuItem20.Click, DBToolStripMenuItem2.Click, DBToolStripMenuItem19.Click, DBToolStripMenuItem18.Click, DBToolStripMenuItem17.Click, DBToolStripMenuItem16.Click, DBToolStripMenuItem15.Click, DBToolStripMenuItem14.Click, DBToolStripMenuItem13.Click, DBToolStripMenuItem11.Click, DBToolStripMenuItem10.Click, DBToolStripMenuItem1.Click, ADToolStripMenuItem4.Click, ADToolStripMenuItem3.Click, ADToolStripMenuItem2.Click, ADToolStripMenuItem1.Click
+
+
+
+
+
+
+
+
 
 
         Dim tb As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
@@ -2050,8 +2048,8 @@ Public Class Frmmain
         End If
     End Sub
 
-    Private Sub tbInput_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_PREFORMINS.Click, TB_PREFORM.Click, TB_PICKUP.Click, TB_PASTEINS.Click, TB_PADNIN.Click, TB_NSOP.Click, TB_NSOL.Click, TB_LEADNIN.Click, TB_FRAMEOUT.Click, TB_BPM.Click, TB_BONDER.Click, TB_AUCUTSHORT.Click _
-    , TB_PREFORM.Enter, TB_PREFORMINS.Enter, TB_PASTEINS.Enter, TB_FRAMEOUT.Enter, TB_BONDER.Enter, TB_PADNIN.Enter, TB_NSOP.Enter, TB_NSOL.Enter, TB_LEADNIN.Enter, TB_BPM.Enter, TB_AUCUTSHORT.Enter
+    Private Sub tbInput_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_PREFORMINS.Enter, TB_PREFORMINS.Click, TB_PREFORM.Enter, TB_PREFORM.Click, TB_PICKUP.Click, TB_PASTEINS.Enter, TB_PASTEINS.Click, TB_PADNIN.Enter, TB_PADNIN.Click, TB_NSOP.Enter, TB_NSOP.Click, TB_NSOL.Enter, TB_NSOL.Click, TB_LEADNIN.Enter, TB_LEADNIN.Click, TB_FRAMEOUT.Enter, TB_FRAMEOUT.Click, TB_BPM.Enter, TB_BPM.Click, TB_BONDER.Enter, TB_BONDER.Click, TB_AUCUTSHORT.Enter, TB_AUCUTSHORT.Click
+
         Dim tb As TextBox = CType(sender, TextBox)
         tb = CType(sender, TextBox)
 
@@ -2185,7 +2183,7 @@ Public Class Frmmain
         Me.Show()
     End Sub
 
-   
+
 
     Private Function CheckLotEdit(ByVal LotNolotEdit As String)
         Dim LotNoDBx As Boolean = False
@@ -2217,7 +2215,7 @@ Public Class Frmmain
                 PBNGSample.Image = Nothing
 
 
-               
+
 
                 TB_ReqName1.Enabled = True
                 TB_ReqName2.Enabled = True
@@ -2510,9 +2508,9 @@ Public Class Frmmain
         CountListData()
     End Sub
 
-   
 
-    
+
+
     Private Sub Tb_LotNoCancelLot_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tb_LotNoCancelLot.Click
         Dim tb As TextBox
         Dim key As FrmKeyBoard = New FrmKeyBoard
@@ -2534,8 +2532,8 @@ Public Class Frmmain
         key.Show()
     End Sub
 
-   
-    
+
+
     Private Sub BtSaveCSV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtSaveCSV.Click
         If My.Computer.Network.IsAvailable Then
             If Not My.Computer.Network.Ping("172.16.0.102") Then
@@ -2553,7 +2551,7 @@ Public Class Frmmain
 
 
         LB_CheckWip.Items.Clear()
-        
+
         Dim timenew As String = Format(Now, "yyyyMMdd HHmmss")
         Dim DataToCSV As String = ""
         DataToCSV &= ("LotNo" & "," & "Package" & "," & "ReqDate" & "," & "RequestMode1" & "," & "RequestModeName1" & "," & "RequestMode2" & "," & "RequestModeName2" _
@@ -2588,10 +2586,5 @@ Public Class Frmmain
         LB_CheckWipToCSV.Text = CountWip
         MsgBox("Save ไฟล์ C:\Wip Inspection DB WB\" & "WIP " & timenew & ".CSV เรียบร้อย")
     End Sub
-
-
-
-
-
 End Class
 
