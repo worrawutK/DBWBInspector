@@ -44,6 +44,7 @@ Partial Class Form1
         Me.pbxLogo = New System.Windows.Forms.PictureBox()
         Me.lbProcessTitle = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.LabelGL = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.ComboBoxProcessName = New System.Windows.Forms.ComboBox()
@@ -306,6 +307,7 @@ Partial Class Form1
         '
         Me.TabPage2.AutoScroll = True
         Me.TabPage2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TabPage2.Controls.Add(Me.LabelGL)
         Me.TabPage2.Controls.Add(Me.Label40)
         Me.TabPage2.Controls.Add(Me.Label37)
         Me.TabPage2.Controls.Add(Me.ComboBoxProcessName)
@@ -373,6 +375,15 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Inspection Record"
         '
+        'LabelGL
+        '
+        Me.LabelGL.AutoSize = True
+        Me.LabelGL.Location = New System.Drawing.Point(219, 573)
+        Me.LabelGL.Name = "LabelGL"
+        Me.LabelGL.Size = New System.Drawing.Size(39, 13)
+        Me.LabelGL.TabIndex = 262
+        Me.LabelGL.Text = "GL : -"
+        '
         'Label40
         '
         Me.Label40.AutoSize = True
@@ -408,7 +419,7 @@ Partial Class Form1
         Me.lbVersion.Name = "lbVersion"
         Me.lbVersion.Size = New System.Drawing.Size(184, 23)
         Me.lbVersion.TabIndex = 257
-        Me.lbVersion.Text = "Ver 1.12"
+        Me.lbVersion.Text = "Ver 1.13"
         Me.lbVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbRemark
@@ -2171,7 +2182,7 @@ Partial Class Form1
         'SendToBackToolStripMenuItem
         '
         Me.SendToBackToolStripMenuItem.Name = "SendToBackToolStripMenuItem"
-        Me.SendToBackToolStripMenuItem.Size = New System.Drawing.Size(138, 22)
+        Me.SendToBackToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.SendToBackToolStripMenuItem.Text = "SendToBack"
         '
         'DbwbinsData1TableAdapter1
@@ -2448,4 +2459,5 @@ Partial Class Form1
     Friend WithEvents ComboBoxProcessName As ComboBox
     Friend WithEvents Label37 As Label
     Friend WithEvents Label40 As Label
+    Friend WithEvents LabelGL As Label
 End Class
