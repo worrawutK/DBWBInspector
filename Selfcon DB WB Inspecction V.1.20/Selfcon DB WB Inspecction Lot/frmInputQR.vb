@@ -126,8 +126,8 @@ Public Class frmInputQR
 
     Function OperatorPermit(ByVal OpNo As String, ByVal role As String) As Boolean
         Dim ret As Boolean = False
-
-        Dim query As String = "SELECT APCSProDB.man.user_roles.user_id, APCSProDB.man.user_roles.role_id, APCSProDB.man.user_roles.expired_on, APCSProDB.man.users.emp_num, APCSProDB.man.roles.name FROM  APCSProDB.man.user_roles INNER JOIN APCSProDB.man.users ON APCSProDB.man.user_roles.user_id = APCSProDB.man.users.id INNER JOIN APCSProDB.man.roles ON APCSProDB.man.user_roles.role_id = APCSProDB.man.roles.id WHERE (APCSProDB.man.users.emp_num = @opno) and APCSProDB.man.roles.name = @rolename"
+        Dim query As String = "APCSProDB.man.user_roles.user_id, APCSProDB.man.user_roles.role_id, APCSProDB.man.user_roles.expired_on, APCSProDB.man.users.emp_num, APCSProDB.man.roles.name FROM  APCSProDB.man.user_roles INNER JOIN APCSProDB.man.users On APCSProDB.man.user_roles.user_id = APCSProDB.man.users.id INNER JOIN APCSProDB.man.roles On APCSProDB.man.user_roles.role_id = APCSProDB.man.roles.id WHERE (APCSProDB.man.users.emp_num = @opno) and (APCSProDB.man.roles.name = 'PDDBGL' or APCSProDB.man.roles.name = 'PDWBGL')"
+        'Dim query As String = "SELECT APCSProDB.man.user_roles.user_id, APCSProDB.man.user_roles.role_id, APCSProDB.man.user_roles.expired_on, APCSProDB.man.users.emp_num, APCSProDB.man.roles.name FROM  APCSProDB.man.user_roles INNER JOIN APCSProDB.man.users ON APCSProDB.man.user_roles.user_id = APCSProDB.man.users.id INNER JOIN APCSProDB.man.roles ON APCSProDB.man.user_roles.role_id = APCSProDB.man.roles.id WHERE (APCSProDB.man.users.emp_num = @opno) and APCSProDB.man.roles.name = @rolename"
         'Dim query As String = "SELECT * FROM ชื่อตาราง WHERE ชื่อคอลัมน์ = @ConditionValue" ' ใช้ @parameter
 
         Using connection As New SqlConnection(My.Settings.DBxConnectionString)
