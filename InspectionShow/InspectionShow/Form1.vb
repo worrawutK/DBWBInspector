@@ -157,9 +157,9 @@ Public Class Form1
                     SearchLotNo.Focus()
                     Exit Sub
                 End If
-                If Data.Remark = "CANCEL LOT" OrElse Data.Remark = "RE-INPUT" Then
-                    Exit For
-                End If
+                'If Data.Remark = "CANCEL LOT" OrElse Data.Remark = "RE-INPUT" Then
+                '    Exit For
+                'End If
                 insp_Endtime = Data.EndTime
                 If Data.IsStartTimeNull = True Then
                     lbStartTime.Text = "-"
@@ -197,6 +197,9 @@ Public Class Form1
 
                 If Data.IsRemarkNull = False Then
                     lbRemark.Text = "Remark : " & Data.Remark
+                End If
+                If Data.IsGLCheckNull = False Then
+                    LabelGL.Text = "GL : " & Data.GLCheck
                 End If
 
                 If Data.IsJudgeReasonNull = False Then
