@@ -712,7 +712,7 @@ Partial Class Frmmain
         Me.lbRevision.Name = "lbRevision"
         Me.lbRevision.Size = New System.Drawing.Size(388, 13)
         Me.lbRevision.TabIndex = 266
-        Me.lbRevision.Text = """SelfCon DBWBISPECTION  Software Ver 1.20_NetVersion 1.10_2020'APR'27"""
+        Me.lbRevision.Text = """SelfCon DBWBISPECTION  Software Ver 1.21_NetVersion 1.10_2020'APR'27"""
         Me.lbRevision.UseWaitCursor = True
         '
         'Timer1
