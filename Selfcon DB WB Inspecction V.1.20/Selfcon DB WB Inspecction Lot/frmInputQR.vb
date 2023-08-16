@@ -136,7 +136,7 @@ Public Class frmInputQR
 
                 ' กำหนดค่าของ @parameter
                 command.Parameters.AddWithValue("@opno", OpNo)
-                command.Parameters.AddWithValue("@rolename", role)
+                'command.Parameters.AddWithValue("@rolename", role)
 
 
                 Using reader As SqlDataReader = command.ExecuteReader()
