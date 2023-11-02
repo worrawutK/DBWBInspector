@@ -2,6 +2,7 @@
 Imports System.Runtime.Serialization.Formatters.Binary
 Imports System.Text
 Imports System.Runtime.InteropServices
+Imports System.Security.Cryptography
 
 
 
@@ -2341,7 +2342,72 @@ Public Class Frmmain
 
 
     Private Sub TabControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabControl1.Click
-        DBWBINSDataTableAdapter.FillWip(DBxDataSet.DBWBINSData)
+        'DBWBINSDataTableAdapter.FillWip(DBxDataSet.DBWBINSData)
+        Dim ob = CType(sender, TabControl)
+        If ob.SelectedTab.Name <> "TabPage2" Then
+            Exit Sub
+        End If
+        Dim tb_LotdataList As DataTable = New DataTable()
+        Using cmd As New SqlClient.SqlCommand
+            cmd.Connection = New SqlClient.SqlConnection("Data Source=172.16.0.102;Initial Catalog=StoredProcedureDB;Persist Security Info=True;User ID=system;Password='p@$$w0rd'")
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "SELECT DBx.INS.DBWBINSData.Package,APCSProDB.trans.lots.id as LotId,DBx.INS.DBWBINSData.LotNo,
+                                DBx.INS.DBWBINSData.ReqDate,DBx.INS.DBWBINSData.RequestMode1,DBx.INS.DBWBINSData.RequestModeName1,
+                                DBx.INS.DBWBINSData.RequestMode2,DBx.INS.DBWBINSData.RequestModeName2,DBx.INS.DBWBINSData.MCNo,
+                                DBx.INS.DBWBINSData.ObjectIns,DBx.INS.DBWBINSData.OPNo,DBx.INS.DBWBINSData.RequestModeRemark1,DBx.INS.DBWBINSData.RequestModeRemark2
+                                FROM DBx.INS.DBWBINSData 
+                                inner join APCSProDB.trans.lots on lots.lot_no = DBWBINSData.LotNo
+                                WHERE (EndTime IS NULL) AND (ReqDate IS NOT NULL) AND (StartTime IS NULL) 
+                                ORDER BY StartTime DESC"
+            cmd.Connection.Open()
+            Dim rd As SqlClient.SqlDataReader = cmd.ExecuteReader()
+            If rd.HasRows Then
+                tb_LotdataList.Load(rd)
+            End If
+            cmd.Connection.Close()
+        End Using
+
+        Dim datalist As List(Of LotData) = New List(Of LotData)()
+        For Each dataRow As DataRow In tb_LotdataList.Rows
+            Dim data As LotData = New LotData()
+            data.Package = dataRow("Package").ToString()
+            data.LotNo = dataRow("LotNo").ToString()
+            data.LotId = dataRow("LotId").ToString()
+            data.ReqDate = CType(dataRow("ReqDate"), DateTime)
+            data.RequestMode1 = dataRow("RequestMode1").ToString()
+            data.RequestModeName1 = dataRow("RequestModeName1").ToString()
+            data.RequestMode2 = dataRow("RequestMode2").ToString()
+            data.RequestModeName2 = dataRow("RequestModeName2").ToString()
+            data.MCNo = dataRow("MCNo").ToString()
+            data.ObjectIns = dataRow("ObjectIns").ToString()
+            data.OPNo = dataRow("OPNo").ToString()
+            data.RequestModeRemark1 = dataRow("RequestModeRemark1").ToString()
+            data.RequestModeRemark2 = dataRow("RequestModeRemark2").ToString()
+
+
+
+            Dim tb_FlowDetail As DataTable = New DataTable()
+            Using cmd As New SqlClient.SqlCommand
+                cmd.Connection = New SqlClient.SqlConnection("Data Source=172.16.0.102;Initial Catalog=StoredProcedureDB;Persist Security Info=True;User ID=system;Password='p@$$w0rd'")
+                cmd.CommandType = System.Data.CommandType.StoredProcedure
+                cmd.CommandText = "[atom].[sp_get_trans_lot_flows]"
+                cmd.Parameters.Add("@lot_id", System.Data.SqlDbType.Int).Value = data.LotId
+                cmd.Connection.Open()
+                Dim rd As SqlClient.SqlDataReader = cmd.ExecuteReader()
+                If rd.HasRows Then
+                    tb_FlowDetail.Load(rd)
+                End If
+                cmd.Connection.Close()
+            End Using
+            Dim _row As DataRow() = tb_FlowDetail.Select("job_name ='AUTO X-RAY100%'")
+            If _row.Count > 0 Then
+                data.XRayFlow = _row(0).Item("job_name").ToString()
+            End If
+            datalist.Add(data)
+        Next
+
+        datalist = datalist.OrderBy(Function(x) x.ReqDate).ToList()
+        LotDataBindingSource.DataSource = datalist
     End Sub
 
     Private Sub BtCancelLot_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtCancelLot.Click
@@ -2585,6 +2651,20 @@ Public Class Frmmain
 
         LB_CheckWipToCSV.Text = CountWip
         MsgBox("Save ไฟล์ C:\Wip Inspection DB WB\" & "WIP " & timenew & ".CSV เรียบร้อย")
+    End Sub
+
+    Private Sub DBWBINSDataDataGridView_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DBWBINSDataDataGridView.CellFormatting
+
+        For i As Integer = 0 To Me.DBWBINSDataDataGridView.Rows.Count - 1
+            If Me.DBWBINSDataDataGridView.Rows(i).Cells("XRayFlow").Value <> "" Then
+                Me.DBWBINSDataDataGridView.Rows(i).DefaultCellStyle.BackColor = Color.YellowGreen
+                'Me.DBWBINSDataDataGridView.Rows(i).DefaultCellStyle.ForeColor = Color.White
+
+            Else
+                'Me.DBWBINSDataDataGridView.Rows(i).DefaultCellStyle.BackColor = Color.Green
+                'Me.DBWBINSDataDataGridView.Rows(i).DefaultCellStyle.ForeColor = Color.White
+            End If
+        Next
     End Sub
 End Class
 
