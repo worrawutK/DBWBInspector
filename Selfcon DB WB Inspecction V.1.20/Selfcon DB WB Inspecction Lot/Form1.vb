@@ -152,9 +152,9 @@ Public Class Frmmain
                 tbMCNo.Enabled = False
                 tbMCNo.BackColor = Color.FloralWhite
                 TB_ModeReq1.Enabled = False
-                TB_OTherRemak1.Enabled = False
+                'TB_OTherRemak1.Enabled = False
                 TB_ModeReq2.Enabled = False
-                TB_OTherRemak2.Enabled = False
+                'TB_OTherRemak2.Enabled = False
                 TB_PICKUP.Enabled = False
                 TB_PREFORM.Enabled = False
                 TB_FRAMEOUT.Enabled = False
@@ -1690,13 +1690,13 @@ Public Class Frmmain
             CompareNameReqeust(tb.Text)
             TB_ModeReq1.Text = ModeReq
             TB_OTherRemak1.Text = ""
-            TB_OTherRemak1.Enabled = False
+            'TB_OTherRemak1.Enabled = False
         End If
         If tb.Text = TB_ReqName2.Text Then
             CompareNameReqeust(tb.Text)
             TB_ModeReq2.Text = ModeReq
             TB_OTherRemak2.Text = ""
-            TB_OTherRemak2.Enabled = False
+            'TB_OTherRemak2.Enabled = False
         End If
     End Sub
     Private Sub DBToolStripMenuItem22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem22.Click

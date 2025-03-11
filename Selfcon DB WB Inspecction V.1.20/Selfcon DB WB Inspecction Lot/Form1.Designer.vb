@@ -119,6 +119,21 @@ Partial Class Frmmain
         Me.LB_CheckWip = New System.Windows.Forms.ListBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DBWBINSDataDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.XRayFlow = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LotDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btupdate = New System.Windows.Forms.Button()
         Me.LotAlarmQtyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -207,26 +222,12 @@ Partial Class Frmmain
         Me.WBDataTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.WBDataTableAdapter()
         Me.LotAlarmQtyTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.LotAlarmQtyTableAdapter()
         Me.DBWBINSDataTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.DBWBINSDataTableAdapter()
-        Me.LotDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.XRayFlow = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.ContextMenuStrip3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DBWBINSDataDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LotDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LotAlarmQtyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.gbBefore.SuspendLayout()
@@ -239,7 +240,6 @@ Partial Class Frmmain
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WBDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LotDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SelfconModeToolStripMenuItem
@@ -303,133 +303,133 @@ Partial Class Frmmain
         'DBToolStripMenuItem1
         '
         Me.DBToolStripMenuItem1.Name = "DBToolStripMenuItem1"
-        Me.DBToolStripMenuItem1.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem1.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem1.Text = "Chip Kake (Chipping)"
         '
         'DBToolStripMenuItem2
         '
         Me.DBToolStripMenuItem2.Name = "DBToolStripMenuItem2"
-        Me.DBToolStripMenuItem2.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem2.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem2.Text = "Chip Crack"
         '
         'DBToolStripMenuItem3
         '
         Me.DBToolStripMenuItem3.Name = "DBToolStripMenuItem3"
-        Me.DBToolStripMenuItem3.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem3.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem3.Text = "Aluminium Scratch"
         '
         'DBToolStripMenuItem4
         '
         Me.DBToolStripMenuItem4.Name = "DBToolStripMenuItem4"
-        Me.DBToolStripMenuItem4.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem4.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem4.Text = "Back Side Chipping"
         '
         'DBToolStripMenuItem5
         '
         Me.DBToolStripMenuItem5.Name = "DBToolStripMenuItem5"
-        Me.DBToolStripMenuItem5.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem5.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem5.Text = "Stained Die (IBUTSU)"
         '
         'DBToolStripMenuItem6
         '
         Me.DBToolStripMenuItem6.Name = "DBToolStripMenuItem6"
-        Me.DBToolStripMenuItem6.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem6.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem6.Text = "Die Twist"
         '
         'DBToolStripMenuItem7
         '
         Me.DBToolStripMenuItem7.Name = "DBToolStripMenuItem7"
-        Me.DBToolStripMenuItem7.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem7.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem7.Text = "Die Drop Off"
         '
         'DBToolStripMenuItem8
         '
         Me.DBToolStripMenuItem8.Name = "DBToolStripMenuItem8"
-        Me.DBToolStripMenuItem8.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem8.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem8.Text = "Die Misorientation"
         '
         'DBToolStripMenuItem9
         '
         Me.DBToolStripMenuItem9.Name = "DBToolStripMenuItem9"
-        Me.DBToolStripMenuItem9.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem9.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem9.Text = "Die Misalignment (Chip Zure)"
         '
         'DBToolStripMenuItem10
         '
         Me.DBToolStripMenuItem10.Name = "DBToolStripMenuItem10"
-        Me.DBToolStripMenuItem10.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem10.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem10.Text = "Chip Bad Mark"
         '
         'DBToolStripMenuItem11
         '
         Me.DBToolStripMenuItem11.Name = "DBToolStripMenuItem11"
-        Me.DBToolStripMenuItem11.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem11.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem11.Text = "Preform Over Flow"
         '
         'DBToolStripMenuItem12
         '
         Me.DBToolStripMenuItem12.Name = "DBToolStripMenuItem12"
-        Me.DBToolStripMenuItem12.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem12.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem12.Text = "Preform Thickness"
         '
         'DBToolStripMenuItem13
         '
         Me.DBToolStripMenuItem13.Name = "DBToolStripMenuItem13"
-        Me.DBToolStripMenuItem13.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem13.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem13.Text = "Preform Spread"
         '
         'DBToolStripMenuItem14
         '
         Me.DBToolStripMenuItem14.Name = "DBToolStripMenuItem14"
-        Me.DBToolStripMenuItem14.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem14.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem14.Text = "Preform Zure"
         '
         'DBToolStripMenuItem15
         '
         Me.DBToolStripMenuItem15.Name = "DBToolStripMenuItem15"
-        Me.DBToolStripMenuItem15.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem15.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem15.Text = "Lead Frame Plating NG."
         '
         'DBToolStripMenuItem16
         '
         Me.DBToolStripMenuItem16.Name = "DBToolStripMenuItem16"
-        Me.DBToolStripMenuItem16.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem16.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem16.Text = "Frame Bent"
         '
         'DBToolStripMenuItem17
         '
         Me.DBToolStripMenuItem17.Name = "DBToolStripMenuItem17"
-        Me.DBToolStripMenuItem17.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem17.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem17.Text = "Inner Lead Bent"
         '
         'DBToolStripMenuItem18
         '
         Me.DBToolStripMenuItem18.Name = "DBToolStripMenuItem18"
-        Me.DBToolStripMenuItem18.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem18.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem18.Text = "Pad Colour Change"
         '
         'DBToolStripMenuItem19
         '
         Me.DBToolStripMenuItem19.Name = "DBToolStripMenuItem19"
-        Me.DBToolStripMenuItem19.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem19.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem19.Text = "Back Side Metal Bari"
         '
         'DBToolStripMenuItem20
         '
         Me.DBToolStripMenuItem20.Name = "DBToolStripMenuItem20"
-        Me.DBToolStripMenuItem20.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem20.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem20.Text = "Missing Die ( Chip Off )"
         '
         'DBToolStripMenuItem21
         '
         Me.DBToolStripMenuItem21.Name = "DBToolStripMenuItem21"
-        Me.DBToolStripMenuItem21.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem21.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem21.Text = "The Impacted Needle Smash Of Back Side Chip"
         '
         'DBToolStripMenuItem22
         '
         Me.DBToolStripMenuItem22.Name = "DBToolStripMenuItem22"
-        Me.DBToolStripMenuItem22.Size = New System.Drawing.Size(321, 22)
+        Me.DBToolStripMenuItem22.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem22.Text = "OTHER DB"
         '
         'WBToolStripMenuItem
@@ -611,31 +611,31 @@ Partial Class Frmmain
         'ADToolStripMenuItem1
         '
         Me.ADToolStripMenuItem1.Name = "ADToolStripMenuItem1"
-        Me.ADToolStripMenuItem1.Size = New System.Drawing.Size(218, 22)
+        Me.ADToolStripMenuItem1.Size = New System.Drawing.Size(219, 22)
         Me.ADToolStripMenuItem1.Text = "DENSO DEVICE"
         '
         'ADToolStripMenuItem2
         '
         Me.ADToolStripMenuItem2.Name = "ADToolStripMenuItem2"
-        Me.ADToolStripMenuItem2.Size = New System.Drawing.Size(218, 22)
+        Me.ADToolStripMenuItem2.Size = New System.Drawing.Size(219, 22)
         Me.ADToolStripMenuItem2.Text = "H-RANK DEVICE"
         '
         'ADToolStripMenuItem3
         '
         Me.ADToolStripMenuItem3.Name = "ADToolStripMenuItem3"
-        Me.ADToolStripMenuItem3.Size = New System.Drawing.Size(218, 22)
+        Me.ADToolStripMenuItem3.Size = New System.Drawing.Size(219, 22)
         Me.ADToolStripMenuItem3.Text = "CLAIM COUNTERMEASURE"
         '
         'ADToolStripMenuItem4
         '
         Me.ADToolStripMenuItem4.Name = "ADToolStripMenuItem4"
-        Me.ADToolStripMenuItem4.Size = New System.Drawing.Size(218, 22)
+        Me.ADToolStripMenuItem4.Size = New System.Drawing.Size(219, 22)
         Me.ADToolStripMenuItem4.Text = "CHRONIC NG"
         '
         'ADToolStripMenuItem5
         '
         Me.ADToolStripMenuItem5.Name = "ADToolStripMenuItem5"
-        Me.ADToolStripMenuItem5.Size = New System.Drawing.Size(218, 22)
+        Me.ADToolStripMenuItem5.Size = New System.Drawing.Size(219, 22)
         Me.ADToolStripMenuItem5.Text = "OTHER AD"
         '
         'MACHINEABNORMALToolStripMenuItem
@@ -648,31 +648,31 @@ Partial Class Frmmain
         'MAToolStripMenuItem1
         '
         Me.MAToolStripMenuItem1.Name = "MAToolStripMenuItem1"
-        Me.MAToolStripMenuItem1.Size = New System.Drawing.Size(214, 22)
+        Me.MAToolStripMenuItem1.Size = New System.Drawing.Size(215, 22)
         Me.MAToolStripMenuItem1.Text = "BM"
         '
         'MAToolStripMenuItem2
         '
         Me.MAToolStripMenuItem2.Name = "MAToolStripMenuItem2"
-        Me.MAToolStripMenuItem2.Size = New System.Drawing.Size(214, 22)
+        Me.MAToolStripMenuItem2.Size = New System.Drawing.Size(215, 22)
         Me.MAToolStripMenuItem2.Text = "FEED BACK LOT"
         '
         'MAToolStripMenuItem3
         '
         Me.MAToolStripMenuItem3.Name = "MAToolStripMenuItem3"
-        Me.MAToolStripMenuItem3.Size = New System.Drawing.Size(214, 22)
+        Me.MAToolStripMenuItem3.Size = New System.Drawing.Size(215, 22)
         Me.MAToolStripMenuItem3.Text = "ALARM OVER STANDARDS"
         '
         'MAToolStripMenuItem4
         '
         Me.MAToolStripMenuItem4.Name = "MAToolStripMenuItem4"
-        Me.MAToolStripMenuItem4.Size = New System.Drawing.Size(214, 22)
+        Me.MAToolStripMenuItem4.Size = New System.Drawing.Size(215, 22)
         Me.MAToolStripMenuItem4.Text = "M/C STOP LONG TIME"
         '
         'MAToolStripMenuItem5
         '
         Me.MAToolStripMenuItem5.Name = "MAToolStripMenuItem5"
-        Me.MAToolStripMenuItem5.Size = New System.Drawing.Size(214, 22)
+        Me.MAToolStripMenuItem5.Size = New System.Drawing.Size(215, 22)
         Me.MAToolStripMenuItem5.Text = "OTHER MA"
         '
         'OTHERToolStripMenuItem
@@ -685,25 +685,25 @@ Partial Class Frmmain
         'OTToolStripMenuItem1
         '
         Me.OTToolStripMenuItem1.Name = "OTToolStripMenuItem1"
-        Me.OTToolStripMenuItem1.Size = New System.Drawing.Size(185, 22)
+        Me.OTToolStripMenuItem1.Size = New System.Drawing.Size(186, 22)
         Me.OTToolStripMenuItem1.Text = "EVALUATION"
         '
         'OTToolStripMenuItem2
         '
         Me.OTToolStripMenuItem2.Name = "OTToolStripMenuItem2"
-        Me.OTToolStripMenuItem2.Size = New System.Drawing.Size(185, 22)
+        Me.OTToolStripMenuItem2.Size = New System.Drawing.Size(186, 22)
         Me.OTToolStripMenuItem2.Text = "NEW DEVICE/CS-LOT"
         '
         'OTToolStripMenuItem3
         '
         Me.OTToolStripMenuItem3.Name = "OTToolStripMenuItem3"
-        Me.OTToolStripMenuItem3.Size = New System.Drawing.Size(185, 22)
+        Me.OTToolStripMenuItem3.Size = New System.Drawing.Size(186, 22)
         Me.OTToolStripMenuItem3.Text = "CLAIM"
         '
         'OTToolStripMenuItem4
         '
         Me.OTToolStripMenuItem4.Name = "OTToolStripMenuItem4"
-        Me.OTToolStripMenuItem4.Size = New System.Drawing.Size(185, 22)
+        Me.OTToolStripMenuItem4.Size = New System.Drawing.Size(186, 22)
         Me.OTToolStripMenuItem4.Text = "OTHER"
         '
         'lbRevision
@@ -713,9 +713,9 @@ Partial Class Frmmain
         Me.lbRevision.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.lbRevision.Location = New System.Drawing.Point(1170, 18)
         Me.lbRevision.Name = "lbRevision"
-        Me.lbRevision.Size = New System.Drawing.Size(388, 13)
+        Me.lbRevision.Size = New System.Drawing.Size(384, 13)
         Me.lbRevision.TabIndex = 266
-        Me.lbRevision.Text = """SelfCon DBWBISPECTION  Software Ver 1.22_NetVersion 1.11_2023'OCT'31"""
+        Me.lbRevision.Text = """SelfCon DBWBISPECTION  Software Ver 1.22_NetVersion 1.12_2025'Mar'11"""
         Me.lbRevision.UseWaitCursor = True
         '
         'Timer1
@@ -925,6 +925,110 @@ Partial Class Frmmain
         Me.DBWBINSDataDataGridView.ReadOnly = True
         Me.DBWBINSDataDataGridView.Size = New System.Drawing.Size(1506, 486)
         Me.DBWBINSDataDataGridView.TabIndex = 276
+        '
+        'DataGridViewTextBoxColumn48
+        '
+        Me.DataGridViewTextBoxColumn48.DataPropertyName = "Package"
+        Me.DataGridViewTextBoxColumn48.HeaderText = "Package"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "LotNo"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "LotNo"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ReqDate"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "ReqDate"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 75
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "RequestMode1"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "RequestMode1"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn37
+        '
+        Me.DataGridViewTextBoxColumn37.DataPropertyName = "RequestModeName1"
+        Me.DataGridViewTextBoxColumn37.HeaderText = "RequestModeName1"
+        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
+        Me.DataGridViewTextBoxColumn37.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "RequestMode2"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "RequestMode2"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn38
+        '
+        Me.DataGridViewTextBoxColumn38.DataPropertyName = "RequestModeName2"
+        Me.DataGridViewTextBoxColumn38.HeaderText = "RequestModeName2"
+        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
+        Me.DataGridViewTextBoxColumn38.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "MCNo"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "MCNo"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn47
+        '
+        Me.DataGridViewTextBoxColumn47.DataPropertyName = "ObjectIns"
+        Me.DataGridViewTextBoxColumn47.HeaderText = "ObjectIns"
+        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        Me.DataGridViewTextBoxColumn47.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "OPNo"
+        Me.DataGridViewTextBoxColumn12.HeaderText = "OPNo"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn42
+        '
+        Me.DataGridViewTextBoxColumn42.DataPropertyName = "RequestModeRemark1"
+        Me.DataGridViewTextBoxColumn42.HeaderText = "RequestModeRemark1"
+        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
+        Me.DataGridViewTextBoxColumn42.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn43
+        '
+        Me.DataGridViewTextBoxColumn43.DataPropertyName = "RequestModeRemark2"
+        Me.DataGridViewTextBoxColumn43.HeaderText = "RequestModeRemark2"
+        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn49
+        '
+        Me.DataGridViewTextBoxColumn49.DataPropertyName = "Process"
+        Me.DataGridViewTextBoxColumn49.HeaderText = "Process"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = True
+        '
+        'XRayFlow
+        '
+        Me.XRayFlow.DataPropertyName = "XRayFlow"
+        Me.XRayFlow.HeaderText = "XRayFlow"
+        Me.XRayFlow.Name = "XRayFlow"
+        Me.XRayFlow.ReadOnly = True
+        '
+        'LotDataBindingSource
+        '
+        Me.LotDataBindingSource.DataSource = GetType(Selfcon_DB_WB_Inspecction_Lot.LotData)
         '
         'btupdate
         '
@@ -1823,110 +1927,6 @@ Partial Class Frmmain
         '
         Me.DBWBINSDataTableAdapter.ClearBeforeFill = True
         '
-        'LotDataBindingSource
-        '
-        Me.LotDataBindingSource.DataSource = GetType(Selfcon_DB_WB_Inspecction_Lot.LotData)
-        '
-        'DataGridViewTextBoxColumn48
-        '
-        Me.DataGridViewTextBoxColumn48.DataPropertyName = "Package"
-        Me.DataGridViewTextBoxColumn48.HeaderText = "Package"
-        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
-        Me.DataGridViewTextBoxColumn48.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "LotNo"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "LotNo"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "ReqDate"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "ReqDate"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 75
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "RequestMode1"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "RequestMode1"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn37
-        '
-        Me.DataGridViewTextBoxColumn37.DataPropertyName = "RequestModeName1"
-        Me.DataGridViewTextBoxColumn37.HeaderText = "RequestModeName1"
-        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
-        Me.DataGridViewTextBoxColumn37.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "RequestMode2"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "RequestMode2"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn38
-        '
-        Me.DataGridViewTextBoxColumn38.DataPropertyName = "RequestModeName2"
-        Me.DataGridViewTextBoxColumn38.HeaderText = "RequestModeName2"
-        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
-        Me.DataGridViewTextBoxColumn38.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "MCNo"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "MCNo"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn47
-        '
-        Me.DataGridViewTextBoxColumn47.DataPropertyName = "ObjectIns"
-        Me.DataGridViewTextBoxColumn47.HeaderText = "ObjectIns"
-        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
-        Me.DataGridViewTextBoxColumn47.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "OPNo"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "OPNo"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn42
-        '
-        Me.DataGridViewTextBoxColumn42.DataPropertyName = "RequestModeRemark1"
-        Me.DataGridViewTextBoxColumn42.HeaderText = "RequestModeRemark1"
-        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
-        Me.DataGridViewTextBoxColumn42.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn43
-        '
-        Me.DataGridViewTextBoxColumn43.DataPropertyName = "RequestModeRemark2"
-        Me.DataGridViewTextBoxColumn43.HeaderText = "RequestModeRemark2"
-        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
-        Me.DataGridViewTextBoxColumn43.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn49
-        '
-        Me.DataGridViewTextBoxColumn49.DataPropertyName = "Process"
-        Me.DataGridViewTextBoxColumn49.HeaderText = "Process"
-        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
-        Me.DataGridViewTextBoxColumn49.ReadOnly = True
-        '
-        'XRayFlow
-        '
-        Me.XRayFlow.DataPropertyName = "XRayFlow"
-        Me.XRayFlow.HeaderText = "XRayFlow"
-        Me.XRayFlow.Name = "XRayFlow"
-        Me.XRayFlow.ReadOnly = True
-        '
         'Frmmain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1954,6 +1954,7 @@ Partial Class Frmmain
         Me.TabPage4.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.DBWBINSDataDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LotDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LotAlarmQtyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1969,7 +1970,6 @@ Partial Class Frmmain
         CType(Me.DBxDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WBDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LotDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
