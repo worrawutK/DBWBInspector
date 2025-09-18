@@ -53,7 +53,6 @@ Partial Class Frmmain
         Me.DBToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DBToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -62,20 +61,12 @@ Partial Class Frmmain
         Me.WBToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WBToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
@@ -222,6 +213,36 @@ Partial Class Frmmain
         Me.WBDataTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.WBDataTableAdapter()
         Me.LotAlarmQtyTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.LotAlarmQtyTableAdapter()
         Me.DBWBINSDataTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.DBWBINSDataTableAdapter()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem24 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem26 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem27 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem28 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem29 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem30 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.ContextMenuStrip3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -295,7 +316,7 @@ Partial Class Frmmain
         '
         'DBToolStripMenuItem
         '
-        Me.DBToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DBToolStripMenuItem1, Me.DBToolStripMenuItem2, Me.DBToolStripMenuItem3, Me.DBToolStripMenuItem4, Me.DBToolStripMenuItem5, Me.DBToolStripMenuItem6, Me.DBToolStripMenuItem7, Me.DBToolStripMenuItem8, Me.DBToolStripMenuItem9, Me.DBToolStripMenuItem10, Me.DBToolStripMenuItem11, Me.DBToolStripMenuItem12, Me.DBToolStripMenuItem13, Me.DBToolStripMenuItem14, Me.DBToolStripMenuItem15, Me.DBToolStripMenuItem16, Me.DBToolStripMenuItem17, Me.DBToolStripMenuItem18, Me.DBToolStripMenuItem19, Me.DBToolStripMenuItem20, Me.DBToolStripMenuItem21, Me.DBToolStripMenuItem22})
+        Me.DBToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DBToolStripMenuItem1, Me.DBToolStripMenuItem2, Me.DBToolStripMenuItem3, Me.DBToolStripMenuItem4, Me.DBToolStripMenuItem5, Me.DBToolStripMenuItem6, Me.DBToolStripMenuItem7, Me.DBToolStripMenuItem8, Me.DBToolStripMenuItem9, Me.ToolStripMenuItem4, Me.DBToolStripMenuItem10, Me.ToolStripMenuItem5, Me.ToolStripMenuItem10, Me.ToolStripMenuItem1, Me.ToolStripMenuItem7, Me.ToolStripMenuItem11, Me.ToolStripMenuItem6, Me.ToolStripMenuItem9, Me.ToolStripMenuItem8, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.DBToolStripMenuItem11, Me.DBToolStripMenuItem12, Me.DBToolStripMenuItem13, Me.DBToolStripMenuItem14, Me.DBToolStripMenuItem15, Me.DBToolStripMenuItem16, Me.DBToolStripMenuItem17, Me.DBToolStripMenuItem18, Me.DBToolStripMenuItem19, Me.DBToolStripMenuItem20, Me.DBToolStripMenuItem22})
         Me.DBToolStripMenuItem.Name = "DBToolStripMenuItem"
         Me.DBToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
         Me.DBToolStripMenuItem.Text = "DB"
@@ -420,12 +441,6 @@ Partial Class Frmmain
         Me.DBToolStripMenuItem20.Size = New System.Drawing.Size(322, 22)
         Me.DBToolStripMenuItem20.Text = "Missing Die ( Chip Off )"
         '
-        'DBToolStripMenuItem21
-        '
-        Me.DBToolStripMenuItem21.Name = "DBToolStripMenuItem21"
-        Me.DBToolStripMenuItem21.Size = New System.Drawing.Size(322, 22)
-        Me.DBToolStripMenuItem21.Text = "The Impacted Needle Smash Of Back Side Chip"
-        '
         'DBToolStripMenuItem22
         '
         Me.DBToolStripMenuItem22.Name = "DBToolStripMenuItem22"
@@ -434,7 +449,7 @@ Partial Class Frmmain
         '
         'WBToolStripMenuItem
         '
-        Me.WBToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WBToolStripMenuItem1, Me.WBToolStripMenuItem2, Me.WBToolStripMenuItem3, Me.WBToolStripMenuItem4, Me.WBToolStripMenuItem5, Me.WBToolStripMenuItem6, Me.WBToolStripMenuItem7, Me.WBToolStripMenuItem8, Me.WBToolStripMenuItem9, Me.WBToolStripMenuItem10, Me.WBToolStripMenuItem11, Me.WBToolStripMenuItem12, Me.WBToolStripMenuItem13, Me.WBToolStripMenuItem14, Me.WBToolStripMenuItem15, Me.WBToolStripMenuItem16, Me.WBToolStripMenuItem17, Me.WBToolStripMenuItem18, Me.WBToolStripMenuItem19, Me.WBToolStripMenuItem20, Me.WBToolStripMenuItem21, Me.WBToolStripMenuItem22, Me.WBToolStripMenuItem23, Me.WBToolStripMenuItem24, Me.WBToolStripMenuItem25, Me.WBToolStripMenuItem26, Me.WBToolStripMenuItem27})
+        Me.WBToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WBToolStripMenuItem1, Me.WBToolStripMenuItem2, Me.WBToolStripMenuItem3, Me.WBToolStripMenuItem4, Me.WBToolStripMenuItem5, Me.ToolStripMenuItem23, Me.WBToolStripMenuItem6, Me.ToolStripMenuItem21, Me.WBToolStripMenuItem8, Me.ToolStripMenuItem15, Me.ToolStripMenuItem19, Me.WBToolStripMenuItem9, Me.WBToolStripMenuItem10, Me.WBToolStripMenuItem11, Me.ToolStripMenuItem17, Me.ToolStripMenuItem12, Me.WBToolStripMenuItem15, Me.ToolStripMenuItem25, Me.ToolStripMenuItem30, Me.ToolStripMenuItem26, Me.ToolStripMenuItem14, Me.ToolStripMenuItem13, Me.ToolStripMenuItem29, Me.WBToolStripMenuItem17, Me.ToolStripMenuItem20, Me.ToolStripMenuItem27, Me.ToolStripMenuItem24, Me.ToolStripMenuItem16, Me.ToolStripMenuItem18, Me.WBToolStripMenuItem21, Me.WBToolStripMenuItem22, Me.WBToolStripMenuItem23, Me.WBToolStripMenuItem24, Me.ToolStripMenuItem28, Me.WBToolStripMenuItem25, Me.ToolStripMenuItem22, Me.WBToolStripMenuItem26, Me.WBToolStripMenuItem27})
         Me.WBToolStripMenuItem.Name = "WBToolStripMenuItem"
         Me.WBToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
         Me.WBToolStripMenuItem.Text = "WB"
@@ -475,12 +490,6 @@ Partial Class Frmmain
         Me.WBToolStripMenuItem6.Size = New System.Drawing.Size(241, 22)
         Me.WBToolStripMenuItem6.Text = "2nd Mekure"
         '
-        'WBToolStripMenuItem7
-        '
-        Me.WBToolStripMenuItem7.Name = "WBToolStripMenuItem7"
-        Me.WBToolStripMenuItem7.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem7.Text = "2nd Tail Width"
-        '
         'WBToolStripMenuItem8
         '
         Me.WBToolStripMenuItem8.Name = "WBToolStripMenuItem8"
@@ -505,59 +514,17 @@ Partial Class Frmmain
         Me.WBToolStripMenuItem11.Size = New System.Drawing.Size(241, 22)
         Me.WBToolStripMenuItem11.Text = "Ball Off Center"
         '
-        'WBToolStripMenuItem12
-        '
-        Me.WBToolStripMenuItem12.Name = "WBToolStripMenuItem12"
-        Me.WBToolStripMenuItem12.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem12.Text = "Wire Pull Test NG"
-        '
-        'WBToolStripMenuItem13
-        '
-        Me.WBToolStripMenuItem13.Name = "WBToolStripMenuItem13"
-        Me.WBToolStripMenuItem13.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem13.Text = "Ball Shear Test NG"
-        '
-        'WBToolStripMenuItem14
-        '
-        Me.WBToolStripMenuItem14.Name = "WBToolStripMenuItem14"
-        Me.WBToolStripMenuItem14.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem14.Text = "Ball Thickness"
-        '
         'WBToolStripMenuItem15
         '
         Me.WBToolStripMenuItem15.Name = "WBToolStripMenuItem15"
         Me.WBToolStripMenuItem15.Size = New System.Drawing.Size(241, 22)
         Me.WBToolStripMenuItem15.Text = "Big Ball"
         '
-        'WBToolStripMenuItem16
-        '
-        Me.WBToolStripMenuItem16.Name = "WBToolStripMenuItem16"
-        Me.WBToolStripMenuItem16.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem16.Text = "Loop NG"
-        '
         'WBToolStripMenuItem17
         '
         Me.WBToolStripMenuItem17.Name = "WBToolStripMenuItem17"
         Me.WBToolStripMenuItem17.Size = New System.Drawing.Size(241, 22)
         Me.WBToolStripMenuItem17.Text = "Neck Cut"
-        '
-        'WBToolStripMenuItem18
-        '
-        Me.WBToolStripMenuItem18.Name = "WBToolStripMenuItem18"
-        Me.WBToolStripMenuItem18.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem18.Text = "Neck Stress"
-        '
-        'WBToolStripMenuItem19
-        '
-        Me.WBToolStripMenuItem19.Name = "WBToolStripMenuItem19"
-        Me.WBToolStripMenuItem19.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem19.Text = "Security Bonding , 2nd Bonding"
-        '
-        'WBToolStripMenuItem20
-        '
-        Me.WBToolStripMenuItem20.Name = "WBToolStripMenuItem20"
-        Me.WBToolStripMenuItem20.Size = New System.Drawing.Size(241, 22)
-        Me.WBToolStripMenuItem20.Text = "Small Ball"
         '
         'WBToolStripMenuItem21
         '
@@ -1927,6 +1894,186 @@ Partial Class Frmmain
         '
         Me.DBWBINSDataTableAdapter.ClearBeforeFill = True
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem1.Text = "Horizontal Crack"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem2.Text = "Preform On Chip"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem3.Text = "Preform On Lead"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem4.Text = "Double Chip"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem5.Text = "Chip Out Pkg."
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem6.Text = "Island Float"
+        '
+        'ToolStripMenuItem7
+        '
+        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem7.Text = "Ink on chip"
+        '
+        'ToolStripMenuItem8
+        '
+        Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
+        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem8.Text = "No Zink"
+        '
+        'ToolStripMenuItem9
+        '
+        Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
+        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem9.Text = "Lead Scratch"
+        '
+        'ToolStripMenuItem10
+        '
+        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem10.Text = "Confirm Quantity"
+        '
+        'ToolStripMenuItem11
+        '
+        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(322, 22)
+        Me.ToolStripMenuItem11.Text = "Ins 100%"
+        '
+        'ToolStripMenuItem12
+        '
+        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
+        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem12.Text = "Smashed Ball"
+        '
+        'ToolStripMenuItem13
+        '
+        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem13.Text = "Loop low"
+        '
+        'ToolStripMenuItem14
+        '
+        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
+        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem14.Text = "Loop Height"
+        '
+        'ToolStripMenuItem15
+        '
+        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
+        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem15.Text = "Au cut"
+        '
+        'ToolStripMenuItem16
+        '
+        Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
+        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem16.Text = "Socket Ng"
+        '
+        'ToolStripMenuItem17
+        '
+        Me.ToolStripMenuItem17.Name = "ToolStripMenuItem17"
+        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem17.Text = "Bent Down Wire"
+        '
+        'ToolStripMenuItem19
+        '
+        Me.ToolStripMenuItem19.Name = "ToolStripMenuItem19"
+        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem19.Text = "Ball Bump Tsubure"
+        '
+        'ToolStripMenuItem20
+        '
+        Me.ToolStripMenuItem20.Name = "ToolStripMenuItem20"
+        Me.ToolStripMenuItem20.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem20.Text = "No Bump"
+        '
+        'ToolStripMenuItem21
+        '
+        Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
+        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem21.Text = "2nd Tool Mark Ng"
+        '
+        'ToolStripMenuItem22
+        '
+        Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
+        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem22.Text = "Wire Taore"
+        '
+        'ToolStripMenuItem23
+        '
+        Me.ToolStripMenuItem23.Name = "ToolStripMenuItem23"
+        Me.ToolStripMenuItem23.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem23.Text = "2nd Horned"
+        '
+        'ToolStripMenuItem24
+        '
+        Me.ToolStripMenuItem24.Name = "ToolStripMenuItem24"
+        Me.ToolStripMenuItem24.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem24.Text = "polymide Hagare(Open Mode)"
+        '
+        'ToolStripMenuItem25
+        '
+        Me.ToolStripMenuItem25.Name = "ToolStripMenuItem25"
+        Me.ToolStripMenuItem25.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem25.Text = "Confirm Quantity(Ng)"
+        '
+        'ToolStripMenuItem26
+        '
+        Me.ToolStripMenuItem26.Name = "ToolStripMenuItem26"
+        Me.ToolStripMenuItem26.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem26.Text = "Ins 100%"
+        '
+        'ToolStripMenuItem27
+        '
+        Me.ToolStripMenuItem27.Name = "ToolStripMenuItem27"
+        Me.ToolStripMenuItem27.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem27.Text = "No Wire"
+        '
+        'ToolStripMenuItem28
+        '
+        Me.ToolStripMenuItem28.Name = "ToolStripMenuItem28"
+        Me.ToolStripMenuItem28.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem28.Text = "Wire Slip"
+        '
+        'ToolStripMenuItem29
+        '
+        Me.ToolStripMenuItem29.Name = "ToolStripMenuItem29"
+        Me.ToolStripMenuItem29.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem29.Text = "Particle"
+        '
+        'ToolStripMenuItem30
+        '
+        Me.ToolStripMenuItem30.Name = "ToolStripMenuItem30"
+        Me.ToolStripMenuItem30.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem30.Text = "Cut Mark"
+        '
+        'ToolStripMenuItem18
+        '
+        Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
+        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem18.Text = "Stomped Wire"
+        '
         'Frmmain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2021,25 +2168,16 @@ Partial Class Frmmain
     Friend WithEvents WBToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem5 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem7 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem8 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem9 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem10 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem11 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem12 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem13 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem14 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem15 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem16 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem17 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem18 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem19 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WBToolStripMenuItem20 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem21 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ADToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DBToolStripMenuItem19 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DBToolStripMenuItem20 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DBToolStripMenuItem21 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem22 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem23 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WBToolStripMenuItem24 As System.Windows.Forms.ToolStripMenuItem
@@ -2179,4 +2317,34 @@ Partial Class Frmmain
     Friend WithEvents DataGridViewTextBoxColumn43 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn49 As DataGridViewTextBoxColumn
     Friend WithEvents XRayFlow As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem7 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem8 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem9 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem10 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem11 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem12 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem13 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem14 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem15 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem16 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem17 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem19 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem20 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem21 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem22 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem23 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem24 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem25 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem26 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem27 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem28 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem29 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem30 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem18 As ToolStripMenuItem
 End Class

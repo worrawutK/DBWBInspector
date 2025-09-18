@@ -1415,7 +1415,7 @@ Public Class Frmmain
     End Sub
 
 
-    Private Sub ToolStripMenuItem2_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles WBToolStripMenuItem9.MouseLeave, WBToolStripMenuItem8.MouseLeave, WBToolStripMenuItem7.MouseLeave, WBToolStripMenuItem6.MouseLeave, WBToolStripMenuItem5.MouseLeave, WBToolStripMenuItem4.MouseLeave, WBToolStripMenuItem3.MouseLeave, WBToolStripMenuItem26.MouseLeave, WBToolStripMenuItem25.MouseLeave, WBToolStripMenuItem24.MouseLeave, WBToolStripMenuItem23.MouseLeave, WBToolStripMenuItem22.MouseLeave, WBToolStripMenuItem21.MouseLeave, WBToolStripMenuItem20.MouseLeave, WBToolStripMenuItem2.MouseLeave, WBToolStripMenuItem19.MouseLeave, WBToolStripMenuItem18.MouseLeave, WBToolStripMenuItem17.MouseLeave, WBToolStripMenuItem16.MouseLeave, WBToolStripMenuItem15.MouseLeave, WBToolStripMenuItem14.MouseLeave, WBToolStripMenuItem13.MouseLeave, WBToolStripMenuItem12.MouseLeave, WBToolStripMenuItem11.MouseLeave, WBToolStripMenuItem10.MouseLeave, WBToolStripMenuItem1.MouseLeave, DBToolStripMenuItem9.MouseLeave, DBToolStripMenuItem8.MouseLeave, DBToolStripMenuItem7.MouseLeave, DBToolStripMenuItem6.MouseLeave, DBToolStripMenuItem5.MouseLeave, DBToolStripMenuItem4.MouseLeave, DBToolStripMenuItem3.MouseLeave, DBToolStripMenuItem21.MouseLeave, DBToolStripMenuItem20.MouseLeave, DBToolStripMenuItem2.MouseLeave, DBToolStripMenuItem19.MouseLeave, DBToolStripMenuItem18.MouseLeave, DBToolStripMenuItem17.MouseLeave, DBToolStripMenuItem16.MouseLeave, DBToolStripMenuItem15.MouseLeave, DBToolStripMenuItem14.MouseLeave, DBToolStripMenuItem13.MouseLeave, DBToolStripMenuItem12.MouseLeave, DBToolStripMenuItem11.MouseLeave, DBToolStripMenuItem10.MouseLeave, DBToolStripMenuItem1.MouseLeave
+    Private Sub ToolStripMenuItem2_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles WBToolStripMenuItem9.MouseLeave, WBToolStripMenuItem8.MouseLeave, WBToolStripMenuItem6.MouseLeave, WBToolStripMenuItem5.MouseLeave, WBToolStripMenuItem4.MouseLeave, WBToolStripMenuItem3.MouseLeave, WBToolStripMenuItem26.MouseLeave, WBToolStripMenuItem25.MouseLeave, WBToolStripMenuItem24.MouseLeave, WBToolStripMenuItem23.MouseLeave, WBToolStripMenuItem22.MouseLeave, WBToolStripMenuItem21.MouseLeave, WBToolStripMenuItem2.MouseLeave, WBToolStripMenuItem17.MouseLeave, WBToolStripMenuItem15.MouseLeave, WBToolStripMenuItem11.MouseLeave, WBToolStripMenuItem10.MouseLeave, WBToolStripMenuItem1.MouseLeave, DBToolStripMenuItem9.MouseLeave, DBToolStripMenuItem8.MouseLeave, DBToolStripMenuItem7.MouseLeave, DBToolStripMenuItem6.MouseLeave, DBToolStripMenuItem5.MouseLeave, DBToolStripMenuItem4.MouseLeave, DBToolStripMenuItem3.MouseLeave, DBToolStripMenuItem20.MouseLeave, DBToolStripMenuItem2.MouseLeave, DBToolStripMenuItem19.MouseLeave, DBToolStripMenuItem18.MouseLeave, DBToolStripMenuItem17.MouseLeave, DBToolStripMenuItem16.MouseLeave, DBToolStripMenuItem15.MouseLeave, DBToolStripMenuItem14.MouseLeave, DBToolStripMenuItem13.MouseLeave, DBToolStripMenuItem12.MouseLeave, DBToolStripMenuItem11.MouseLeave, DBToolStripMenuItem10.MouseLeave, DBToolStripMenuItem1.MouseLeave
 
 
 
@@ -1534,7 +1534,7 @@ Public Class Frmmain
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub ToolStripMenuItem21_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles DBToolStripMenuItem21.MouseMove
+    Private Sub ToolStripMenuItem21_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.DB21
         PictureBox1.Visible = True
         PictureBox2.Visible = True
@@ -1570,7 +1570,7 @@ Public Class Frmmain
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem7_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem7.MouseMove
+    Private Sub WBToolStripMenuItem7_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB7
         PictureBox1.Visible = True
         PictureBox2.Visible = True
@@ -1595,17 +1595,17 @@ Public Class Frmmain
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem12_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem12.MouseMove
+    Private Sub WBToolStripMenuItem12_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB12
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem13_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem13.MouseMove
+    Private Sub WBToolStripMenuItem13_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB13
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem14_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem14.MouseMove
+    Private Sub WBToolStripMenuItem14_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB14
         PictureBox1.Visible = True
         PictureBox2.Visible = True
@@ -1615,7 +1615,7 @@ Public Class Frmmain
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem16_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem16.MouseMove
+    Private Sub WBToolStripMenuItem16_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB16
         PictureBox1.Visible = True
         PictureBox2.Visible = True
@@ -1625,17 +1625,17 @@ Public Class Frmmain
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem18_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem18.MouseMove
+    Private Sub WBToolStripMenuItem18_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB18
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem19_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem19.MouseMove
+    Private Sub WBToolStripMenuItem19_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB19
         PictureBox1.Visible = True
         PictureBox2.Visible = True
     End Sub
-    Private Sub WBToolStripMenuItem20_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles WBToolStripMenuItem20.MouseMove
+    Private Sub WBToolStripMenuItem20_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         PictureBox1.Image = My.Resources.WB20
         PictureBox1.Visible = True
         PictureBox2.Visible = True
@@ -1672,7 +1672,7 @@ Public Class Frmmain
     End Sub
 
 
-    Private Sub DBToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem12.Click, WBToolStripMenuItem9.Click, WBToolStripMenuItem8.Click, WBToolStripMenuItem7.Click, WBToolStripMenuItem6.Click, WBToolStripMenuItem5.Click, WBToolStripMenuItem4.Click, WBToolStripMenuItem3.Click, WBToolStripMenuItem26.Click, WBToolStripMenuItem25.Click, WBToolStripMenuItem24.Click, WBToolStripMenuItem23.Click, WBToolStripMenuItem22.Click, WBToolStripMenuItem21.Click, WBToolStripMenuItem20.Click, WBToolStripMenuItem2.Click, WBToolStripMenuItem19.Click, WBToolStripMenuItem18.Click, WBToolStripMenuItem17.Click, WBToolStripMenuItem16.Click, WBToolStripMenuItem15.Click, WBToolStripMenuItem14.Click, WBToolStripMenuItem13.Click, WBToolStripMenuItem12.Click, WBToolStripMenuItem11.Click, WBToolStripMenuItem10.Click, WBToolStripMenuItem1.Click, OTToolStripMenuItem3.Click, OTToolStripMenuItem2.Click, OTToolStripMenuItem1.Click, MAToolStripMenuItem4.Click, MAToolStripMenuItem3.Click, MAToolStripMenuItem2.Click, MAToolStripMenuItem1.Click, DBToolStripMenuItem9.Click, DBToolStripMenuItem8.Click, DBToolStripMenuItem7.Click, DBToolStripMenuItem6.Click, DBToolStripMenuItem5.Click, DBToolStripMenuItem4.Click, DBToolStripMenuItem3.Click, DBToolStripMenuItem21.Click, DBToolStripMenuItem20.Click, DBToolStripMenuItem2.Click, DBToolStripMenuItem19.Click, DBToolStripMenuItem18.Click, DBToolStripMenuItem17.Click, DBToolStripMenuItem16.Click, DBToolStripMenuItem15.Click, DBToolStripMenuItem14.Click, DBToolStripMenuItem13.Click, DBToolStripMenuItem11.Click, DBToolStripMenuItem10.Click, DBToolStripMenuItem1.Click, ADToolStripMenuItem4.Click, ADToolStripMenuItem3.Click, ADToolStripMenuItem2.Click, ADToolStripMenuItem1.Click
+    Private Sub DBToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DBToolStripMenuItem12.Click, WBToolStripMenuItem9.Click, WBToolStripMenuItem8.Click, WBToolStripMenuItem6.Click, WBToolStripMenuItem5.Click, WBToolStripMenuItem4.Click, WBToolStripMenuItem3.Click, WBToolStripMenuItem26.Click, WBToolStripMenuItem25.Click, WBToolStripMenuItem24.Click, WBToolStripMenuItem23.Click, WBToolStripMenuItem22.Click, WBToolStripMenuItem21.Click, WBToolStripMenuItem2.Click, WBToolStripMenuItem17.Click, WBToolStripMenuItem15.Click, WBToolStripMenuItem11.Click, WBToolStripMenuItem10.Click, WBToolStripMenuItem1.Click, OTToolStripMenuItem3.Click, OTToolStripMenuItem2.Click, OTToolStripMenuItem1.Click, MAToolStripMenuItem4.Click, MAToolStripMenuItem3.Click, MAToolStripMenuItem2.Click, MAToolStripMenuItem1.Click, DBToolStripMenuItem9.Click, DBToolStripMenuItem8.Click, DBToolStripMenuItem7.Click, DBToolStripMenuItem6.Click, DBToolStripMenuItem5.Click, DBToolStripMenuItem4.Click, DBToolStripMenuItem3.Click, DBToolStripMenuItem20.Click, DBToolStripMenuItem2.Click, DBToolStripMenuItem19.Click, DBToolStripMenuItem18.Click, DBToolStripMenuItem17.Click, DBToolStripMenuItem16.Click, DBToolStripMenuItem15.Click, DBToolStripMenuItem14.Click, DBToolStripMenuItem13.Click, DBToolStripMenuItem11.Click, DBToolStripMenuItem10.Click, DBToolStripMenuItem1.Click, ADToolStripMenuItem4.Click, ADToolStripMenuItem3.Click, ADToolStripMenuItem2.Click, ADToolStripMenuItem1.Click
 
 
 
