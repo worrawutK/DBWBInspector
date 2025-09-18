@@ -34,9 +34,9 @@ Partial Class frmInputQR
         'tbRevQR
         '
         Me.tbRevQR.ForeColor = System.Drawing.Color.White
-        Me.tbRevQR.Location = New System.Drawing.Point(612, 21)
+        Me.tbRevQR.Location = New System.Drawing.Point(276, 32)
         Me.tbRevQR.Name = "tbRevQR"
-        Me.tbRevQR.Size = New System.Drawing.Size(10, 20)
+        Me.tbRevQR.Size = New System.Drawing.Size(123, 20)
         Me.tbRevQR.TabIndex = 0
         '
         'lbCaption
