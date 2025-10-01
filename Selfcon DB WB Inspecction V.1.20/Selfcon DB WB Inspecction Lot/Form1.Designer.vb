@@ -42,7 +42,18 @@ Partial Class Frmmain
         Me.DBToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DBToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,18 +71,37 @@ Partial Class Frmmain
         Me.WBToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem30 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem26 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem29 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem27 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem24 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem24 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem28 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem26 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WBToolStripMenuItem27 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -213,36 +243,6 @@ Partial Class Frmmain
         Me.WBDataTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.WBDataTableAdapter()
         Me.LotAlarmQtyTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.LotAlarmQtyTableAdapter()
         Me.DBWBINSDataTableAdapter = New Selfcon_DB_WB_Inspecction_Lot.DBxDataSetTableAdapters.DBWBINSDataTableAdapter()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem21 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem22 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem23 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem24 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem25 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem26 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem27 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem28 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem29 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem30 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.ContextMenuStrip3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -324,127 +324,193 @@ Partial Class Frmmain
         'DBToolStripMenuItem1
         '
         Me.DBToolStripMenuItem1.Name = "DBToolStripMenuItem1"
-        Me.DBToolStripMenuItem1.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem1.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem1.Text = "Chip Kake (Chipping)"
         '
         'DBToolStripMenuItem2
         '
         Me.DBToolStripMenuItem2.Name = "DBToolStripMenuItem2"
-        Me.DBToolStripMenuItem2.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem2.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem2.Text = "Chip Crack"
         '
         'DBToolStripMenuItem3
         '
         Me.DBToolStripMenuItem3.Name = "DBToolStripMenuItem3"
-        Me.DBToolStripMenuItem3.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem3.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem3.Text = "Aluminium Scratch"
         '
         'DBToolStripMenuItem4
         '
         Me.DBToolStripMenuItem4.Name = "DBToolStripMenuItem4"
-        Me.DBToolStripMenuItem4.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem4.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem4.Text = "Back Side Chipping"
         '
         'DBToolStripMenuItem5
         '
         Me.DBToolStripMenuItem5.Name = "DBToolStripMenuItem5"
-        Me.DBToolStripMenuItem5.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem5.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem5.Text = "Stained Die (IBUTSU)"
         '
         'DBToolStripMenuItem6
         '
         Me.DBToolStripMenuItem6.Name = "DBToolStripMenuItem6"
-        Me.DBToolStripMenuItem6.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem6.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem6.Text = "Die Twist"
         '
         'DBToolStripMenuItem7
         '
         Me.DBToolStripMenuItem7.Name = "DBToolStripMenuItem7"
-        Me.DBToolStripMenuItem7.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem7.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem7.Text = "Die Drop Off"
         '
         'DBToolStripMenuItem8
         '
         Me.DBToolStripMenuItem8.Name = "DBToolStripMenuItem8"
-        Me.DBToolStripMenuItem8.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem8.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem8.Text = "Die Misorientation"
         '
         'DBToolStripMenuItem9
         '
         Me.DBToolStripMenuItem9.Name = "DBToolStripMenuItem9"
-        Me.DBToolStripMenuItem9.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem9.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem9.Text = "Die Misalignment (Chip Zure)"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem4.Text = "Double Chip"
         '
         'DBToolStripMenuItem10
         '
         Me.DBToolStripMenuItem10.Name = "DBToolStripMenuItem10"
-        Me.DBToolStripMenuItem10.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem10.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem10.Text = "Chip Bad Mark"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem5.Text = "Chip Out Pkg."
+        '
+        'ToolStripMenuItem10
+        '
+        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem10.Text = "Confirm Quantity"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem1.Text = "Horizontal Crack"
+        '
+        'ToolStripMenuItem7
+        '
+        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem7.Text = "Ink on chip"
+        '
+        'ToolStripMenuItem11
+        '
+        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem11.Text = "Ins 100%"
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem6.Text = "Island Float"
+        '
+        'ToolStripMenuItem9
+        '
+        Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
+        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem9.Text = "Lead Scratch"
+        '
+        'ToolStripMenuItem8
+        '
+        Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
+        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem8.Text = "No Zink"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem2.Text = "Preform On Chip"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(230, 22)
+        Me.ToolStripMenuItem3.Text = "Preform On Lead"
         '
         'DBToolStripMenuItem11
         '
         Me.DBToolStripMenuItem11.Name = "DBToolStripMenuItem11"
-        Me.DBToolStripMenuItem11.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem11.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem11.Text = "Preform Over Flow"
         '
         'DBToolStripMenuItem12
         '
         Me.DBToolStripMenuItem12.Name = "DBToolStripMenuItem12"
-        Me.DBToolStripMenuItem12.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem12.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem12.Text = "Preform Thickness"
         '
         'DBToolStripMenuItem13
         '
         Me.DBToolStripMenuItem13.Name = "DBToolStripMenuItem13"
-        Me.DBToolStripMenuItem13.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem13.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem13.Text = "Preform Spread"
         '
         'DBToolStripMenuItem14
         '
         Me.DBToolStripMenuItem14.Name = "DBToolStripMenuItem14"
-        Me.DBToolStripMenuItem14.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem14.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem14.Text = "Preform Zure"
         '
         'DBToolStripMenuItem15
         '
         Me.DBToolStripMenuItem15.Name = "DBToolStripMenuItem15"
-        Me.DBToolStripMenuItem15.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem15.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem15.Text = "Lead Frame Plating NG."
         '
         'DBToolStripMenuItem16
         '
         Me.DBToolStripMenuItem16.Name = "DBToolStripMenuItem16"
-        Me.DBToolStripMenuItem16.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem16.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem16.Text = "Frame Bent"
         '
         'DBToolStripMenuItem17
         '
         Me.DBToolStripMenuItem17.Name = "DBToolStripMenuItem17"
-        Me.DBToolStripMenuItem17.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem17.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem17.Text = "Inner Lead Bent"
         '
         'DBToolStripMenuItem18
         '
         Me.DBToolStripMenuItem18.Name = "DBToolStripMenuItem18"
-        Me.DBToolStripMenuItem18.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem18.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem18.Text = "Pad Colour Change"
         '
         'DBToolStripMenuItem19
         '
         Me.DBToolStripMenuItem19.Name = "DBToolStripMenuItem19"
-        Me.DBToolStripMenuItem19.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem19.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem19.Text = "Back Side Metal Bari"
         '
         'DBToolStripMenuItem20
         '
         Me.DBToolStripMenuItem20.Name = "DBToolStripMenuItem20"
-        Me.DBToolStripMenuItem20.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem20.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem20.Text = "Missing Die ( Chip Off )"
         '
         'DBToolStripMenuItem22
         '
         Me.DBToolStripMenuItem22.Name = "DBToolStripMenuItem22"
-        Me.DBToolStripMenuItem22.Size = New System.Drawing.Size(322, 22)
+        Me.DBToolStripMenuItem22.Size = New System.Drawing.Size(230, 22)
         Me.DBToolStripMenuItem22.Text = "OTHER DB"
         '
         'WBToolStripMenuItem
@@ -457,115 +523,229 @@ Partial Class Frmmain
         'WBToolStripMenuItem1
         '
         Me.WBToolStripMenuItem1.Name = "WBToolStripMenuItem1"
-        Me.WBToolStripMenuItem1.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem1.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem1.Text = "1st Open"
         '
         'WBToolStripMenuItem2
         '
         Me.WBToolStripMenuItem2.Name = "WBToolStripMenuItem2"
-        Me.WBToolStripMenuItem2.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem2.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem2.Text = "2nd Open"
         '
         'WBToolStripMenuItem3
         '
         Me.WBToolStripMenuItem3.Name = "WBToolStripMenuItem3"
-        Me.WBToolStripMenuItem3.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem3.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem3.Text = "2nd Cut"
         '
         'WBToolStripMenuItem4
         '
         Me.WBToolStripMenuItem4.Name = "WBToolStripMenuItem4"
-        Me.WBToolStripMenuItem4.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem4.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem4.Text = "2nd  Zure"
         '
         'WBToolStripMenuItem5
         '
         Me.WBToolStripMenuItem5.Name = "WBToolStripMenuItem5"
-        Me.WBToolStripMenuItem5.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem5.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem5.Text = "2nd Dagon"
+        '
+        'ToolStripMenuItem23
+        '
+        Me.ToolStripMenuItem23.Name = "ToolStripMenuItem23"
+        Me.ToolStripMenuItem23.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem23.Text = "2nd Horned"
         '
         'WBToolStripMenuItem6
         '
         Me.WBToolStripMenuItem6.Name = "WBToolStripMenuItem6"
-        Me.WBToolStripMenuItem6.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem6.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem6.Text = "2nd Mekure"
+        '
+        'ToolStripMenuItem21
+        '
+        Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
+        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem21.Text = "2nd Tool Mark Ng"
         '
         'WBToolStripMenuItem8
         '
         Me.WBToolStripMenuItem8.Name = "WBToolStripMenuItem8"
-        Me.WBToolStripMenuItem8.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem8.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem8.Text = "Aluminum Spread"
+        '
+        'ToolStripMenuItem15
+        '
+        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
+        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem15.Text = "Au cut"
+        '
+        'ToolStripMenuItem19
+        '
+        Me.ToolStripMenuItem19.Name = "ToolStripMenuItem19"
+        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem19.Text = "Ball Bump Tsubure"
         '
         'WBToolStripMenuItem9
         '
         Me.WBToolStripMenuItem9.Name = "WBToolStripMenuItem9"
-        Me.WBToolStripMenuItem9.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem9.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem9.Text = "Ball Zure"
         '
         'WBToolStripMenuItem10
         '
         Me.WBToolStripMenuItem10.Name = "WBToolStripMenuItem10"
-        Me.WBToolStripMenuItem10.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem10.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem10.Text = "Ball Hazure"
         '
         'WBToolStripMenuItem11
         '
         Me.WBToolStripMenuItem11.Name = "WBToolStripMenuItem11"
-        Me.WBToolStripMenuItem11.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem11.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem11.Text = "Ball Off Center"
+        '
+        'ToolStripMenuItem17
+        '
+        Me.ToolStripMenuItem17.Name = "ToolStripMenuItem17"
+        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem17.Text = "Bent Down Wire"
+        '
+        'ToolStripMenuItem12
+        '
+        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
+        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem12.Text = "Smashed Ball"
         '
         'WBToolStripMenuItem15
         '
         Me.WBToolStripMenuItem15.Name = "WBToolStripMenuItem15"
-        Me.WBToolStripMenuItem15.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem15.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem15.Text = "Big Ball"
+        '
+        'ToolStripMenuItem25
+        '
+        Me.ToolStripMenuItem25.Name = "ToolStripMenuItem25"
+        Me.ToolStripMenuItem25.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem25.Text = "Confirm Quantity(Ng)"
+        '
+        'ToolStripMenuItem30
+        '
+        Me.ToolStripMenuItem30.Name = "ToolStripMenuItem30"
+        Me.ToolStripMenuItem30.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem30.Text = "Cut Mark"
+        '
+        'ToolStripMenuItem26
+        '
+        Me.ToolStripMenuItem26.Name = "ToolStripMenuItem26"
+        Me.ToolStripMenuItem26.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem26.Text = "Ins 100%"
+        '
+        'ToolStripMenuItem14
+        '
+        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
+        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem14.Text = "Loop Height"
+        '
+        'ToolStripMenuItem13
+        '
+        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem13.Text = "Loop low"
+        '
+        'ToolStripMenuItem29
+        '
+        Me.ToolStripMenuItem29.Name = "ToolStripMenuItem29"
+        Me.ToolStripMenuItem29.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem29.Text = "Particle"
         '
         'WBToolStripMenuItem17
         '
         Me.WBToolStripMenuItem17.Name = "WBToolStripMenuItem17"
-        Me.WBToolStripMenuItem17.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem17.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem17.Text = "Neck Cut"
+        '
+        'ToolStripMenuItem20
+        '
+        Me.ToolStripMenuItem20.Name = "ToolStripMenuItem20"
+        Me.ToolStripMenuItem20.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem20.Text = "No Bump"
+        '
+        'ToolStripMenuItem27
+        '
+        Me.ToolStripMenuItem27.Name = "ToolStripMenuItem27"
+        Me.ToolStripMenuItem27.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem27.Text = "No Wire"
+        '
+        'ToolStripMenuItem24
+        '
+        Me.ToolStripMenuItem24.Name = "ToolStripMenuItem24"
+        Me.ToolStripMenuItem24.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem24.Text = "polymide Hagare(Open Mode)"
+        '
+        'ToolStripMenuItem16
+        '
+        Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
+        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem16.Text = "Socket Ng"
+        '
+        'ToolStripMenuItem18
+        '
+        Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
+        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem18.Text = "Stomped Wire"
         '
         'WBToolStripMenuItem21
         '
         Me.WBToolStripMenuItem21.Name = "WBToolStripMenuItem21"
-        Me.WBToolStripMenuItem21.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem21.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem21.Text = "V-Tsuki"
         '
         'WBToolStripMenuItem22
         '
         Me.WBToolStripMenuItem22.Name = "WBToolStripMenuItem22"
-        Me.WBToolStripMenuItem22.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem22.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem22.Text = "WB Nashi"
         '
         'WBToolStripMenuItem23
         '
         Me.WBToolStripMenuItem23.Name = "WBToolStripMenuItem23"
-        Me.WBToolStripMenuItem23.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem23.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem23.Text = "Wire Curl"
         '
         'WBToolStripMenuItem24
         '
         Me.WBToolStripMenuItem24.Name = "WBToolStripMenuItem24"
-        Me.WBToolStripMenuItem24.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem24.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem24.Text = "Wire Scar"
+        '
+        'ToolStripMenuItem28
+        '
+        Me.ToolStripMenuItem28.Name = "ToolStripMenuItem28"
+        Me.ToolStripMenuItem28.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem28.Text = "Wire Slip"
         '
         'WBToolStripMenuItem25
         '
         Me.WBToolStripMenuItem25.Name = "WBToolStripMenuItem25"
-        Me.WBToolStripMenuItem25.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem25.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem25.Text = "Wire Tare"
+        '
+        'ToolStripMenuItem22
+        '
+        Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
+        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(236, 22)
+        Me.ToolStripMenuItem22.Text = "Wire Taore"
         '
         'WBToolStripMenuItem26
         '
         Me.WBToolStripMenuItem26.Name = "WBToolStripMenuItem26"
-        Me.WBToolStripMenuItem26.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem26.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem26.Text = "Wire Touch"
         '
         'WBToolStripMenuItem27
         '
         Me.WBToolStripMenuItem27.Name = "WBToolStripMenuItem27"
-        Me.WBToolStripMenuItem27.Size = New System.Drawing.Size(241, 22)
+        Me.WBToolStripMenuItem27.Size = New System.Drawing.Size(236, 22)
         Me.WBToolStripMenuItem27.Text = "OTHER WB"
         '
         'OTToolStripMenuItem
@@ -680,9 +860,9 @@ Partial Class Frmmain
         Me.lbRevision.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.lbRevision.Location = New System.Drawing.Point(1170, 18)
         Me.lbRevision.Name = "lbRevision"
-        Me.lbRevision.Size = New System.Drawing.Size(384, 13)
+        Me.lbRevision.Size = New System.Drawing.Size(383, 13)
         Me.lbRevision.TabIndex = 266
-        Me.lbRevision.Text = """SelfCon DBWBISPECTION  Software Ver 1.22_NetVersion 1.12_2025'Mar'11"""
+        Me.lbRevision.Text = """SelfCon DBWBISPECTION  Software Ver 1.23_NetVersion 1.13_2025'Oct'12"""
         Me.lbRevision.UseWaitCursor = True
         '
         'Timer1
@@ -1893,186 +2073,6 @@ Partial Class Frmmain
         'DBWBINSDataTableAdapter
         '
         Me.DBWBINSDataTableAdapter.ClearBeforeFill = True
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem1.Text = "Horizontal Crack"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem2.Text = "Preform On Chip"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem3.Text = "Preform On Lead"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem4.Text = "Double Chip"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem5.Text = "Chip Out Pkg."
-        '
-        'ToolStripMenuItem6
-        '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem6.Text = "Island Float"
-        '
-        'ToolStripMenuItem7
-        '
-        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem7.Text = "Ink on chip"
-        '
-        'ToolStripMenuItem8
-        '
-        Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
-        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem8.Text = "No Zink"
-        '
-        'ToolStripMenuItem9
-        '
-        Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem9.Text = "Lead Scratch"
-        '
-        'ToolStripMenuItem10
-        '
-        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem10.Text = "Confirm Quantity"
-        '
-        'ToolStripMenuItem11
-        '
-        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(322, 22)
-        Me.ToolStripMenuItem11.Text = "Ins 100%"
-        '
-        'ToolStripMenuItem12
-        '
-        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem12.Text = "Smashed Ball"
-        '
-        'ToolStripMenuItem13
-        '
-        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem13.Text = "Loop low"
-        '
-        'ToolStripMenuItem14
-        '
-        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
-        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem14.Text = "Loop Height"
-        '
-        'ToolStripMenuItem15
-        '
-        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem15.Text = "Au cut"
-        '
-        'ToolStripMenuItem16
-        '
-        Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
-        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem16.Text = "Socket Ng"
-        '
-        'ToolStripMenuItem17
-        '
-        Me.ToolStripMenuItem17.Name = "ToolStripMenuItem17"
-        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem17.Text = "Bent Down Wire"
-        '
-        'ToolStripMenuItem19
-        '
-        Me.ToolStripMenuItem19.Name = "ToolStripMenuItem19"
-        Me.ToolStripMenuItem19.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem19.Text = "Ball Bump Tsubure"
-        '
-        'ToolStripMenuItem20
-        '
-        Me.ToolStripMenuItem20.Name = "ToolStripMenuItem20"
-        Me.ToolStripMenuItem20.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem20.Text = "No Bump"
-        '
-        'ToolStripMenuItem21
-        '
-        Me.ToolStripMenuItem21.Name = "ToolStripMenuItem21"
-        Me.ToolStripMenuItem21.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem21.Text = "2nd Tool Mark Ng"
-        '
-        'ToolStripMenuItem22
-        '
-        Me.ToolStripMenuItem22.Name = "ToolStripMenuItem22"
-        Me.ToolStripMenuItem22.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem22.Text = "Wire Taore"
-        '
-        'ToolStripMenuItem23
-        '
-        Me.ToolStripMenuItem23.Name = "ToolStripMenuItem23"
-        Me.ToolStripMenuItem23.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem23.Text = "2nd Horned"
-        '
-        'ToolStripMenuItem24
-        '
-        Me.ToolStripMenuItem24.Name = "ToolStripMenuItem24"
-        Me.ToolStripMenuItem24.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem24.Text = "polymide Hagare(Open Mode)"
-        '
-        'ToolStripMenuItem25
-        '
-        Me.ToolStripMenuItem25.Name = "ToolStripMenuItem25"
-        Me.ToolStripMenuItem25.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem25.Text = "Confirm Quantity(Ng)"
-        '
-        'ToolStripMenuItem26
-        '
-        Me.ToolStripMenuItem26.Name = "ToolStripMenuItem26"
-        Me.ToolStripMenuItem26.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem26.Text = "Ins 100%"
-        '
-        'ToolStripMenuItem27
-        '
-        Me.ToolStripMenuItem27.Name = "ToolStripMenuItem27"
-        Me.ToolStripMenuItem27.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem27.Text = "No Wire"
-        '
-        'ToolStripMenuItem28
-        '
-        Me.ToolStripMenuItem28.Name = "ToolStripMenuItem28"
-        Me.ToolStripMenuItem28.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem28.Text = "Wire Slip"
-        '
-        'ToolStripMenuItem29
-        '
-        Me.ToolStripMenuItem29.Name = "ToolStripMenuItem29"
-        Me.ToolStripMenuItem29.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem29.Text = "Particle"
-        '
-        'ToolStripMenuItem30
-        '
-        Me.ToolStripMenuItem30.Name = "ToolStripMenuItem30"
-        Me.ToolStripMenuItem30.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem30.Text = "Cut Mark"
-        '
-        'ToolStripMenuItem18
-        '
-        Me.ToolStripMenuItem18.Name = "ToolStripMenuItem18"
-        Me.ToolStripMenuItem18.Size = New System.Drawing.Size(236, 22)
-        Me.ToolStripMenuItem18.Text = "Stomped Wire"
         '
         'Frmmain
         '
